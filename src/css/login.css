@@ -92,12 +92,16 @@ input[type="submit"], input[type="button"]{
   font-weight: 600;
   line-height: 1.4375rem;
   filter:  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
+  transition: background-color 0.6s linear;
 }
 input[type="submit"]{
   width: 8.8429rem;
   height: 2.5rem;
   border-radius: 10px;
   margin-right: 1rem;
+}
+input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: #3a62b9;
 }
 
 #info-login{
