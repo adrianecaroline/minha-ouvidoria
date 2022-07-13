@@ -109,7 +109,7 @@ button:hover {
 .parte1 {
   border-radius: 6px;
   width: 360px;
-  height: 400px;
+  height: 500px;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.35);
   background-color: #ffff;
 }
@@ -127,6 +127,8 @@ span > h3 {
 }
 
 .info {
+  display: flex;
+  flex-direction: column;
   height: 250px;
   margin: 5% 11%;
   padding: 0 10px;
@@ -143,7 +145,7 @@ input {
 }
 
 .btn {
-  margin: 5%;
+  margin-top: 6rem;
   justify-content: space-evenly;
   display: flex;
   align-content: center;
