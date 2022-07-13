@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/solicitacao.css">
+  <title>Solicitação</title>
+</head>
+<body>
+  <!--Menu-->
+  <header>
+    <img src="src/images/owl-nav.png" alt="logotipo" id="logotipo" class="owl" />
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Ajuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Faça sua Solicitação</h1>
+    
+    <!--Formulário-->
+    <form>
+      <div class="select">
+        <label for="selection">Sobre qual assunto você quer falar: </label>
+        <select id="selection" name="selection">
+          <option selected disabled value="">Selecione</option>
+          <option value="ilumincacao">Iluminação</option>
+          <option value="arborizacao">Arborização</option>
+          <option value="coletalixo">Coleta de lixo</option>
+          <option value="pavimentacao">Pavimentação</option>
+          <option value="ciclovia">Ciclovia</option>
+          <option value="saneamento">Saneamento básico</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <!--Descrição da solicitação-->
+      <section class="formulario">
+        <div class="descricao">
+          <h1>Descrição</h1>
+          <label for="titulo">Título da Solicitação</label>
+          <input type="text" name="titulo">
+          <label for="descricao">Descrição</label>
+          <textarea row="10" id="descricao" name="descricao"></textarea>
+        </div>
+
+        <!--Endereço da solicitação-->
+        <div class="endereco">
+          <h1>Endereço</h1>
+          <label for="local">Local do fato</label>
+          <input type="text" name="local">
+          <div class="text">
+          <label for="numero">Nº</label>
+          <input type="number" name="numero" class="numero">
+          <label for="cep">CEP</label>
+          <input type="number" name="cep" class="cep">
+          <label for="uf">UF</label>
+          <input type="text" name="uf" class="uf">
+        </div>
+        <p> Incluir anexos: 
+          <input type="file" value="Incluir Anexos">
+        </p>
+        </div>
+        
+      </section>
+      
+      <!--Botão para submeter as informações-->
+      <input type="submit" value="Enviar" class="botao">
+    </form>
+  
+  </main>
+  
+</body>
+</html>
