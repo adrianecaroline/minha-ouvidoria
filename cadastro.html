@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="src/css/cadastro.css">
+  <title> Minha Ouvidoria - Cadastro </title>
+</head>
+<body>
+  <header>
+    <img src="src/images/owl-nav.png" alt="logotipo" id="logotipo" class="owl" />
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Ajuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main><div id="form-cadastro">
+    <h1> Cadastro de Perfil </h1>
+    <form method="post" action="">
+    <div id="lado-lado">
+      <div id="lado-esquerdo">
+        <h4 class="nome-azul"> Dados Pessoais </h4>
+
+        <div id="entrada-nome">
+          <label for="NomeC" class="nome-escuro"> Nome completo: </label><br>
+          <input type="text" name="nome-completo" id="NomeC" class="borda-redonda inputLongo" required>
+        </div>
+
+        <div id="entrada-email">
+          <label for="E-mail" class="nome-escuro"> Email: </label><br>
+          <input type="email" name="email" id="E-mail" class="borda-redonda inputLongo" required>
+        </div>
+
+        <div id="entrada-senha">
+          <label for="Senha" id="LabelSenha" class="nome-escuro"> Senha: </label>
+          <label for="ConfSenha" class="nome-escuro"> Confirmar senha: </label><br>
+          <input type="password" name="senha" id="Senha" class="borda-redonda inputPequeno" required>
+          <input type="password" name="confsenha" id="ConfSenha" class="borda-redonda inputPequeno" required>
+        </div>
+
+        <h4 class="nome-azul"> Endereço </h4>
+
+        <div id="entrada-endereço" class="nome-escuro">
+          <label for="Endereço"> Endereço: </label><br>
+          <input type="text" name="endereço" id="Endereço" class="borda-redonda inputLongo" required>
+        </div>
+
+        <div id="checkbox">
+          <input type="checkbox" id="termos" name="radiobutton" value="radiobutton" required>
+          <label for="termos">Concordo com os Termos de Uso</label><br>
+
+          <input type="checkbox" id="newletters" name="radiobutton" value="radiobutton">
+          <label for="newletters">Aceito receber Newletters eventualmente</label> <br>
+        </div>
+      </div>
+
+      <div id="lado-direito">
+        <h4 class="invisivel nome-azul"> FACHADA </h4>
+        
+        <div id="entrada-cpf-data">
+          <label for="CPF" class="nome-escuro"> CPF: </label>
+          <label for="DataNasc" id="Data" class="nome-escuro"> Data de Nascimento: </label><br>
+          <input type="number" min="00000000001" max="99999999999" name="cpf" id="CPF" class="borda-redonda inputMedio" required>
+          <input type="date" name="data" id="DataNasc" class="borda-redonda" required>
+        </div>
+
+        <div id="entrada-username">
+          <label for="UserName" class="nome-escuro"> Nome de usuário: </label><br>
+          <input type="text" name="username" id="UserName" class="borda-redonda inputMedio" required> 
+        </div>
+
+        <div id="check-senha">
+          <span>Sua senha deve conter no mínimo:
+            <br>8 caracteres.
+            <br>Letras maiúsculas (A-Z).
+            <br>Números (0-9).
+            <br>Caracteres especiais (!@#$%&*).
+           </span>
+        </div>
+
+        <h4 class="invisivel nome-azul"> FACHADA </h4>
+
+        <div id="entrada-cep">
+          <label for="CEP" class="nome-escuro"> CEP: </label>
+          <label for="Numero" id="Nº" class="nome-escuro"> Nº: </label>
+          <label for="UF" class="nome-escuro"> UF: </label><br>
+          <input type="number" name="cep" id="CEP" min="00000001" max="99999999" class="borda-redonda" required>
+          <input type="number" name="numero" id="Numero" class="borda-redonda" required>
+          <select name="uf" id="UF" class="borda-redonda" required>
+            <option selected disabled value="  ">  </option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+        </select>
+
+        </div>
+      </div>
+    </div>
+
+      <div id="botao-criar">
+        <button type="submit" onclick="CriarConta()" id="botao-cad"> Criar conta </button>
+      </div>
+      
+    </form>
+  </div></main>
+  
+  <footer>
+    <div id="divFooter">
+      <div id="rodape">
+        <p><a href="#">SOBRE OS DESENVOLVEDORES</a></p>
+        <p><a href="#">PERGUNTAS FREQUENTES</a></p>
+      </div>      
+      <div id="copyright">
+        <p>©REACTon 2022. Todos os Direitos Reservados</p>
+      </div>
+    </div>    
+  </footer> 
+</body>
+</html>
