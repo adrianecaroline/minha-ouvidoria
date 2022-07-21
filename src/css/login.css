@@ -17,7 +17,7 @@ main {
 
 #banner-login {
   background-color: #1348AA;
-  height: 110vh;
+  height: 100vh;
   width: 50%;
   text-align: center;
 
@@ -114,6 +114,7 @@ hr {
   margin-right: 0.5rem;
   width: 12.56rem;
 }
+
 .msg-login {
   margin-bottom: 1.5rem;
 }
@@ -122,4 +123,10 @@ input[type="button"]{
   height: 2.5rem;
   width: 10.06rem;
   border-radius: 10px;
+}
+
+/* OPÇÕES DE LOGIN */
+
+#opcoes {
+  margin-top: 6rem;
 }
