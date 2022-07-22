@@ -3,11 +3,11 @@
 :root {
   --color-btn: #4DD14E;
 }
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 .h3{
   color: #1348AA;
@@ -23,7 +23,7 @@ main {
   height: 100vh;
 }
 
-#banner-login {
+#bannerlogin {
   background-color: #1348AA;
   height: 100vh;
   width: 50%;
@@ -48,22 +48,23 @@ img {
 }
 
 
-#login-area {
+#loginarea {
   height: 100vh;
   width: 50%;
   text-align: center;
 }
 
-#login-area img {
+#loginarea img {
   margin-right: 4rem;
 }
 
-p, #title-login {
+p, #titlelogin {
   color: #5F5D5D;
   font-family: 'Montserrat';
   font-weight: 600;
 }
-#title-login {
+
+#titlelogin {
   font-size: 1.625rem;
   line-height: 1.906rem;
   margin-bottom: 2.06rem;
@@ -102,17 +103,17 @@ input[type="submit"], input[type="button"]{
   filter:  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
   transition: background-color 0.6s linear;
 }
-#btn-login{
+#btnlogin{
   width: 8.8429rem;
   height: 2.5rem;
   border-radius: 10px;
   margin-right: 1rem;
 }
-#btn-login:hover, input[type="button"]:hover {
+#btnlogin:hover, input[type="button"]:hover {
   background-color: #3a62b9;
 }
 
-#info-login{
+#infologin{
   margin-left: 10.43rem;
   margin-right: 11.68rem;
 }
@@ -123,7 +124,7 @@ hr {
   width: 12.56rem;
 }
 
-.msg-login {
+.msglogin {
   margin-bottom: 1.5rem;
 }
 

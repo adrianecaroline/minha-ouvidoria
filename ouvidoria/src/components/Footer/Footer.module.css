@@ -1,0 +1,14 @@
+footer {
+  background-color: #1348aa;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+p > a {
+  text-decoration: none;
+  color: #ffff;
+  word-spacing: 4px;
+}
