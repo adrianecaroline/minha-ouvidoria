@@ -1,12 +1,18 @@
 import imgSvg from '../../images/imagem-login.svg'
 import logo from '../../images/logo.png'
-import styles from './Login.module.css'
+import { 
+  MainLogin, 
+  Banner, 
+  AreaLogin, 
+  Opcoes 
+} from './LoginStyle'
+
 
 export default function Login () {
 
   return (
-    <main>
-      <section id={styles.bannerlogin}>
+    <MainLogin>
+      <Banner>
         <h2>
           Faça seu login na plataforma para registrar e acompanhar sua
           solicitação!
@@ -15,26 +21,24 @@ export default function Login () {
           src={imgSvg}
           alt="Animação de um rapaz em frente ao notebook"
         />
-      </section>
+      </Banner>
 
-      <section id={styles.loginarea}>
+      <AreaLogin>
         <img
           src={logo}
           alt="Logo da Minha Ouvidoria"
-          className={styles.logoarea}
         />
         
-        <div id={styles.opcoes}>
+        <Opcoes>
           <h3 class="h3">Você é:</h3>
-          <a href="moradorLogin.html">
-            <input type="button" id={styles.btnlogin} defaultValue="Morador"/>
-          </a>
-          <a href="condominioLogin.html">
-            <input type="button" id={styles.btnlogin} defaultValue="Condomínio"/>
-          </a>
-        </div>
-      </section>
-    </main>
+
+            <input type="button" defaultValue="Morador"/>
+        
+            <input type="button" defaultValue="Condomínio"/>
+          
+        </Opcoes>
+      </AreaLogin>
+    </MainLogin>
   )
 
 }

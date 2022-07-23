@@ -9,6 +9,10 @@
   box-sizing: border-box;
 } */
 
+/* .logoarea{
+  margin-right: 4rem;
+} */
+
 .h3{
   color: #1348AA;
   font-family: 'Nanum Gothic';
@@ -17,7 +21,7 @@
   font-size: 1.5rem;
 }
 
-main {
+.mainLogin {
   display: flex;
   gap: 2rem;
   height: 100vh;
@@ -42,7 +46,7 @@ h2 {
   margin-right: 12.25rem;
 }
 
-img {
+.imgSvg {
   margin-top: 5.75rem;
   width: 350px;
 }
