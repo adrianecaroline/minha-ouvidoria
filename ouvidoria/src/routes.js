@@ -1,21 +1,19 @@
-import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Solicitacao from "./pages/Solicitacao";
+import React from "react";
+import { BrowserRouter, Route } from 'react-router-dom';
 
-// import Routes from "./routes";
-
-function App() {
-  return (
+export default function Routes () {
+  return(
     <>
-      <Routes>
+      <BrowserRouter>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/solicitacao" element={<Solicitacao/>}/>
-      </Routes>
+      </BrowserRouter>
     </>
-    
-  );
-}
+  )
 
-export default App;
+
+}

@@ -4,7 +4,8 @@ import {
   MainLogin, 
   Banner, 
   AreaLogin, 
-  Opcoes 
+  Opcoes,
+  InputLogin 
 } from './LoginStyle'
 
 
@@ -30,12 +31,14 @@ export default function Login () {
         />
         
         <Opcoes>
+          
           <h3 class="h3">Você é:</h3>
-
+          <InputLogin>
             <input type="button" defaultValue="Morador"/>
         
             <input type="button" defaultValue="Condomínio"/>
-          
+          </InputLogin>
+    
         </Opcoes>
       </AreaLogin>
     </MainLogin>

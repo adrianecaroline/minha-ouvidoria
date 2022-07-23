@@ -44,7 +44,7 @@ export const AreaLogin = styled.section `
 `;
 
 export const Opcoes = styled.div `
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   h3 {
     color: #1348AA;
@@ -53,16 +53,25 @@ export const Opcoes = styled.div `
     font-size: 1.5rem;
   }  
 
+ 
+`;
+
+export const InputLogin = styled.div `
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
   input {
     cursor: pointer;
-    background-color: var(--color-btn);
+    background-color: #4DD14E;
+    width: 10rem;
     color: white;
     border: none;
     font-size: 1.125rem;
     font-weight: 600;
-    line-height: 1.4375rem;
     filter:  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    transition: background-color 0.6s linear;
+    transition: background-color 0.3s linear;
+    
 
     :hover {
       background-color: #3a62b9;
