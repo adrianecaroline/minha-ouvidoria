@@ -1,5 +1,6 @@
 import styles from './Registro.module.css'
 
+
 export default function Registro (){
 
   return (
