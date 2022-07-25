@@ -10,13 +10,22 @@ import {
   BtnUser, 
   Botao 
 } from './PerfilStyle'
+import { useState } from 'react'
+import { MenuMobile } from '../../components/Menu/MenuMobile'
 
 function User(props) {
+
+  const [menuVisible, setMenuVisible] = useState(false);
+
   const {name, email, usuario, condominio, bloco} = props;
   
   return (
     <>
-      <Menu/>
+      <MenuMobile
+        menuVisible={menuVisible}
+        setMenuVisible={setMenuVisible}
+      />
+      <Menu setMenuVisible={setMenuVisible}/>
       <Container>
         <FrameUser>
           <span>

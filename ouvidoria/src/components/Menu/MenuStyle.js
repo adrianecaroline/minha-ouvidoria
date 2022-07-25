@@ -16,6 +16,38 @@ export const Header = styled.header `
     width: 10rem;
     margin-left: 14%;
   }
+
+  .mobile {
+    display: none;
+  }
+  
+  @media(max-width: 900px) {
+    .mobile {
+      display: initial;
+      padding-right: 4rem;
+      cursor: pointer;
+    }
+    
+    img {
+      width: 10rem;
+      margin-left: 4.2rem;
+    }
+
+    nav, button {
+      display: none;
+    }
+
+    @media(max-width: 500px) {
+      img {
+        width: 8rem;
+        margin-left: 2rem;
+      }
+
+      .mobile {
+        padding-right: 2rem;
+      }
+    }
+  }
 `;
 
 export const Nav = styled.nav `

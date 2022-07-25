@@ -1,8 +1,9 @@
 // import styles from './Menu.module.css'
 import imagem from '../../images/owl-nav.png'
 import { Header, Nav, Btn } from './MenuStyle'
+import { IoMenu } from "react-icons/io5";
 
-function Menu () {
+function Menu ({setMenuVisible}) {
 
   return(
     <Header>
@@ -15,6 +16,7 @@ function Menu () {
         </ul>
       </Nav>
       <Btn type="submit">Sair</Btn>
+      <IoMenu size={34} color="#ffff" className="mobile" onClick={() => setMenuVisible (true)}/>
     </Header>
   )
 
