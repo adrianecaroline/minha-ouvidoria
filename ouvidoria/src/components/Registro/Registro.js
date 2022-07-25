@@ -1,5 +1,5 @@
 import styles from './Registro.module.css'
-
+import { FcNext } from "react-icons/fc";
 
 export default function Registro (){
 
@@ -11,10 +11,7 @@ export default function Registro (){
               <p>Garagem para bicicletas</p>
             </div>
             <div className={styles.icon}>
-              <span className="material-symbols-outlined">
-                {" "}
-                arrow_forward_ios{" "}
-              </span>
+             <FcNext size={30}/>
             </div>
           </div>
           <div className={styles.registro}>
@@ -23,10 +20,7 @@ export default function Registro (){
               <p>Corrimão para escadas</p>
             </div>
             <div className={styles.icon}>
-              <span className="material-symbols-outlined">
-                {" "}
-                arrow_forward_ios{" "}
-              </span>
+              <FcNext size={30}/>
             </div>
           </div>
         </>

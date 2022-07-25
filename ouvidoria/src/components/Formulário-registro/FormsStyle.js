@@ -11,7 +11,7 @@ export const FormMain = styled.main `
     font-size: 28px;
   }
 
-  input[type="submit"] {
+  input[type="button"] {
     background-color: #23e24c;
     color: #ffff;
     border: none;
@@ -91,6 +91,7 @@ export const Endereco = styled.div `
     border: none;
     border-radius: 3px;
     padding: 10px;
+    width: 400px;
     box-sizing: border-box;
   }
 
@@ -117,19 +118,18 @@ export const Endereco = styled.div `
 
 export const SInputs = styled.div `
   display: flex;
-  justify-content: space-between;
-
+  gap: 2.4rem;
 `;
 
 export const SubInputs = styled.div `
   display: grid;
   gap: 0.5rem;
 
-  input {
+  input[type="text"] {
     width: 86px;
   }
 
   input[type="number"] {
-    width: 150px;
+    width: 120px;
   }
 `;

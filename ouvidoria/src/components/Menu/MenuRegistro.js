@@ -1,23 +1,23 @@
-import styles from './MenuRegistro.css'
 import imagem from '../../images/owl-nav.png'
+import { HeaderR, NavR } from './MenuRegistroStyle'
 
 function MenuRegistro () {
 
   return(
-    <header className={styles.header}>
-      <img src={imagem} className="owl"
+    <HeaderR>
+      <img src={imagem}
         // alt="logotipo"
         // id="logotipo"
         // className="owl"
       />
-      <nav className={styles.nav}>
+      <NavR>
         <ul>
-          <li><a href="inicio.html">Início</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Ajuda</a></li>
+          <li><a>Início</a></li>
+          <li><a>Sobre Nós</a></li>
+          <li><a>Ajuda</a></li>
         </ul>
-      </nav>
-    </header>
+      </NavR>
+    </HeaderR>
   )
 }
 

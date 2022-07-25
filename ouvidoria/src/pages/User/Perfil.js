@@ -8,7 +8,7 @@ import {
   FrameUser, 
   UserInfo, 
   BtnUser, 
-  BtnEdt 
+  Botao 
 } from './PerfilStyle'
 
 function User(props) {
@@ -36,8 +36,10 @@ function User(props) {
             Bloco: <strong> {props.bloco} {7}</strong> */}
           </UserInfo>
           <BtnUser>
-            <input type="button" value="Editar perfil" className='btn1'/>
-            <input type="button" value="Excluir conta"/>
+            <Botao>Editar Perfil</Botao>
+            <Botao primary>Excluir Perfil</Botao>
+            {/* <input type="button" value="Editar perfil" className='btn1'/>
+            <input type="button" value="Excluir conta"/> */}
           </BtnUser>
         </FrameUser>
 
