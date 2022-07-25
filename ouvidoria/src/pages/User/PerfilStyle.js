@@ -36,6 +36,10 @@ export const UserInfo = styled.div `
   height: 250px;
   margin: 5% 11%;
   padding: 0 10px;
+
+  p {
+    font-size: 16px;
+  }
 `;
 
 export const BtnUser = styled.div `
@@ -44,20 +48,6 @@ export const BtnUser = styled.div `
   display: flex;
   justify-content: space-around;
   align-content: center;
-
-  // input[type="button"] {
-  //   padding: 8px;
-  //   border: none;
-  //   border-radius: 3px;
-  //   color: #f9f9f9;
-  //   font-weight: bolder;
-  //   cursor: pointer;
-  //   box-shadow: 0px 2px 3px 0px rgb(0 0 0 / 35%);
-    
-  //   .btn1 {
-  //     background-color: #6fd222;
-  //   }
-  // }
 
 `;
 
@@ -77,6 +67,3 @@ export const Botao = styled.button `
       color: white;
     `};
 `;
-// export const BtnEdt = styled.span `
-//   background-color: #6fd222;
-// `;

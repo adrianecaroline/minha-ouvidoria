@@ -44,11 +44,18 @@ app.put("/user/:username", (req, res) => {
 //Deletar usuário pelo seu username
 app.delete("/user/:username", (req, res) => {
     // const {username} = req.params.username;
-    dbcon.query("DELETE FROM usuario WHERE username = ?" , req.params.username, (err, results) => {
+    dbcon.query("DELETE FROM ouvidoria WHERE usuario = ?" , req.params.username, (err, results) => {
         if (err) {
             res.status(409).json({ msg: "Erro: ", err })
         } else {
-            res.status(201).json({ msg: "Usuário Deletado, Mini Adriane." })
+            dbcon.query("DELETE FROM usuario WHERE username = ?" , req.params.username, (err, results) => {
+                if (err) {
+                    res.status(409).json({ msg: "Erro: ", err })
+                } else {
+                    res.status(201).json({ msg: "Usuário Deletado, Mini Adriane." })
+                }
+            });
+            // res.status(201).json({ msg: "Usuário Deletado, Mini Adriane." })
         }
     });
 });

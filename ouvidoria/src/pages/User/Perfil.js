@@ -2,6 +2,8 @@ import Registro from '../../components/Registro/Registro.js'
 import Footer from '../../components/Footer/Footer.js'
 import photo from '../../images/profile.png'
 import Menu from '../../components/Menu/Menu.js'
+import { useState } from 'react'
+import { MenuMobile } from '../../components/Menu/MenuMobile'
 // import styles  from './Perfil.module.css'
 import { 
   Container, 
@@ -10,14 +12,11 @@ import {
   BtnUser, 
   Botao 
 } from './PerfilStyle'
-import { useState } from 'react'
-import { MenuMobile } from '../../components/Menu/MenuMobile'
+
 
 function User(props) {
 
   const [menuVisible, setMenuVisible] = useState(false);
-
-  const {name, email, usuario, condominio, bloco} = props;
   
   return (
     <>
@@ -30,19 +29,24 @@ function User(props) {
         <FrameUser>
           <span>
             <h3>Seu Perfil</h3>
-            
-            
           </span>
           <UserInfo>
-          Nome: propsname="Jonh, email="john@uol.com", usuario="john1", condominio="rosa", bloco="7"
-            <br />
-            {/* E-mail: <strong>{props.email} {"jaquelinedesouza@gmail.com"}</strong>
-            <br />
+            <p>
+            Nome: <strong>{props.name} {"Jaqueline Souza"}</strong>
+            </p>
+            <p>
+            E-mail: <strong>{props.email} {"jaquelinedesouza@gmail.com"}</strong>
+            </p>
+            <p>
             Usuário: <strong>{props.user} {"Joana1"}</strong>
-            <br />
+            </p>
+            <p>
             Condomínio: <strong> {props.condominio} {"Rosa & Silva"}</strong>
-            <br />
-            Bloco: <strong> {props.bloco} {7}</strong> */}
+            </p>
+            <p>
+            Bloco: <strong> {props.bloco} {7}</strong>
+            </p>
+            
           </UserInfo>
           <BtnUser>
             <Botao>Editar Perfil</Botao>
