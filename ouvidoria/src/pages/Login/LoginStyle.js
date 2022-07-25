@@ -5,6 +5,15 @@ export const MainLogin = styled.main `
   gap: 2rem;
   // height: 100vh;
 
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
+
+  @media (max-width: 1440px) {
+    heigth: 100vh; 
+  }
+
+
 `;
 
 export const Banner = styled.section `
@@ -29,6 +38,29 @@ export const Banner = styled.section `
     width: 350px;
   }
 
+  @media (max-width: 1440px) {
+    h2 {
+      margin-top: 8rem;
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+  }
+
+  @media (max-width: 990px) {
+    
+    img {
+      width: 240px;
+      margin-top: 4rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 8rem;
+      margin-left: 4rem;
+      margin-right: 4rem;
+
+    }
+  }
 `;
 
 export const AreaLogin = styled.section `
@@ -41,6 +73,12 @@ export const AreaLogin = styled.section `
     margin-top: 8rem;
     width: 20rem;
   }
+
+  @media (max-width: 990px) {
+    img {
+      width: 14rem;
+    }
+  }
 `;
 
 export const Opcoes = styled.div `
@@ -51,7 +89,13 @@ export const Opcoes = styled.div `
     margin: 2%;
     font-weight: 600;
     font-size: 1.5rem;
-  }  
+  }
+  
+  @media (max-width: 990px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
 
  
 `;
@@ -77,6 +121,21 @@ export const InputLogin = styled.div `
 
     :hover {
       background-color: #3a62b9;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    input {
+      width: 10rem;
+      height: 2.4rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 990px) {
+    input {
+      width: 8rem;
+      font-size: 1rem;
     }
   }
 `;
