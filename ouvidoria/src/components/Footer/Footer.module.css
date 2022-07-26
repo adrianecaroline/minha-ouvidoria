@@ -7,6 +7,16 @@ footer {
   gap: 3rem;
 }
 
+@media screen ,(max-width: 500px) {
+  footer {
+    gap: 0.6rem;
+    font-size: 10px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 p > a {
   text-decoration: none;
   color: #ffff;

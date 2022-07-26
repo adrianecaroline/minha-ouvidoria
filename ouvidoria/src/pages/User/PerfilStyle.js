@@ -6,7 +6,33 @@ export const Container = styled.main `
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;  
+
+  h3 {
+    font-size: 20px;
+  }
+
+  section {
+    height: 460px;
+    padding: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    } 
+    ::-webkit-scrollbar-thumb {   
+      background-color: darkgrey;   
+      }
+  }
+
+  @media(max-width: 800px) {
+    margin: 8% 1%;
+  }
+
+  @media(max-width: 600px) {
+    margin: 16% 1%;
+    
+  }
 
 `;
 
@@ -39,6 +65,7 @@ export const UserInfo = styled.div `
 
   p {
     font-size: 16px;
+    margin: 0.6rem 0;
   }
 `;
 

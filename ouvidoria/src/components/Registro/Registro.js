@@ -1,29 +1,38 @@
-import styles from './Registro.module.css'
+// import styles from './Registro.module.css'
+import React from "react";
+import { Container } from "./RegistroStyle";
 import { FcNext } from "react-icons/fc";
+import Modal from "./Modal/modal";
 
-export default function Registro (){
+export default function Registro(props) {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickArrow = () => {
+    setOpen(true);
+  };
 
   return (
-        <>
-          <div className={styles.registro}>
-            <div>
-              Sugestão (Nº 102411)
-              <p>Garagem para bicicletas</p>
-            </div>
-            <div className={styles.icon}>
-             <FcNext size={30}/>
-            </div>
-          </div>
-          <div className={styles.registro}>
-            <div>
-              Sugestão (Nº 102412)
-              <p>Corrimão para escadas</p>
-            </div>
-            <div className={styles.icon}>
-              <FcNext size={30}/>
-            </div>
-          </div>
-        </>
-  )
-
+    <>
+      <Modal
+        open={open}
+        setOpen={setOpen}
+        idProtocolo={props.idProtocolo}
+        tipo_registro={props.tipo_registro}
+        titulo={props.titulo}
+        assunto_registro={props.assunto_registro}
+        descricao={props.descricao}
+        listRegistros={props.listRegistros}
+        setListRegistros={props.setListRegistros}
+      />
+      <Container>
+        <div>
+          {props.tipo_registro} (Nº do Protocolo: {props.idProtocolo})
+          <p>{props.titulo}</p>
+        </div>
+        <div className="icon">
+          <FcNext size={30} onClick={() => handleClickArrow()} />
+        </div>
+      </Container>
+    </>
+  );
 }

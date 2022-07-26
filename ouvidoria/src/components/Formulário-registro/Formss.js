@@ -25,7 +25,7 @@ export default function Formss (props) {
   const handleClickBtn = () => {
     Axios.post("http://localhost:8080/ouvidoria", {
       usuario: "Joana1", 
-      tipo_registro: "Denuncia",
+      tipo_registro: `${props.registro}`,
       assunto_registro: values.selection,
       titulo: values.titulo,
       descricao: values.descricao,
@@ -46,7 +46,7 @@ export default function Formss (props) {
           <Selection>
             <label htmlFor="selection">Sobre qual assunto você quer falar: </label>
             <select name="selection" onChange={handleChangeValues} >
-              <option disabled defaultValue="">Selecione</option>
+              <option disabled selected>Selecione</option>
               <option defaultValue="ilumincacao">Iluminação</option>
               <option defaultValue="arborizacao">Arborização</option>
               <option defaultValue="coletalixo">Coleta de lixo</option>

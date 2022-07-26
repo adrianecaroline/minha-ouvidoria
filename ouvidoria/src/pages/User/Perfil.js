@@ -1,30 +1,27 @@
-import Registro from '../../components/Registro/Registro.js'
-import Footer from '../../components/Footer/Footer.js'
-import photo from '../../images/profile.png'
-import Menu from '../../components/Menu/Menu.js'
-import { useState } from 'react'
-import { MenuMobile } from '../../components/Menu/MenuMobile'
+import Registro from "../../components/Registro/Registro.js";
+import Footer from "../../components/Footer/Footer.js";
+import photo from "../../images/profile.png";
+import Menu from "../../components/Menu/Menu.js";
+import { useEffect, useState } from "react";
+import { MenuMobile } from "../../components/Menu/MenuMobile";
+import Axios from "axios";
 // import styles  from './Perfil.module.css'
-import { 
-  Container, 
-  FrameUser, 
-  UserInfo, 
-  BtnUser, 
-  Botao 
-} from './PerfilStyle'
-
+import { Container, FrameUser, UserInfo, BtnUser, Botao } from "./PerfilStyle";
 
 function User(props) {
-
   const [menuVisible, setMenuVisible] = useState(false);
-  
+  const [listRegistros, setListRegistros] = useState();
+
+  useEffect(() => {
+    Axios.get("http://localhost:8080/ouvidoria").then((response) => {
+      setListRegistros(response.data);
+    });
+  });
+
   return (
     <>
-      <MenuMobile
-        menuVisible={menuVisible}
-        setMenuVisible={setMenuVisible}
-      />
-      <Menu setMenuVisible={setMenuVisible}/>
+      <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible} />
       <Container>
         <FrameUser>
           <span>
@@ -32,21 +29,37 @@ function User(props) {
           </span>
           <UserInfo>
             <p>
-            Nome: <strong>{props.name} {"Jaqueline Souza"}</strong>
+              Usuário:{" "}
+              <strong>
+                {props.user} {"Joana1"}
+              </strong>
             </p>
             <p>
-            E-mail: <strong>{props.email} {"jaquelinedesouza@gmail.com"}</strong>
+              Nome:{" "}
+              <strong>
+                {props.name} {"Jaqueline Souza"}
+              </strong>
             </p>
             <p>
-            Usuário: <strong>{props.user} {"Joana1"}</strong>
+              E-mail:{" "}
+              <strong>
+                {props.email} {"jaquelinedesouza@gmail.com"}
+              </strong>
             </p>
             <p>
-            Condomínio: <strong> {props.condominio} {"Rosa & Silva"}</strong>
+              Condomínio:{" "}
+              <strong>
+                {" "}
+                {props.condominio} {"Rosa & Silva"}
+              </strong>
             </p>
             <p>
-            Bloco: <strong> {props.bloco} {7}</strong>
+              Bloco:{" "}
+              <strong>
+                {" "}
+                {props.bloco} {7}
+              </strong>
             </p>
-            
           </UserInfo>
           <BtnUser>
             <Botao>Editar Perfil</Botao>
@@ -58,7 +71,21 @@ function User(props) {
 
         <section>
           <h3>Seus registros</h3>
-          <Registro/>
+          {typeof listRegistros !== "undefined" &&
+            listRegistros.map((value) => {
+              return (
+                <Registro
+                  key={value.id}
+                  listRegistros={listRegistros}
+                  setListRegistros={setListRegistros}
+                  idProtocolo={value.idProtocolo}
+                  tipo_registro={value.tipo_registro}
+                  titulo={value.titulo}
+                  descricao={value.descricao}
+                  assunto_registro={value.assunto_registro}
+                />
+              );
+            }) || (<p>Você não possui nenhum registro ainda.</p>)}
         </section>
       </Container>
 
@@ -94,7 +121,7 @@ function User(props) {
           <img src={photo} className={styles.photo} alt="profile" width="100%" />
         </div>
       </div> */}
-      <Footer/>
+      <Footer />
     </>
   );
 }

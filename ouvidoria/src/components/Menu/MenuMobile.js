@@ -22,5 +22,4 @@ export function MenuMobile({ menuVisible, setMenuVisible }){
       </nav>
     </Container>
   )
-
 }
