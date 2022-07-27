@@ -1,12 +1,23 @@
 import Registro from "../../components/Registro/Registro.js";
 import Footer from "../../components/Footer/Footer.js";
 import photo from "../../images/profile.png";
+import solicitar from "../../images/solicitar.png"
+import negative from "../../images/negative.png"
+import lampada from "../../images/lampada.png"
 import Menu from "../../components/Menu/Menu.js";
+
 import { useEffect, useState } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import Axios from "axios";
 // import styles  from './Perfil.module.css'
-import { Container, FrameUser, UserInfo, BtnUser, Botao } from "./PerfilStyle";
+import { 
+  Container, 
+  FrameUser, 
+  UserInfo, 
+  BtnUser, 
+  Botao,
+  Frame 
+} from "./PerfilStyle";
 
 function User(props) {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -89,28 +100,26 @@ function User(props) {
         </section>
       </Container>
 
-      {/* <div className={styles.conten}>
-        <div className={styles.carrossel}>
+      <Frame>
+        <div className="carrossel">
           <h3>O que você precisa?</h3>
 
-          <div className={styles.box}>
-            <div className={styles.card}>
-              <div className={styles.sing}>
-                <img src="src/images/votacao-negativa.png" alt="" srcset="" />
+          <div className="box">
+            <div className="card">
+              <div className="icon">
+                <img src={negative} alt="" srcset="" />
                 Reclamação
               </div>
             </div>
-            <div className={styles.card}>
-              <div className={styles.sing}>
-                <img src="src/images/lampada.png" alt="" srcset="" />
+            <div className="card">
+              <div className="icon">
+                <img src={solicitar} alt="" srcset="" />
                 Sugestão
               </div>
             </div>
-            <div className={styles.card}>
-              <div className={styles.sing}>
-                <a href="solicitacao.html">
-                  <img src="src/images/solicitar.png" alt="" srcset="" />
-                </a>
+            <div className="card">
+              <div className="icon">
+                  <img src={lampada} alt="" srcset="" />
                 Solicitação
               </div>
             </div>
@@ -118,9 +127,9 @@ function User(props) {
         </div>
 
         <div>
-          <img src={photo} className={styles.photo} alt="profile" width="100%" />
+          <img src={photo} className="profile" alt="profile" width="100%" />
         </div>
-      </div> */}
+      </Frame>
       <Footer />
     </>
   );

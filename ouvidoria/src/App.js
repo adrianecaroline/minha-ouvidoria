@@ -1,9 +1,12 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import Solicitacao from "./pages/Solicitacao";
-import Reclamacao from "./pages/Reclamacao";
+import Solicitacao from "./pages/Registros/Solicitacao";
+import Reclamacao from "./pages/Registros/Reclamacao";
+import Sugestao from "./pages/Registros/Sugestao";
+import Elogio from "./pages/Registros/Elogio";
 import User from "./pages/User/Perfil";
+import CondominioCad from "./pages/Cadastro/Condominio/condominio_cad";
 
 // import Routes from "./routes";
 
@@ -15,7 +18,10 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/solicitacao" element={<Solicitacao/>}/>
         <Route exact path="/reclamacao" element={<Reclamacao/>}/>
+        <Route exact path="/elogio" element={<Elogio/>}/>
+        <Route exact path="/sugestao" element={<Sugestao/>}/>
         <Route exact path="/perfil-user" element={<User/>}/>
+        <Route exact path="/condominio-cadastro" element={<CondominioCad/>}/>
       </Routes>
     </>
     

@@ -46,7 +46,8 @@ export const Selection = styled.div `
 export const FormSection = styled.section `
   display: flex;
   align-items: flex-start;
-  justify-content: space-between; 
+  // justify-content: space-between;
+  gap: 10rem; 
 
 `;
 

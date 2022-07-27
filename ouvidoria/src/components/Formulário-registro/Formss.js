@@ -46,7 +46,7 @@ export default function Formss (props) {
           <Selection>
             <label htmlFor="selection">Sobre qual assunto você quer falar: </label>
             <select name="selection" onChange={handleChangeValues} >
-              <option disabled selected>Selecione</option>
+              <option disabled defaultValue= "Selecione" >Selecione</option>
               <option defaultValue="ilumincacao">Iluminação</option>
               <option defaultValue="arborizacao">Arborização</option>
               <option defaultValue="coletalixo">Coleta de lixo</option>

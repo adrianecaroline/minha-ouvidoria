@@ -11,8 +11,9 @@ export const Container = styled.main `
     font-size: 20px;
   }
 
+
   section {
-    height: 460px;
+    // height: 460px;
     padding: 6px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -22,7 +23,21 @@ export const Container = styled.main `
     } 
     ::-webkit-scrollbar-thumb {   
       background-color: darkgrey;   
+    }
+
+    > h3 {
+      font-size: 25px;
+    }
+
+    @media (max-width: 870px){
+      // height: 380px;
+      width: 300px;
+  
+    > h3 {
+      font-size: 18px;
       }
+  
+    }
   }
 
   @media(max-width: 800px) {
@@ -54,6 +69,15 @@ export const FrameUser = styled.div `
     align-items: center;
     border-radius: 6px 6px 0px 0px;
   }
+
+  @media (max-width: 870px){
+    width: 300px;
+    height: 380px;
+
+    h3 {
+      font-size: 16px;
+    }
+  }
 `;
 
 export const UserInfo = styled.div `
@@ -67,6 +91,15 @@ export const UserInfo = styled.div `
     font-size: 16px;
     margin: 0.6rem 0;
   }
+
+  @media (max-width: 870px){
+    margin: 2% 11%;
+
+    p {
+      font-size: 14px;
+      margin: 0.rem 0;
+    }
+  }
 `;
 
 export const BtnUser = styled.div `
@@ -75,6 +108,11 @@ export const BtnUser = styled.div `
   display: flex;
   justify-content: space-around;
   align-content: center;
+
+  @media (max-width: 870px){
+    margin: 1px;
+    gap: .6rem;
+  }
 
 `;
 
@@ -92,5 +130,99 @@ export const Botao = styled.button `
   ${props => props.primary && css`
       background: red;
       color: white;
-    `};
+  `};
+`;
+
+export const Frame = styled.div `
+  margin: 2% 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  .carrossel {
+    width: 360px;
+    height: 400px;
+
+    > h3 {
+      color: #2539ea;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .box {
+      display: flex;
+      /* align-content: center; */
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card {
+      display: flex;
+      width: 112px;
+      height: 160px;
+      border-radius: 3px;
+      margin-top: 16%;
+      box-sizing: border-box;
+      padding: 20px;
+      justify-content: center;
+      background-color: #ffff;
+      box-shadow: 2px 3px 5px 1px rgb(0 0 0 / 25%);
+      cursor: pointer;
+      transition-duration: 0.3s;
+      transition-property: transform;
+
+      :hover{
+        transform: scale(1.1);
+      }
+    }
+    
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      > img {
+        width: 50px;
+      }
+    }
+    
+    @media (max-width: 870px){
+      width: 300px;
+      height: 360px;
+      
+      > h3 {
+        color: #2539ea;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      > .box {
+        width: 100px;
+        height: 100px;
+        border-radius: 3px;
+        margin-top: 16%;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+
+      > .card {
+        width: 100px;
+        height: 100px;
+        margin: 1% 6%;
+        padding: 18px;
+      }
+
+      > .icon {
+        width: 30px;
+      }
+    }
+
+  }
+
+  .profile {
+    width: 24rem;
+  }
+
 `;
