@@ -9,6 +9,7 @@ import User from "./pages/User/Perfil";
 import CondominioCad from "./pages/Cadastro/Condominio/condominio_cad";
 import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
+import SobreNos from "./pages/SobreNos/SobreNos";
 
 // import Routes from "./routes";
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/condominio-cadastro" element={<CondominioCad/>}/>
         <Route exact path="/morador-cadastro" element={<MoradorCadastro/>}/>
         <Route exact path="/*" element={<NotFound/>}/>
+        <Route exact path="/sobre-nos" element={<SobreNos/>}/>
       </Routes>
     </>
     
