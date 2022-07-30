@@ -7,7 +7,7 @@ import Sugestao from "./pages/Registros/Sugestao";
 import Elogio from "./pages/Registros/Elogio";
 import User from "./pages/User/Perfil";
 import CondominioCad from "./pages/Cadastro/Condominio/condominio_cad";
-
+import LoginUser from "./pages/Login/LoginUsuario/Login";
 // import Routes from "./routes";
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
         <Route exact path="/sugestao" element={<Sugestao/>}/>
         <Route exact path="/perfil-user" element={<User/>}/>
         <Route exact path="/condominio-cadastro" element={<CondominioCad/>}/>
+        <Route exact path="/login-usuario" element={<LoginUser/>}/>
       </Routes>
     </>
     
