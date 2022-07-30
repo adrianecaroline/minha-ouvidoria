@@ -16,6 +16,27 @@ export const HeaderR = styled.header `
     width: 10rem;
     margin-left: 14%;
   }
+
+  .mobile {
+    display: none;
+  }
+  
+  @media(max-width: 900px) {
+    .mobile {
+      display: initial;
+      padding-right: 4rem;
+      cursor: pointer;
+    }
+
+    img {
+      width: 10rem;
+      margin-left: 4.2rem;
+    }
+
+    nav {
+      display: none;
+    }
+  }
 `;
 
 export const NavR = styled.nav `

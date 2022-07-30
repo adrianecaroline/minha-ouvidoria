@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainLogin = styled.main `
   display: flex;
   gap: 2rem;
-  // height: 100vh;
+  
 
   @media (max-width: 600px) {
     flex-direction: column-reverse;
@@ -18,7 +18,7 @@ export const MainLogin = styled.main `
 
 export const Banner = styled.section `
   background-color: #1348AA;
-  // height: 100vh;
+  height: 100vh;
   width: 50%;
   text-align: center;
 
@@ -28,21 +28,21 @@ export const Banner = styled.section `
     line-height: 2rem;
     color: white;
 
-    margin-top: 6rem;
-    margin-left: 11.5625rem;
-    margin-right: 12.25rem;
+    margin-top: 6rem; 
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 
   img {
-    margin-top: 5.75rem;
+    margin-top: 0.75rem;
     width: 350px;
   }
 
   @media (max-width: 1440px) {
     h2 {
       margin-top: 8rem;
-      margin-left: 6rem;
-      margin-right: 6rem;
+      // margin-left: 6rem;
+      // margin-right: 6rem;
     }
   }
 

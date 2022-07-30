@@ -28,15 +28,16 @@ export const Frame1 = styled.div `
   button {
     width: 160px;
     height: 50px;
-    background-color: #6fd222;
+    background-color: #23e24c;
     border: none;
     border-radius: 6px;
     font-weight: bolder;
     font-size: 1rem;
     transition: background-color 0.4s linear;
     cursor: pointer;
-    box-shadow: 0 5px 6px 0 rgb(0 0 0 / 20%), 0 3px 9px 0 rgb(0 0 0 / 19%);
+    box-shadow: 0 5px 3px 0 rgb(0 0 0 / 20%), 0 3px 9px 0 rgb(0 0 0 / 19%);
     color: #ffff;
+    font-family: 'Montserrat';
 
     :hover {
       background-color: #3a62b9;
@@ -45,7 +46,7 @@ export const Frame1 = styled.div `
 
   @media (max-width: 980px) {
 
-    img{
+    img {
       width: 200px;
     }
 

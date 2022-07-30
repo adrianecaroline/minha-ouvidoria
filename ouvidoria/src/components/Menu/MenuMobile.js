@@ -1,4 +1,4 @@
-import { Container } from './MBStyles';
+import { Container } from './MenuMobileStyles';
 import { IoClose } from "react-icons/io5";
 import { useEffect } from 'react';
 

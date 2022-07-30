@@ -8,8 +8,11 @@ import {
   InputLogin 
 } from './LoginStyle'
 
+import { useNavigate } from 'react-router-dom'
 
 export default function Login () {
+
+  const navigate = useNavigate();
 
   return (
     <MainLogin>
@@ -34,7 +37,7 @@ export default function Login () {
           
           <h3 class="h3">Você é:</h3>
           <InputLogin>
-            <input type="button" defaultValue="Morador"/>
+            <input type="button" defaultValue="Morador" onClick={ () => {navigate("/login-usuario")}}/>
         
             <input type="button" defaultValue="Condomínio"/>
           </InputLogin>
