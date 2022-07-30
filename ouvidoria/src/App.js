@@ -8,6 +8,9 @@ import Elogio from "./pages/Registros/Elogio";
 import User from "./pages/User/Perfil";
 import CondominioCad from "./pages/Cadastro/Condominio/condominio_cad";
 import LoginUser from "./pages/Login/LoginUsuario/Login";
+import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
+import NotFound from "./pages/NotFound/NotFound";
+import SobreNos from "./pages/SobreNos/SobreNos";
 // import Routes from "./routes";
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
         <Route exact path="/perfil-user" element={<User/>}/>
         <Route exact path="/condominio-cadastro" element={<CondominioCad/>}/>
         <Route exact path="/login-usuario" element={<LoginUser/>}/>
+        <Route exact path="/morador-cadastro" element={<MoradorCadastro/>}/>
+        <Route exact path="/*" element={<NotFound/>}/>
+        <Route exact path="/sobre-nos" element={<SobreNos/>}/>
       </Routes>
     </>
     
