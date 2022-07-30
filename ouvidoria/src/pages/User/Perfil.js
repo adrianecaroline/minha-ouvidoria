@@ -6,6 +6,7 @@ import negative from "../../images/negative.png"
 import lampada from "../../images/lampada.png"
 import Menu from "../../components/Menu/Menu.js";
 
+import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import Axios from "axios";
@@ -19,7 +20,12 @@ import {
   Frame 
 } from "./PerfilStyle";
 
+// import { useParams } from "react-router-dom"
+
 function User(props) {
+  const navigate = useNavigate();
+  // const username = useParams();
+
   const [menuVisible, setMenuVisible] = useState(false);
   const [listRegistros, setListRegistros] = useState();
 
@@ -42,7 +48,7 @@ function User(props) {
             <p>
               Usuário:{" "}
               <strong>
-                {props.user} {"Joana1"}
+                {props.user} {"Joana1"} 
               </strong>
             </p>
             <p>
@@ -106,18 +112,18 @@ function User(props) {
 
           <div className="box">
             <div className="card">
-              <div className="icon">
+              <div className="icon" onClick={ () => {navigate("/reclamacao")}}>
                 <img src={negative} alt="" srcset="" />
                 Reclamação
               </div>
             </div>
-            <div className="card">
+            <div className="card" onClick={ () => {navigate("/sugestao")}}>
               <div className="icon">
                 <img src={solicitar} alt="" srcset="" />
                 Sugestão
               </div>
             </div>
-            <div className="card">
+            <div className="card" onClick={ () => {navigate("/solicitacao")}}>
               <div className="icon">
                   <img src={lampada} alt="" srcset="" />
                 Solicitação

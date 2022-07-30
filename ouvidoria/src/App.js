@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/reclamacao" element={<Reclamacao/>}/>
         <Route exact path="/elogio" element={<Elogio/>}/>
         <Route exact path="/sugestao" element={<Sugestao/>}/>
-        <Route exact path="/perfil-user" element={<User/>}/>
+        <Route exact path="/perfil-user/:username" element={<User/>}/>
         <Route exact path="/condominio-cadastro" element={<CondominioCad/>}/>
         <Route exact path="/morador-cadastro" element={<MoradorCadastro/>}/>
         <Route exact path="/*" element={<NotFound/>}/>
