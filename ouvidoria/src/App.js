@@ -13,6 +13,7 @@ import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
 import Ajuda from "./pages/Ajuda/Ajuda";
+import CondominioPerfil from "./pages/Condominio/CondominioHome";
 // import Routes from "./routes";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/sobre-nos" element={<SobreNos/>}/>
         <Route exact path="/ajuda" element={<Ajuda/>}/>
         <Route exact path="/login-condominio" element={<LoginUserCond/>}/>
+        <Route exact path="/perfil-condominio" element={<CondominioPerfil/>}/>
         
       </Routes>
     </>
