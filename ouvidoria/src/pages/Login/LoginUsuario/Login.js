@@ -1,5 +1,6 @@
 import Imagem from "../../../images/imagem-login.svg";
 import logo from "../../../images/logo.png";
+import { Link } from "react-router-dom";
 import {
   MainUser,
   BannerLogin,
@@ -55,7 +56,9 @@ export default function Login() {
               </span>
             </p>
             <p>Ainda não tem uma conta?</p>
-            <input type="button" value="Cadastre-se" />
+            <Link to="/morador-cadastro">
+              <input type="button" value="Cadastre-se" />
+            </Link>
           </InfoLogin>
           {/* <!-- /esqueceu senha e cadastro --> */}
         </LoginArea>

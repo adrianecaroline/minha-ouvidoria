@@ -11,6 +11,7 @@ import LoginUser from "./pages/Login/LoginUsuario/Login";
 import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
+import Ajuda from "./pages/Ajuda/Ajuda";
 // import Routes from "./routes";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/morador-cadastro" element={<MoradorCadastro/>}/>
         <Route exact path="/*" element={<NotFound/>}/>
         <Route exact path="/sobre-nos" element={<SobreNos/>}/>
+        <Route exact path="/ajuda" element={<Ajuda/>}/>
       </Routes>
     </>
     
