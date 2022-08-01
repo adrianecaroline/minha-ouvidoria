@@ -39,7 +39,7 @@ export default function Login () {
           <InputLogin>
             <input type="button" defaultValue="Morador" onClick={ () => {navigate("/login-usuario")}}/>
         
-            <input type="button" defaultValue="Condomínio"/>
+            <input type="button" defaultValue="Condomínio" onClick={ () => {navigate("/login-condominio")}}/>
           </InputLogin>
     
         </Opcoes>

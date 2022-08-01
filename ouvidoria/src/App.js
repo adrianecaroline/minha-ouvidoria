@@ -8,6 +8,7 @@ import Elogio from "./pages/Registros/Elogio";
 import User from "./pages/User/Perfil";
 import CondominioCad from "./pages/Cadastro/Condominio/condominio_cad";
 import LoginUser from "./pages/Login/LoginUsuario/Login";
+import LoginUserCond from "./pages/Login/LoginCondominio/Login";
 import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
@@ -31,6 +32,8 @@ function App() {
         <Route exact path="/*" element={<NotFound/>}/>
         <Route exact path="/sobre-nos" element={<SobreNos/>}/>
         <Route exact path="/ajuda" element={<Ajuda/>}/>
+        <Route exact path="/login-condominio" element={<LoginUserCond/>}/>
+        
       </Routes>
     </>
     
