@@ -52,7 +52,9 @@ export default function Login() {
             <p>
               Esqueceu sua senha?{" "}
               <span>
+                <Link to="/esqueci-senha">
                 <a href="/">Clique aqui!</a>
+                </Link>
               </span>
             </p>
             <p>Ainda não tem uma conta?</p>

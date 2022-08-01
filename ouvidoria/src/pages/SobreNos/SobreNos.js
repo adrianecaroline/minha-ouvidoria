@@ -1,5 +1,6 @@
 import iconOwl from "../../images/icon-owl.png";
 import sobreNosWoman from "../../images/sobre-nos-woman.png";
+import { Link } from "react-router-dom";
 import { DivAzul, DivBranca } from "./SobreNosStyle";
 import MenuRegistro from "../../components/Menu/MenuRegistro";
 import Footer from "../../components/Footer/Footer";
@@ -31,9 +32,11 @@ export default function SobreNos() {
                 <p>
                   Com a sua informação, podemos monitorar esses problemas de forma rápida e agir de forma prática!
                 </p>
+                <Link to="/">
                 <button type="button" className="botao-time">
                   Conheça nosso time!
                 </button>
+                </Link>
               </div>
               <div className="divWoman">
                 <img
