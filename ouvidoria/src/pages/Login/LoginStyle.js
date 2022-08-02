@@ -3,16 +3,14 @@ import styled from "styled-components";
 export const MainLogin = styled.main `
   display: flex;
   gap: 2rem;
-  
-
-  @media (max-width: 600px) {
-    flex-direction: column-reverse;
-  }
 
   @media (max-width: 1440px) {
-    heigth: 100vh; 
+    height: 100vh; 
   }
 
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 
 `;
 
@@ -61,6 +59,10 @@ export const Banner = styled.section `
 
     }
   }
+
+  @media (max-width: 600px) {
+      display: none;
+  }
 `;
 
 export const AreaLogin = styled.section `
@@ -79,6 +81,16 @@ export const AreaLogin = styled.section `
       width: 14rem;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    background-color: #fff;
+
+    img {
+      margin: 0 auto;
+      padding-top: 4rem;
+    }
+  }
 `;
 
 export const Opcoes = styled.div `
@@ -91,12 +103,22 @@ export const Opcoes = styled.div `
     font-size: 1.5rem;
   }
   
+  .visible-mobile {
+    display: none;
+  }
+
   @media (max-width: 990px) {
     h3 {
       font-size: 1.2rem;
     }
   }
 
+  @media (max-width: 600px) {
+    .visible-mobile {
+      display: block;
+      padding: 1rem;
+    }
+  }
  
 `;
 
