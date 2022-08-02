@@ -54,7 +54,7 @@ export const DivBranca = styled.div`
     width: 20rem; height: 3rem;
     border-radius: 0.5rem;
     border-style: none;
-    background-color: #4DD14E;
+    background-color: #23e24c;
     color: white;
     cursor: pointer;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.35);
