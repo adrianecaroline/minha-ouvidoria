@@ -20,16 +20,16 @@ export default function CondominioCad() {
                             </div>
 
                             <div className="input-dados">
-                                <label for="CPF" className="nome-escuro"> CPF: </label>
+                                <label for="CPF" className="nome-escuro CPF"> CPF: </label>
                                 <input type="number" min="00000000001" max="99999999999"name="cpf" 
                                 className="CPF"
                                 required></input>
                             </div>
 
                             <div className="input-dados">
-                                <label for="dtNasci" class="nome-escuro"> Data de Nascimento: </label>
+                                <label for="dtNasci" className="nome-escuro data"> Data de Nascimento: </label>
                                 <input type="date" name="dtNasci" 
-                                className="data"
+                                className="data data-900"
                                 required></input>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ export default function CondominioCad() {
                             </div>
 
                             <div className="input-dados">
-                                <label for="idUsername" class="nome-escuro"> Nome de usuário: </label>
+                                <label for="idUsername" className="nome-escuro username"> Nome de usuário: </label>
                                 <input type="text" name="idUsername" id="UserName" 
                                 className="username"
                                 required /> 
@@ -59,14 +59,14 @@ export default function CondominioCad() {
                             </div>
                             
                             <div className="input-dados">
-                                <label for="confirmarSenha" className="nome-escuro"> Confirmar senha: </label>
+                                <label for="confirmarSenha" className="nome-escuro confirmarSenha"> Confirmar senha: </label>
                                 <input type="password" name="confirmarSenha"
                                 className="confirmarSenha"
                                 required />
                             </div>
                         </div>
 
-                        <div>
+                        <div className="info-senha">
                             <p>Sua senha deve conter no mínimo:</p>
                             <p>8 caracteres.</p>
                             <p>Letras maiúsculas (A-Z).</p>
@@ -82,14 +82,14 @@ export default function CondominioCad() {
                             </div>
 
                             <div className="input-dados">
-                                <label for="bloco" className="nome-escuro"> Bloco: </label>
+                                <label for="bloco" className="nome-escuro bloco"> Bloco: </label>
                                 <input type="text" name="bloco"
                                 className="bloco"
                                 required />
                             </div>
 
                             <div className="input-dados">
-                                <label for="apto" className="nome-escuro"> Nº Apartamento: </label>
+                                <label for="apto" className="nome-escuro numero"> Nº Apartamento: </label>
                                 <input type="number" name="apto" className="numero" required />
                             </div>
                         </div>
@@ -103,7 +103,7 @@ export default function CondominioCad() {
                             </div>
 
                             <div className="input-dados">
-                                <label for="UF" class="nome-escuro"> UF: </label>
+                                <label for="UF" className="nome-escuro UF"> UF: </label>
                                 <input type="text" className="UF" name="UF" required />
                             </div>
                         </div>
@@ -112,7 +112,7 @@ export default function CondominioCad() {
             </Container>
 
             <Checkbox>
-                <div>
+                <div className="termos">
                     <input type="checkbox" id="termos" name="radiobutton" value="radiobutton" required />
                     <label for="termos">Concordo com os Termos de Uso</label>
                 </div>

@@ -12,7 +12,7 @@ export const Container = styled.main `
 
     .forms {
         display: flex;
-        justify-content: space-between;
+        gap: 2rem;
     }
 
     h1 {
@@ -57,18 +57,57 @@ export const Container = styled.main `
         width: 12.5rem;
     }
 
-    .username {
-        margin-right: 5.5rem;
+    @media (max-width: 1070px) {
+        padding-top: 5%;
+
+        .nomeCompleto, .email, .username, .condominio {
+            width: 22rem;
+        }
     }
 
-    .confirmarSenha {
-        margin-right: 28rem;
+    @media (max-width: 900px) {
+        padding-top: 5%;
+
+        .nome-escuro {
+            font-weight: bold;
+            font-size: 100%;
+            margin-bottom: 10px;
+        }
+
+        .nomeCompleto, .email, .username, .condominio {
+            width: 16rem;
+        }
+
+        .CPF, .data-900, .senha, .confirmarSenha, .bloco, .numero {
+            width: 10rem;
+        }
+      }
     }
 
-    .UF {
-        margin-right: 30rem;
-    }
+    @media (max-width: 700px) {
+        padding-top: 6%;
 
+        h3 {
+            text-align: center;
+        }
+
+        .forms {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-dados {
+            justify-content: center;
+        }
+
+        .nomeCompleto, .email, .username, .condominio, .CPF, .data-900, .senha, .confirmarSenha, .bloco, .numero, .CEP, .UF {
+            width: 20rem;
+        }
+
+        .info-senha p {
+            margin: 0.5rem 0 0.5rem 7.5rem;
+        }
+    }
 
 `
 
@@ -77,6 +116,14 @@ export const Checkbox = styled.section `
     flex-direction: column;
     gap: 1rem;
     margin: 2% 10%;
+
+    @media (max-width: 700px) {
+        text-align: center;
+
+        .termos {
+            margin: 0.5rem 4.5rem 0 0;
+        }
+    }
 `
 
 export const ButtonCad = styled.button `
