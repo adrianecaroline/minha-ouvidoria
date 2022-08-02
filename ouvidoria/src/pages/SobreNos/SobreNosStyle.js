@@ -59,6 +59,11 @@ export const DivBranca = styled.div`
     cursor: pointer;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.35);
     font-family: "Montserrat", sans-serif;
+    transition: background-color 0.4s linear;
+
+    :hover {
+        background-color: #3a62b9;
+      }
 }
 .divWoman img{
     width: 22rem;
