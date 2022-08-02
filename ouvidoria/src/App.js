@@ -15,6 +15,7 @@ import SobreNos from "./pages/SobreNos/SobreNos";
 import Ajuda from "./pages/Ajuda/Ajuda";
 import CondominioPerfil from "./pages/Condominio/CondominioHome";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
+import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
 // import Routes from "./routes";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/login-condominio" element={<LoginUserCond/>}/>
         <Route exact path="/perfil-condominio" element={<CondominioPerfil/>}/>
         <Route exact path="/esqueci-senha" element={<EsqueciSenha/>}/>
+        <Route exact path="/desenvolvedores" element={<Desenvolvedores/>}/>
       </Routes>
     </>
     
