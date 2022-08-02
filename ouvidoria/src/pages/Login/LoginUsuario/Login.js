@@ -9,9 +9,11 @@ import {
   InfoLogin,
 } from "./LoginStyle";
 
-
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -39,9 +41,9 @@ export default function Login() {
                 id="senha"
                 placeholder="Senha"
               />
-              <a href="inicio.html">
-                <input type="button" id="btn-login" value="Continue" />
-              </a>
+        
+                <input type="button" id="btn-login" value="Continue" onClick={ () => {navigate("/perfil-user")}} />
+              
               <hr />
             </form>
           </LoginInput>
@@ -57,7 +59,7 @@ export default function Login() {
             </p>
             <p>Ainda não tem uma conta?</p>
             <Link to="/morador-cadastro">
-              <input type="button" value="Cadastre-se" />
+              <input type="button" value="Cadastre-se" onClick={ () => {navigate("/morador-cadastro")}} />
             </Link>
           </InfoLogin>
           {/* <!-- /esqueceu senha e cadastro --> */}

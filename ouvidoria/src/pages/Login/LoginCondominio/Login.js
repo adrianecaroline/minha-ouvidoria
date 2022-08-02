@@ -9,9 +9,11 @@ import {
   InfoLogin,
 } from "./LoginStyle";
 
-
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -40,7 +42,7 @@ export default function Login() {
                 placeholder="Senha"
               />
               <a href="inicio.html">
-                <input type="button" id="btn-login" value="Continue" />
+                <input type="button" id="btn-login" value="Continue" onClick={ () => {navigate("/condominio-cadastro")}}/>
               </a>
               <hr />
             </form>

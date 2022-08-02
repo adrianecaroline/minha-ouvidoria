@@ -23,17 +23,15 @@ export default function Formss (props) {
   }
 
   const handleClickBtn = () => {
-    Axios.post("http://localhost:8080/ouvidoria", {
-      usuario: "Joana1", 
+    // console.log(values)
+    Axios.post("http://localhost:4200/register", {
+      id_usuario: "adriane", 
       tipo_registro: `${props.registro}`,
       assunto_registro: values.selection,
       titulo: values.titulo,
       descricao: values.descricao,
-      endereco: values.endereco,
-      cep: values.cep,
-      numero: values.numero,
-      uf: values.uf,
-      url: values.url
+      endereco: values.local,
+      numero: values.numero
     }).then((response) => {
       console.log(response)
     })
@@ -46,14 +44,14 @@ export default function Formss (props) {
           <Selection>
             <label htmlFor="selection">Sobre qual assunto você quer falar: </label>
             <select name="selection" onChange={handleChangeValues} >
-              <option disabled selected defaultValue= "Selecione" >Selecione</option>
-              <option defaultValue="ilumincacao">Iluminação</option>
-              <option defaultValue="arborizacao">Arborização</option>
-              <option defaultValue="coletalixo">Coleta de lixo</option>
-              <option defaultValue="pavimentacao">Pavimentação</option>
-              <option defaultValue="ciclovia">Ciclovia</option>
-              <option defaultValue="saneamento">Saneamento básico</option>
-              <option defaultValue="Outro">Outro</option>
+              <option disabled  defaultValue= "Selecione" >Selecione</option>
+              <option value="ilumincacao">Iluminação</option>
+              <option value="arborizacao">Arborização</option>
+              <option value="coletalixo">Coleta de lixo</option>
+              <option value="pavimentacao">Pavimentação</option>
+              <option value="ciclovia">Ciclovia</option>
+              <option value="saneamento">Saneamento básico</option>
+              <option value="Outro">Outro</option>
             </select>
           </Selection>
 
@@ -83,13 +81,13 @@ export default function Formss (props) {
                 </SubInputs>
                 <SubInputs>
                   <label htmlFor="uf">UF</label>
-                  <input type="text" name="uf" onChange={handleChangeValues}/>
+                  <input type="text" name="uf" onChange={handleChangeValues} />
                 </SubInputs>
               </SInputs>
               <p>
                 Incluir anexos:
                 <input type="file" name='url' onChange={handleChangeValues} />
-                {/* <input type="file" defaultValue="Incluir Anexos" /> */}
+                
               </p>
             </Endereco>
           </FormSection>
