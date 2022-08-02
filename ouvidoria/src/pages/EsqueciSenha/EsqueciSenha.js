@@ -1,5 +1,5 @@
-import Imagem from "../../../images/imagem-login.svg";
-import logo from "../../../images/logo.png";
+import Imagem from "../../images/imagem-login.svg";
+import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import {
   MainUser,
@@ -7,13 +7,11 @@ import {
   LoginArea,
   LoginInput,
   InfoLogin,
-} from "./LoginStyle";
+} from "./EsqueciSenhaStyle";
 
-import { useNavigate } from 'react-router-dom'
+
 
 export default function Login() {
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -32,18 +30,15 @@ export default function Login() {
           {/* 
         <!-- area do input --> */}
           <LoginInput>
-            <p>Login</p>
+            <p> Recuperar senha </p>
+            <span> Você receberá um link no seu e-mail para redefinir a sua senha. </span>
+            <p></p>
             <form action="/" method="post">
               <input type="text" name="email" id="email" placeholder="E-mail" />
-              <input
-                type="password"
-                name="senha"
-                id="senha"
-                placeholder="Senha"
-              />
-              <a href="inicio.html">
-                <input type="button" id="btn-login" value="Continue" onClick={ () => {navigate("/condominio-cadastro")}}/>
-              </a>
+              
+              <Link to="/">
+                <input type="button" id="btn-login" value="Enviar link" />
+              </Link>
               <hr />
             </form>
           </LoginInput>
@@ -52,17 +47,12 @@ export default function Login() {
           {/* <!-- esqueceu senha e cadastro --> */}
           <InfoLogin>
             <p>
-              Esqueceu sua senha?{" "}
+              Precisa de ajuda?{" "}
               <span>
-               <Link to="/esqueci-senha">
                 <a href="/">Clique aqui!</a>
-               </Link>
               </span>
             </p>
-            <p>Ainda não tem uma conta?</p>
-            <Link to="/condominio-cadastro">
-              <input type="button" value="Cadastre-se" />
-            </Link>
+            
           </InfoLogin>
           {/* <!-- /esqueceu senha e cadastro --> */}
         </LoginArea>

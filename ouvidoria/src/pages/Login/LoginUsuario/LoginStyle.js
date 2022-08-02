@@ -54,6 +54,10 @@ export const BannerLogin = styled.section`
       width: 280px;
     }
   }
+
+  @media (max-width: 600px) {
+      display: none;
+  }
 `;
 
 export const LoginArea = styled.section`
@@ -78,6 +82,9 @@ export const LoginArea = styled.section`
     }
   }
 
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const LoginInput = styled.section`

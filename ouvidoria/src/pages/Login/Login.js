@@ -34,14 +34,13 @@ export default function Login () {
         />
         
         <Opcoes>
-          
+          <h2 className='visible-mobile'> Faça seu login na plataforma para registrar e acompanhar sua solicitação!</h2>
           <h3 class="h3">Você é:</h3>
           <InputLogin>
             <input type="button" defaultValue="Morador" onClick={ () => {navigate("/login-usuario")}}/>
         
             <input type="button" defaultValue="Condomínio" onClick={ () => {navigate("/login-condominio")}}/>
           </InputLogin>
-    
         </Opcoes>
       </AreaLogin>
     </MainLogin>
