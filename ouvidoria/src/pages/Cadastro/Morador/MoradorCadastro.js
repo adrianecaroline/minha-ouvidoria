@@ -20,13 +20,11 @@ export default function CondominioCad() {
     //lógica para enviar os dados a api pelo axios
     console.log(values)
   }
-
   return (
     <>
       <Menu />
       <Container>
         <h1> Cadastro de Perfil </h1>
-
         <form>
           <section className="form-data">
             <h3>Dados Pessoais</h3>
@@ -102,7 +100,6 @@ export default function CondominioCad() {
                 />
               </div>
             </div>
-
             <div className="forms">
               <div className="input-dados">
                 <label for="senha" class="nome-escuro">
@@ -140,7 +137,6 @@ export default function CondominioCad() {
               <p>Números (0-9).</p>
               <p>Caracteres especiais (!@#$%&*).</p>
             </div>
-
             <h3>Endereço</h3>
             <div className="forms">
               <div className="input-dados">
@@ -209,7 +205,7 @@ export default function CondominioCad() {
         </form>
       </Container>
 
-      <Checkbox>
+      {/* <Checkbox>
         <div>
           <input
             type="checkbox"
@@ -232,7 +228,7 @@ export default function CondominioCad() {
             Aceito receber Newletters eventualmente
           </label>
         </div>
-      </Checkbox>
+      </Checkbox> */}
 
       <ButtonCad onClick={() => handleClickBtn()}>Criar Conta</ButtonCad>
     </>

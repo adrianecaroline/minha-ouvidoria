@@ -1,6 +1,5 @@
 import iconOwl from "../../images/icon-owl.png";
 import sobreNosWoman from "../../images/sobre-nos-woman.png";
-import { Link } from "react-router-dom";
 import { DivAzul, DivBranca } from "./SobreNosStyle";
 import MenuRegistro from "../../components/Menu/MenuRegistro";
 import Footer from "../../components/Footer/Footer";

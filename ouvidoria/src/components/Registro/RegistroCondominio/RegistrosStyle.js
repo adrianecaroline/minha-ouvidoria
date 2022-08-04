@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.main `
-    margin: 4% 10%;
     background-color: #ffffff;
     width: 800px;
     height: 350px;
@@ -9,7 +8,7 @@ export const Container = styled.main `
     box-shadow: 0px 3px 4px 1px rgb(0 0 0 / 25%);
     padding: 30px;
     box-sizing: border-box;
-
+    margin: 0 auto;
     
 `
 
