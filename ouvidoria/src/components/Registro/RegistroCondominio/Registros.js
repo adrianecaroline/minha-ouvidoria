@@ -1,5 +1,3 @@
-import Axios from 'axios';
-import Menu from '../../Menu/Menu';
 import { Container, Registro, Feedback } from './RegistrosStyle'
 
 export default function Registros(props) {
@@ -9,16 +7,15 @@ export default function Registros(props) {
         <Container>
             <Registro>
                 <div>
-                    <p>Morador: Joana Lima</p>
-                    <p>Bloco: 15 Apto: 14</p> 
-                    <p>Data: 28/07/2022</p>
+                    <p>Morador: {props.id_usuario}</p>
+                    <p>Bloco: Apto: {props.numero}</p> 
                 </div>
                 <div>
-                    <p>Sugestão <span>(Nº 102412)</span></p>
-                    <p>Título: Garagem para bicicletas.</p>
-                    <p>Descrição: Quero garagem para bicicletas. </p>
-                    <p>Endereço: Próximo ao salão de festa</p>
-                    <p>Anexo: foto/video</p>
+                    <p> {props.registro} <span>(Nº {props.idProtocol})</span></p>
+                    <p>Título: {props.titulo}</p>
+                    <p>Descrição: {props.descricao} </p>
+                    <p>Endereço: {props.endereco}</p>
+                    <p>Anexo: {props.url}</p>
                 </div>
             </Registro>
             <p>Feedback:</p>
