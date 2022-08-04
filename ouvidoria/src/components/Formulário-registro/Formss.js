@@ -25,12 +25,12 @@ export default function Formss (props) {
   const handleClickBtn = () => {
     // console.log(values)
     Axios.post("http://localhost:4200/register", {
-      id_usuario: "adriane", 
+      id_usuario: "Danilo", 
       tipo_registro: `${props.registro}`,
       assunto_registro: values.selection,
       titulo: values.titulo,
       descricao: values.descricao,
-      endereco: values.local,
+      endereco: values.local, 
       numero: values.numero
     }).then((response) => {
       console.log(response)
