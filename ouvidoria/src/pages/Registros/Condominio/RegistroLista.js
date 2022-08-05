@@ -1,5 +1,5 @@
-import { Container } from './ListaStyle';
-import Registro from '../components/Registro';
+import { Container } from './RegistroListaStyle';
+import Registro from '../../../components/Registro/RegistroCondominio/Registros';
 import Axios from 'axios';
 import { useState, useEffect } from 'react';
 

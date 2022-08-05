@@ -1,4 +1,4 @@
-import { Container, Registro, Feedback } from './RegistroStyle'
+import { Container, Registro, Feedback } from './RegistrosStyle'
 
 export default function Registros(props) {
 
