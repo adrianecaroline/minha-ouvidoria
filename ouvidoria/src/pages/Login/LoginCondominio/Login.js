@@ -10,6 +10,7 @@ import {
 } from "./LoginStyle";
 
 import { useNavigate } from 'react-router-dom'
+import { BiArrowBack } from "react-icons/bi";
 
 export default function Login() {
 
@@ -28,6 +29,7 @@ export default function Login() {
 
         {/* <!-- login --> */}
         <LoginArea>
+          <h3><BiArrowBack onClick={() => { navigate(window.history.back());}} /></h3>
           <img src={logo} alt="Logo da Minha Ouvidoria" />
           {/* 
         <!-- area do input --> */}
