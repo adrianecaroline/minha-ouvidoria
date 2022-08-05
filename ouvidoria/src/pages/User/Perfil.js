@@ -9,8 +9,11 @@ import Menu from "../../components/Menu/Menu.js";
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
-import Axios from "axios";
+import ouvidoriaApi from "../../api_services/ouvidoriaApi"
+
 // import styles  from './Perfil.module.css'
+
+
 import { 
   Container, 
   FrameUser, 
@@ -27,13 +30,17 @@ function User(props) {
   // const username = useParams();
 
   const [menuVisible, setMenuVisible] = useState(false);
-  const [listRegistros, setListRegistros] = useState();
+  const [listRegistros, setListRegistros] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:8080/ouvidoria").then((response) => {
+    ouvidoriaApi.get("/users/registers")
+    .then((response) => {
       setListRegistros(response.data);
-    });
-  });
+    }) 
+    .catch((err) => {
+      console.log(err)
+    } );
+  }, []);
 
   return (
     <>
@@ -88,7 +95,7 @@ function User(props) {
 
         <section>
           <h3>Seus registros</h3>
-          {typeof listRegistros !== "undefined" &&
+          {typeof listRegistros !== "undefined" ?
             listRegistros.map((value) => {
               return (
                 <Registro
@@ -102,7 +109,7 @@ function User(props) {
                   assunto_registro={value.assunto_registro}
                 />
               );
-            }) || (<p>Você não possui nenhum registro ainda.</p>)}
+            }) : (<p>Você não possui nenhum registro ainda.</p>)}
         </section>
       </Container>
 

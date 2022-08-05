@@ -9,11 +9,35 @@ import {
   InfoLogin,
 } from "./LoginStyle";
 
+import { useState } from "react";
+
 import { useNavigate } from 'react-router-dom'
+import ouvidoriaApi from '../../../api_services/ouvidoriaApi'
+import { BiArrowBack } from "react-icons/bi";
 
 export default function Login() {
 
   const navigate = useNavigate();
+  
+  const [values, setValues] = useState();
+
+  const handleChangeValues = (value) => {
+    setValues((prevValue) =>({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }))
+  }
+
+  const login = () => {
+    ouvidoriaApi.post("/auth/user/login", {
+      email: values.email,
+	    senha: values.senha
+    }); if (!values.senha || !values.email) {
+      console.log("email e senha inválidos");
+    } else {
+      navigate('/perfil-user')
+    }
+  }
 
   return (
     <>
@@ -28,21 +52,23 @@ export default function Login() {
 
         {/* <!-- login --> */}
         <LoginArea>
+          <h3><BiArrowBack onClick={() => { navigate(window.history.back());}} /></h3>
           <img src={logo} alt="Logo da Minha Ouvidoria" />
           {/* 
         <!-- area do input --> */}
           <LoginInput>
             <p>Login</p>
             <form action="/" method="post">
-              <input type="text" name="email" id="email" placeholder="E-mail" />
+              <input type="text" name="email" id="email" onChange={handleChangeValues} placeholder="E-mail" />
               <input
                 type="password"
                 name="senha"
                 id="senha"
                 placeholder="Senha"
+                onChange={handleChangeValues}
               />
         
-                <input type="button" id="btn-login" value="Continue" onClick={ () => {navigate("/perfil-user")}} />
+                <input type="button" id="btn-login" value="Continue" onClick={login} />
               
               <hr />
             </form>

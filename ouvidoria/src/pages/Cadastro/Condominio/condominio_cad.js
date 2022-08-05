@@ -1,7 +1,23 @@
 import Menu from "../../../components/Menu/MenuRegistro";
 import { Container, Password } from "./condominio_cadStyle";
+import { useState } from "react";
 
 export default function CondominioCad() {
+
+  const [values, setValues] = useState();
+  
+  const handleChangeValues = (value) => {
+    setValues((prevValue) =>({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }))
+  }
+
+  const handleClickBtn = () => {
+    //lógica para enviar os dados a api pelo axios
+    console.log(values)
+  }
+
   return (
     <>
       <Menu />
@@ -13,42 +29,43 @@ export default function CondominioCad() {
             <h3>Dados Pessoais</h3>
             <section className="forms">
               <div className="inputs">
-                <label for="razao">Razão Social</label>
-                <input type="text" name="razao" className="razao" />
+                <label htmlFor="razao">Razão Social</label>
+                <input type="text" name="razao" className="razao" onChange={handleChangeValues}/>
               </div>
               <div className="inputs">
-                <label for="nome">Nome Fantasia</label>
-                <input type="text" name="nome" className="nome" />
+                <label htmlFor="nome">Nome Fantasia</label>
+                <input type="text" name="nome" className="nome" onChange={handleChangeValues}/>
               </div>
             </section>
 
             <section className="forms">
               <div className="inputs">
-                <label for="cnpj">CNPJ</label>
-                <input type="text" name="cnpj" className="cnpj" />
+                <label htmlFor="cnpj">CNPJ</label>
+                <input type="text" name="cnpj" className="cnpj" onChange={handleChangeValues}/>
               </div>
               {/* <div className="inputs">
-                <label for="cpf">CPF</label>
+                <label htmlFor="cpf">CPF</label>
                 <input type="text" name="cpf" className="cpf" />
               </div> */}
               <div className="inputs">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" className="email" />
+                <label htmlFor="email">E-mail</label>
+                <input type="email" name="email" className="email" onChange={handleChangeValues}/>
               </div>
             </section>
 
             <section className="forms">
               <Password>
                 <div className="inputs">
-                  <label for="senha">Senha</label>
-                  <input type="password" name="senha" className="senha" />
+                  <label htmlFor="senha">Senha</label>
+                  <input type="password" name="senha" className="senha" onChange={handleChangeValues}/>
                 </div>
                 <div className="inputs">
-                  <label for="confirmar">Confirmar Senha</label>
+                  <label htmlFor="confirmar">Confirmar Senha</label>
                   <input
                     type="password"
                     name="confirmar"
                     className="confirmar"
+                    onChange={handleChangeValues}
                   />
                 </div>
               </Password>
@@ -59,25 +76,26 @@ export default function CondominioCad() {
             <h3>Endereço</h3>
             <section className="forms">
               <div className="inputs">
-                <label for="address">Endereço</label>
-                <input type="text" name="adress" className="adress" />
+                <label htmlFor="address">Endereço</label>
+                <input type="text" name="adress" className="adress" onChange={handleChangeValues}/>
               </div>
               <div className="inputs">
-                <label for="cep">CEP</label>
-                <input type="text" name="cep" className="cep" />
+                <label htmlFor="cep">CEP</label>
+                <input type="text" name="cep" className="cep" onChange={handleChangeValues}/>
               </div>
               <div className="inputs">
-                <label for="num">Nº</label>
-                <input type="text" name="num" className="num" />
+                <label htmlFor="num">Nº</label>
+                <input type="text" name="num" className="num" onChange={handleChangeValues}/>
               </div>
               <div className="inputs">
-                <label for="uf">UF</label>
-                <input type="text" name="uf" className="uf" />
+                <label htmlFor="uf">UF</label>
+                <input type="text" name="uf" className="uf" onChange={handleChangeValues}/>
               </div>
             </section>
           </div>
 
-          <button type="submit" className="btn">
+              {/*type submit está recarregando a pagina*/}
+          <button type="submit" className="btn" onClick={() => handleClickBtn()}>
             Enviar
           </button>
         </form>
