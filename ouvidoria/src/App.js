@@ -13,7 +13,7 @@ import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
 import Ajuda from "./pages/Ajuda/Ajuda";
-import CondominioPerfil from "./pages/Condominio/CondominioHome";
+import CondominioPerfil from "./pages/Condominio/RegistroLista";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
 import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
 // import Routes from "./routes";
