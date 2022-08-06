@@ -17,7 +17,7 @@ export default function Registro(props) {
       <Modal
         open={open}
         setOpen={setOpen}
-        idProtocolo={props.idProtocolo}
+        idProtocol={props.idProtocol}
         tipo_registro={props.tipo_registro}
         titulo={props.titulo}
         assunto_registro={props.assunto_registro}
@@ -27,8 +27,8 @@ export default function Registro(props) {
       />
       <Container>
         <div>
-           (Nº do Protocolo: {props.idProtocolo})
-          <p>{props.titulo}</p>
+           Registro: {props.tipo_registro}
+          <p>{props.assunto_registro}</p>
         </div>
         <div className="icon">
           <FcNext size={30} onClick={() => handleClickArrow()} />

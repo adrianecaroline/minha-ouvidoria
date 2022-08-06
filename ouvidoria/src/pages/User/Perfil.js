@@ -22,51 +22,28 @@ import {
   Frame 
 } from "./PerfilStyle";
 
-// import { useParams } from "react-router-dom"
-
-function User(props) {
+function User() {
 
   const navigate = useNavigate();
-  // const username = useParams();
 
   const [menuVisible, setMenuVisible] = useState(false);
   const [listRegistros, setListRegistros] = useState([]);
 
-  useEffect(() => {
-    axiosInstance.get("/user/registers")
-    .then(async (response) => {
-      const regist = await (response.data)
-      setListRegistros(regist);
-    }) 
-    .catch((err) => {
-      console.log(err)
-    } );
-  }, []);
-
-  
-
-  // useEffect(() => {
-  //   axiosInstance.get("/user/registers").then( async (res) => {
-  //     const data = await res.data.user;
-  //     setListRegistros(data);
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   } );
-  // }, []);
-
   const { token, setToken } = useContext(Contexto);
   const { user, setUser } = useContext(Contexto);
 
-  const [info, setInfo] = useState([]);
-
-  useEffect(  () => {
-    console.log(user)
-    axiosInstance.get("/user").then( async (res) => {
-      console.log (res)
-      const data = await res.data.user;
-      setUser(data)
-    })      
+  useEffect (  () => {
+    userRegistro();
   }, []);
+
+  const userRegistro = () => {
+    if(user) {
+      axiosInstance.get("ouvidoria/registers/" + user.username)
+      .then( (res) => {
+        setListRegistros(res.data)
+      })
+    }
+  }
 
   return (
     <>
@@ -102,7 +79,7 @@ function User(props) {
                   key={registros.username}
                   listRegistros={listRegistros}
                   setListRegistros={setListRegistros}
-                  idProtocolo={registros.idProtocolo}
+                  idProtocol={registros.idProtocol}
                   tipo_registro={registros.tipo_registro}
                   titulo={registros.titulo}
                   descricao={registros.descricao}

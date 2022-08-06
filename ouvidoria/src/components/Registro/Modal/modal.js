@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 export default function FormDialog(props) {
   const [deleteValue, setDeleteValue] = useState({
-    idProtocolo: props.idProtocolo,
+    idProtocol: props.idProtocol,
     registro: props.tipo_registro,
     titulo: props.titulo,
     assunto_registro: props.assunto_registro,
@@ -35,23 +35,30 @@ export default function FormDialog(props) {
       const mystyle = {
       display: "flex",
       flexDirection: "column",
-      gap: "20px"
+      gap: "10px"
     };
 
     return mystyle;
   }
   style();
 
+  const border = () => {
+    const mystyle = {
+      borderBottom: "2px solid #235ae2"
+    };
+    return mystyle;
+  }
+
   return (
     <div>
       <Dialog open={props.open} onClose={handleClose}>
         <div  style={{width: "450px"}}>
-        <DialogTitle>(Nº do Protocolo: {props.idProtocolo})</DialogTitle>
+        <DialogTitle style={border()}> {/*(Nº do Protocolo: {props.idProtocolo})*/} Seu Registro</DialogTitle>
         <DialogContent>
           <DialogContentText style={style()}>
             <>
               <div>
-                <span>Registro: <strong>{props.tipo_registro}</strong></span>
+                <span>Tipo: <strong>{props.tipo_registro}</strong></span>
               </div>
               <div>
                 <span>Titulo: </span>
