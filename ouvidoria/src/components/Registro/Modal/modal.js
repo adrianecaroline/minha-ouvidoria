@@ -31,12 +31,24 @@ export default function FormDialog(props) {
     props.setOpen(false);
   };
 
+  const style = () => {  
+      const mystyle = {
+      display: "flex",
+      flexDirection: "column",
+      gap: "20px"
+    };
+
+    return mystyle;
+  }
+  style();
+
   return (
     <div>
       <Dialog open={props.open} onClose={handleClose}>
+        <div  style={{width: "450px"}}>
         <DialogTitle>(Nº do Protocolo: {props.idProtocolo})</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={style()}>
             <>
               <div>
                 <span>Registro: <strong>{props.tipo_registro}</strong></span>
@@ -60,6 +72,7 @@ export default function FormDialog(props) {
           <Button onClick={handleDelete}>Excluir</Button>
           <Button onClick={handleClose}>Fechar</Button>
         </DialogActions>
+        </div>
       </Dialog>
     </div>
   );

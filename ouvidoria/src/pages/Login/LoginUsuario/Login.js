@@ -9,14 +9,17 @@ import {
   InfoLogin,
 } from "./LoginStyle";
 
-import { useState } from "react";
-
-import { useNavigate } from 'react-router-dom'
-import ouvidoriaApi from '../../../api_services/ouvidoriaApi'
+import { useState, useContext, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { Contexto } from "../../../context/AuthContext"
+import {axiosInstance} from '../../../api_services/ouvidoriaApi';
 
 export default function Login() {
 
   const navigate = useNavigate();
+
+  const { token, setToken } = useContext(Contexto);
+  const { user, setUser } = useContext(Contexto);
   
   const [values, setValues] = useState();
 
@@ -27,15 +30,23 @@ export default function Login() {
     }))
   }
 
+//   useEffect(() => {
+//     if (localStorage.getItem('token') !== null) {
+//         navigate("/perfil-user");
+//     }
+// }, []);
+
   const login = () => {
-    ouvidoriaApi.post("/auth/user/login", {
-      email: values.email,
-	    senha: values.senha
-    }); if (!values.senha || !values.email) {
-      console.log("email e senha inválidos");
-    } else {
+    axiosInstance.post("/auth/user/login", {email: values.email, senha: values.senha}).then((response)=>{
+      localStorage.setItem('token',response.data.token)
+      setToken(response.data.token)
+      setUser(response.data.user)
       navigate('/perfil-user')
-    }
+      console.log(response)
+    }).catch((err)=>{
+      console.log("error: " + err)
+    })
+  
   }
 
   return (

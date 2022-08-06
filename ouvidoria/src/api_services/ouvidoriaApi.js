@@ -1,8 +1,7 @@
-require('dotenv').config();
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4200',
+export const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_BACK,
   timeout: 8000,
   headers: { 'Content-Type': 'application/json' }
 })
@@ -22,5 +21,3 @@ axiosInstance.interceptors.request.use((config) => {
 axiosInstance.interceptors.response.use((response) => {
   return response
 });
-
-export default axiosInstance;

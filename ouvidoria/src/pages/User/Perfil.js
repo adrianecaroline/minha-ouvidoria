@@ -7,11 +7,10 @@ import lampada from "../../images/lampada.png"
 import Menu from "../../components/Menu/Menu.js";
 
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
-import ouvidoriaApi from "../../api_services/ouvidoriaApi"
-
-// import styles  from './Perfil.module.css'
+import { axiosInstance } from "../../api_services/ouvidoriaApi"
+import { Contexto } from "../../context/AuthContext.js";
 
 
 import { 
@@ -26,6 +25,7 @@ import {
 // import { useParams } from "react-router-dom"
 
 function User(props) {
+
   const navigate = useNavigate();
   // const username = useParams();
 
@@ -33,13 +33,39 @@ function User(props) {
   const [listRegistros, setListRegistros] = useState([]);
 
   useEffect(() => {
-    ouvidoriaApi.get("/users/registers")
-    .then((response) => {
-      setListRegistros(response.data);
+    axiosInstance.get("/user/registers")
+    .then(async (response) => {
+      const regist = await (response.data)
+      setListRegistros(regist);
     }) 
     .catch((err) => {
       console.log(err)
     } );
+  }, []);
+
+  
+
+  // useEffect(() => {
+  //   axiosInstance.get("/user/registers").then( async (res) => {
+  //     const data = await res.data.user;
+  //     setListRegistros(data);
+  //   }).catch((err) => {
+  //     console.log(err)
+  //   } );
+  // }, []);
+
+  const { token, setToken } = useContext(Contexto);
+  const { user, setUser } = useContext(Contexto);
+
+  const [info, setInfo] = useState([]);
+
+  useEffect(  () => {
+    console.log(user)
+    axiosInstance.get("/user").then( async (res) => {
+      console.log (res)
+      const data = await res.data.user;
+      setUser(data)
+    })      
   }, []);
 
   return (
@@ -52,38 +78,12 @@ function User(props) {
             <h3>Seu Perfil</h3>
           </span>
           <UserInfo>
-            <p>
-              Usuário:{" "}
-              <strong>
-                {props.user} {"Joana1"} 
-              </strong>
-            </p>
-            <p>
-              Nome:{" "}
-              <strong>
-                {props.name} {"Jaqueline Souza"}
-              </strong>
-            </p>
-            <p>
-              E-mail:{" "}
-              <strong>
-                {props.email} {"jaquelinedesouza@gmail.com"}
-              </strong>
-            </p>
-            <p>
-              Condomínio:{" "}
-              <strong>
-                {" "}
-                {props.condominio} {"Rosa & Silva"}
-              </strong>
-            </p>
-            <p>
-              Bloco:{" "}
-              <strong>
-                {" "}
-                {props.bloco} {7}
-              </strong>
-            </p>
+            <p>Username: {user.username}</p>
+            <p>E-mail: {user.email}</p>
+            <p>Nome: {user.nome}</p>
+            <p>Condominio: {user.condominio}</p>
+            <p>Bloco: {user.bloco}</p>
+            <p>Apto: {user.apto}</p>
           </UserInfo>
           <BtnUser>
             <Botao>Editar Perfil</Botao>
@@ -95,18 +95,18 @@ function User(props) {
 
         <section>
           <h3>Seus registros</h3>
-          {typeof listRegistros !== "undefined" ?
-            listRegistros.map((value) => {
+          {listRegistros.toString()  !== "" ?
+            listRegistros.map((registros) => {
               return (
                 <Registro
-                  key={value.id}
+                  key={registros.username}
                   listRegistros={listRegistros}
                   setListRegistros={setListRegistros}
-                  idProtocolo={value.idProtocolo}
-                  tipo_registro={value.tipo_registro}
-                  titulo={value.titulo}
-                  descricao={value.descricao}
-                  assunto_registro={value.assunto_registro}
+                  idProtocolo={registros.idProtocolo}
+                  tipo_registro={registros.tipo_registro}
+                  titulo={registros.titulo}
+                  descricao={registros.descricao}
+                  assunto_registro={registros.assunto_registro}
                 />
               );
             }) : (<p>Você não possui nenhum registro ainda.</p>)}
@@ -120,19 +120,19 @@ function User(props) {
           <div className="box">
             <div className="card">
               <div className="icon" onClick={ () => {navigate("/reclamacao")}}>
-                <img src={negative} alt="" srcset="" />
+                <img src={negative} alt="" />
                 Reclamação
               </div>
             </div>
             <div className="card" onClick={ () => {navigate("/sugestao")}}>
               <div className="icon">
-                <img src={solicitar} alt="" srcset="" />
+                <img src={solicitar} alt="" />
                 Sugestão
               </div>
             </div>
             <div className="card" onClick={ () => {navigate("/solicitacao")}}>
               <div className="icon">
-                  <img src={lampada} alt="" srcset="" />
+                  <img src={lampada} alt="" />
                 Solicitação
               </div>
             </div>
@@ -145,10 +145,20 @@ function User(props) {
       </Frame>
       <Footer />
     </>
-  );
+  )
+
 }
 
+
+
 export default User;
+
+//   useEffect(() => {
+//     if (!token) {
+//         navigate("/");
+//     }
+// }, []);
+
 
 // function Userinf (props) {
 //   const [name, email, usuario, condominio, bloco] = props;

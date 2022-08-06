@@ -1,4 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Solicitacao from "./pages/Registros/Solicitacao";
@@ -16,11 +17,13 @@ import Ajuda from "./pages/Ajuda/Ajuda";
 import CondominioPerfil from "./pages/Condominio/CondominioHome";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
 import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
-// import Routes from "./routes";
+import AuthContext  from './context/AuthContext';
+
 
 function App() {
+  
   return (
-    <>
+    <AuthContext>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
@@ -40,7 +43,7 @@ function App() {
         <Route exact path="/esqueci-senha" element={<EsqueciSenha/>}/>
         <Route exact path="/desenvolvedores" element={<Desenvolvedores/>}/>
       </Routes>
-    </>
+    </AuthContext>
     
   );
 }

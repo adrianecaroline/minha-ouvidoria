@@ -1,10 +1,11 @@
 // import styles from './Registro.module.css'
-import React from "react";
+import React, { useContext } from "react";
 import { Container } from "./RegistroStyle";
 import { FcNext } from "react-icons/fc";
 import Modal from "./Modal/modal";
 
 export default function Registro(props) {
+  // const { token, setToken } = useContext(Contexto);
   const [open, setOpen] = React.useState(false);
 
   const handleClickArrow = () => {
@@ -26,7 +27,7 @@ export default function Registro(props) {
       />
       <Container>
         <div>
-          {props.tipo_registro} (Nº do Protocolo: {props.idProtocolo})
+           (Nº do Protocolo: {props.idProtocolo})
           <p>{props.titulo}</p>
         </div>
         <div className="icon">
