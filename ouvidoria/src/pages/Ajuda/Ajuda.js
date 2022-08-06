@@ -1,11 +1,12 @@
 import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Solicitacoes from "../../images/solicitacoes.png";
 import Registros from "../../images/registros.png"
 import {Container} from './AjudaStyle'
 
 export default function Ajuda() {
+    const navigate = useNavigate();
     return (
         <>
             <Menu/>
@@ -17,7 +18,7 @@ export default function Ajuda() {
                 <p>E você poderá acompanhar o andamento do seu registro através da área “Seus registros”, também localizada na página inicial. </p>
                 <img src={Registros} alt="Imagem listando os registros feitos, um abaixo do outro."/>
                 <p>
-                Você tem mais dúvidas? Se sim, <span><a href="/perguntas-frequentes"> clique aqui. </a></span>
+                Você tem mais dúvidas? Se sim, <span><a onClick={ () => {navigate("/perguntas-frequentes")}}> clique aqui. </a></span>
                 </p>
             </Container>
             <Footer />

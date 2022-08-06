@@ -14,6 +14,7 @@ import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
 import Ajuda from "./pages/Ajuda/Ajuda";
+import PerguntasFrequentes from "./pages/Ajuda/Perguntas/PerguntasFreq";
 import CondominioPerfil from "./pages/Registros/Condominio/RegistroLista";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
 import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/*" element={<NotFound/>}/>
         <Route exact path="/sobre-nos" element={<SobreNos/>}/>
         <Route exact path="/ajuda" element={<Ajuda/>}/>
+        <Route exact path="/perguntas-frequentes" element={<PerguntasFrequentes/>}/>
         <Route exact path="/login-condominio" element={<LoginUserCond/>}/>
         <Route exact path="/perfil-condominio" element={<CondominioPerfil/>}/>
         <Route exact path="/esqueci-senha" element={<EsqueciSenha/>}/>

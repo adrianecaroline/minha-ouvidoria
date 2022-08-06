@@ -17,7 +17,7 @@ function MenuRegistro ({setMenuVisible}) {
       />
       <NavR>
         <ul>
-          <li><a>Início</a></li>
+          <li><a onClick={ () => {navigate("/perfil-user")}}>Início</a></li>
           <li><a onClick={ () => {navigate("/sobre-nos")}}>Sobre Nós</a></li>
           <li><a onClick={ () => {navigate("/ajuda")}}>Ajuda</a></li>
         </ul>

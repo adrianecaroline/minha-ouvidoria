@@ -7,14 +7,6 @@ import { Principal, Frame1, Frame2 } from './HomeStyle';
 
 export default function Home () {
 
-//   const { token, setToken } = useContext(Contexto);
-
-//   useEffect(() => {
-//     if (localStorage.getItem('tipo') !== null) {
-//         navigate("/home");
-//     }
-// }, []);
-
   return (
     <Principal>
       <Frame1>

@@ -36,6 +36,12 @@ function User() {
     userRegistro();
   }, []);
 
+  // useEffect(() => {
+  //   if (!token) {
+  //   navigate("/");
+  //   }
+  // }, []);
+
   const userRegistro = () => {
     if(user) {
       axiosInstance.get("ouvidoria/registers/" + user.username)
@@ -130,21 +136,4 @@ function User() {
 
 export default User;
 
-//   useEffect(() => {
-//     if (!token) {
-//         navigate("/");
-//     }
-// }, []);
 
-
-// function Userinf (props) {
-//   const [name, email, usuario, condominio, bloco] = props;
-//   return ([{
-//     name: name,
-//     email: email,
-//     usuario: usuario,
-//     condominio: condominio,
-//     bloco: bloco
-//   }]
-//   )
-// }

@@ -15,7 +15,7 @@ function Menu ({setMenuVisible}) {
       <ul>
           <li><a href="#" onClick={ () => {navigate("/sobre-nos")}}>Sobre Nós</a></li>
           <li><a href="#" onClick={ () => {navigate("/ajuda")}}>Ajuda</a></li>
-          <li><a href="#">Editar Perfil</a></li>
+          <li><a href="#">Perfil</a></li>
         </ul>
       </Nav>
       <Btn type="submit">Sair</Btn>

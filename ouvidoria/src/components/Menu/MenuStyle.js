@@ -78,15 +78,18 @@ export const Nav = styled.nav `
 `;
 
 export const Btn = styled.button `
-  width: 69px;
+  width: 80px;
   margin-right: 14%;
   border: none;
   padding: 10px;
-  border-radius: 6px;
-  background-color: #6fd222;
+  border: 1px solid;
+  border-radius: 3px;
+  background-color: #6fd22200; 
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
 
   :hover {
   background-color: #9e9ec2;
