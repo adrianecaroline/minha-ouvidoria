@@ -4,6 +4,11 @@ export const Container = styled.main `
     margin: 3% 10%;
     padding-top: 3%;
 
+    svg {
+        cursor: pointer;
+        margin-top: 2%;
+    }
+
     .form-data {
         display: flex;
         flex-direction: column;
@@ -81,7 +86,14 @@ export const Container = styled.main `
         .CPF, .data-900, .senha, .confirmarSenha, .bloco, .numero {
             width: 10rem;
         }
+        svg {
+            margin-top: 8%;
+            cursor: pointer;
+        }
+
       }
+        
+
     }
 
     @media (max-width: 700px) {

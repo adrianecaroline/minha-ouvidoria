@@ -64,7 +64,7 @@ export default function Login() {
 
         {/* <!-- login --> */}
         <LoginArea>
-          <h3><BiArrowBack onClick={() => { navigate(window.history.back());}} /></h3>
+          <h3><BiArrowBack size={35} onClick={() => { navigate(window.history.back());}} /></h3>
           <img src={logo} alt="Logo da Minha Ouvidoria" />
           {/* 
         <!-- area do input --> */}

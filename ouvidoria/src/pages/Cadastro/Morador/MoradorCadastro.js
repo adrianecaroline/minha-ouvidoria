@@ -1,12 +1,15 @@
 import Menu from "../../../components/Menu/MenuRegistro";
 import { Container, Checkbox, ButtonCad } from "./MoradorCadastroStyle";
 import { useEffect, useState } from "react";
+import { BiArrowBack } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom'
 
 export default function CondominioCad() {
 
   // const [sucessesMsg, setsucessesMsg] = useState(false);
   // const [errorMsg, setErrorMsg] = useState(false);
 
+  const navigate = useNavigate();
   const [values, setValues] = useState();
   
   const handleChangeValues = (value) => {
@@ -24,6 +27,7 @@ export default function CondominioCad() {
     <>
       <Menu />
       <Container>
+      <BiArrowBack size={35} onClick={() => { navigate( window.history.go(-2));}} />
         <h1> Cadastro de Perfil </h1>
         <form>
           <section className="form-data">

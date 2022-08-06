@@ -31,18 +31,18 @@ export const Banner = styled.section `
     margin-right: 10rem;
   }
 
-  img {
+  img { 
     margin-top: 0.75rem;
     width: 350px;
   }
 
-  @media (max-width: 1440px) {
-    h2 {
-      margin-top: 8rem;
-      // margin-left: 6rem;
-      // margin-right: 6rem;
-    }
-  }
+  // @media (max-width: 1440px) {
+  //   h2 {
+  //     margin-top: 8rem;
+  //     // margin-left: 6rem;
+  //     // margin-right: 6rem;
+  //   }
+  // }
 
   @media (max-width: 990px) {
     

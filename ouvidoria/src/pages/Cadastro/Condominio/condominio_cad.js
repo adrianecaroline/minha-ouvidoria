@@ -1,9 +1,12 @@
 import Menu from "../../../components/Menu/MenuRegistro";
 import { Container, Password } from "./condominio_cadStyle";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { BiArrowBack } from "react-icons/bi";
 
 export default function CondominioCad() {
 
+  const navigate = useNavigate();
   const [values, setValues] = useState();
   
   const handleChangeValues = (value) => {
@@ -22,6 +25,7 @@ export default function CondominioCad() {
     <>
       <Menu />
       <Container>
+      <BiArrowBack size={35} onClick={() => { navigate( window.history.go(-2));}} />
         <h1>Cadastro Condomínio</h1>
 
         <form>
