@@ -5,32 +5,88 @@ export const DivAzul = styled.div`
 .divAzul{
     padding-top: 8%;
     padding-bottom: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
     background-color: #74ACE1;
     display: flex;
     justify-content:space-evenly;
 } 
 .divCoruja{
-    width: 200%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    width: 90rem;
 }
 .divCoruja img{
     width: 15rem;   
 }
 .divTexto1{
+    width: 200%;
     text-align: justify;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 550;
     color: #282525;
-    padding-right: 15%;
+    margin-left: 3rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1050px){
+    .divCoruja{
+        width: 60rem;
+    } 
+    .divCoruja img{
+        width: 13rem;
+    }
+    .divTexto1{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 900px){
+    .divAzul{
+        padding-top: 10%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .divCoruja{
+        width: 50rem;
+    } 
+}
+@media (max-width: 700px){
+    .divTexto1{
+        text-align: center;
+        margin: 0;
+    }
+    .divCoruja{
+        width: 50rem;
+    }
+}
+@media (max-width: 550px){
+    .divAzul{
+        padding-top: 18%;
+        display: block;
+        width: auto;
+    }
+    .divTexto1{
+        text-align: justify;
+        font-size: 1.1rem;
+        width: 90%;
+        margin: auto;
+    }
+    .divCoruja{
+        justify-content: center;
+        width: 30rem;
+    } 
+    .divCoruja img{
+        width: 8rem;
+    }
 }
 `;
 
 export const DivBranca = styled.div`
 
 .divBranca{
-    padding: 3% 15%;
+    padding: 3% 13%;
     background-color: #E5E5E5;
     display: flex;
     justify-content:space-around;
@@ -42,7 +98,7 @@ export const DivBranca = styled.div`
 .divTexto2 p {
     width: 80%;
     text-align: justify;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 550;
     color: #2539EA;
 }
@@ -67,6 +123,46 @@ export const DivBranca = styled.div`
 }
 .divWoman img{
     width: 22rem;
+}
+
+@media (max-width: 900px){
+    .divWoman img{
+        width: 18rem;
+    }
+    .divBranca{
+        padding-right: 8%;
+    }
+    .divTexto2 p {
+        width: auto;
+    }
+}
+@media (max-width: 770px){
+    .divTexto2 p {
+        font-size: 1.3rem;
+        width: 90%;
+    }
+    .botao-time{
+        font-size: 1rem;
+        width: 15rem; height: 3rem;
+    }
+}
+@media (max-width: 550px){
+    .divBranca{
+        width: auto;
+    }
+    .divTexto2 p {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+    .divWoman img{
+        width: 15rem;
+    }
+    .botao-time{
+        margin-top: auto;
+        font-size: 0.8rem;
+        width: 10rem; height: 2.5rem;
+        font-weight: 500;
+    }
 }
 `;
 

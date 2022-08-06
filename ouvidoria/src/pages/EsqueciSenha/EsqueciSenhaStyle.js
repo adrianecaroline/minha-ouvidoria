@@ -54,6 +54,9 @@ export const BannerLogin = styled.section`
       width: 280px;
     }
   }
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const LoginArea = styled.section`
@@ -62,8 +65,16 @@ export const LoginArea = styled.section`
   width: 50%;
   text-align: center;
   
+  h3{
+    margin-top: 2rem;
+    margin-bottom: 0;
+    width: 6rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
   img {
-    margin-top: 4rem;
+    
     width: 18rem;
   }
 
@@ -77,7 +88,9 @@ export const LoginArea = styled.section`
       width: 14.8rem;
     }
   }
-
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const LoginInput = styled.section`
@@ -151,6 +164,7 @@ export const LoginInput = styled.section`
       height: 2rem;
       font-size: 0.7rem;
     }
+ }
  }
 `;
 

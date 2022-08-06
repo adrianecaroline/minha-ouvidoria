@@ -66,8 +66,15 @@ export const LoginArea = styled.section`
   width: 50%;
   text-align: center;
   
+  h3{
+    margin-top: 2rem;
+    margin-bottom: 0;
+    width: 6rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
   img {
-    margin-top: 4rem;
+    
     width: 18rem;
   }
 

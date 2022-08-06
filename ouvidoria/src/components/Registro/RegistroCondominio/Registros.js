@@ -15,7 +15,7 @@ export default function Registros(props) {
                     <p>Título: {props.titulo}</p>
                     <p>Descrição: {props.descricao} </p>
                     <p>Endereço: {props.endereco}</p>
-                    <p>Anexo: {props.url}</p>
+                    <p>{props.url}</p>
                 </div>
             </Registro>
             <p>Feedback:</p>

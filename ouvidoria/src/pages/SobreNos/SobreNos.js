@@ -1,7 +1,7 @@
 import iconOwl from "../../images/icon-owl.png";
 import sobreNosWoman from "../../images/sobre-nos-woman.png";
 import { DivAzul, DivBranca } from "./SobreNosStyle";
-import MenuRegistro from "../../components/Menu/MenuRegistro";
+import Menu from "../../components/Menu/MenuRegistro";
 import Footer from "../../components/Footer/Footer";
 
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ export default function SobreNos() {
 
   return (
     <>
-      <MenuRegistro />
+      <Menu/>
       <DivAzul>
         <section>
           <div className="divAzul">
