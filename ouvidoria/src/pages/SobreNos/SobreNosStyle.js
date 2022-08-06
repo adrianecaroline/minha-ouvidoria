@@ -87,7 +87,7 @@ export const DivBranca = styled.div`
 
 .divBranca{
     padding: 3% 13%;
-    background-color: #E5E5E5;
+    background-color: #f8f8f8;
     display: flex;
     justify-content:space-around;
     align-items: center;
