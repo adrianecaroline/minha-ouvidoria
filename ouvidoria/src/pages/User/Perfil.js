@@ -1,39 +1,38 @@
 import Registro from "../../components/Registro/Registro.js";
 import Footer from "../../components/Footer/Footer.js";
 import photo from "../../images/profile.png";
-import solicitar from "../../images/solicitar.png"
-import negative from "../../images/negative.png"
-import lampada from "../../images/lampada.png"
-import gostar from "../../images/gostar.png"
+import solicitar from "../../images/solicitar.png";
+import negative from "../../images/negative.png";
+import lampada from "../../images/lampada.png";
+import gostar from "../../images/gostar.png";
 import Menu from "../../components/Menu/Menu.js";
 
-import { useNavigate } from "react-router-dom"
+
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
-import { axiosInstance } from "../../api_services/ouvidoriaApi"
+import { axiosInstance } from "../../api_services/ouvidoriaApi";
 import { Contexto } from "../../context/AuthContext.js";
 
-
-import { 
-  Container, 
-  FrameUser, 
-  UserInfo, 
-  BtnUser, 
+import {
+  Container,
+  FrameUser,
+  UserInfo,
+  BtnUser,
   Botao,
-  Frame 
+  Frame,
 } from "./PerfilStyle";
 
 function User() {
 
   const navigate = useNavigate();
 
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [listRegistros, setListRegistros] = useState([]);
-
   const { token, setToken } = useContext(Contexto);
   const { user, setUser } = useContext(Contexto);
 
-  useEffect (  () => {
+  const [listRegistros, setListRegistros] = useState([]);
+  
+  useEffect(() => {
     userRegistro();
   }, [listRegistros]);
 
@@ -44,13 +43,15 @@ function User() {
   // }, []);
 
   const userRegistro = () => {
-    if(user) {
-      axiosInstance.get("ouvidoria/registers/" + user.username)
-      .then( (res) => {
-        setListRegistros(res.data)
-      })
+    if (user) {
+      axiosInstance.get("ouvidoria/registers/" + user.username).then((res) => {
+        setListRegistros(res.data);
+      });
     }
-  }
+  };
+
+  //menu mobile
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <>
@@ -72,14 +73,12 @@ function User() {
           <BtnUser>
             <Botao>Editar Perfil</Botao>
             <Botao primary>Excluir Perfil</Botao>
-            {/* <input type="button" value="Editar perfil" className='btn1'/>
-            <input type="button" value="Excluir conta"/> */}
           </BtnUser>
         </FrameUser>
 
         <section>
           <h3>Seus registros</h3>
-          {listRegistros.toString()  !== "" ?
+          {listRegistros.toString() !== "" ? (
             listRegistros.map((registros) => {
               return (
                 <Registro
@@ -93,7 +92,10 @@ function User() {
                   assunto_registro={registros.assunto_registro}
                 />
               );
-            }) : (<p>Você não possui nenhum registro ainda.</p>)}
+            })
+          ) : (
+            <p>Você não possui nenhum registro ainda.</p>
+          )}
         </section>
       </Container>
 
@@ -103,26 +105,46 @@ function User() {
 
           <div className="box">
             <div className="card">
-              <div className="icon" onClick={ () => {navigate("/reclamacao")}}>
+              <div
+                className="icon"
+                onClick={() => {
+                  navigate("/reclamacao");
+                }}
+              >
                 <img src={negative} alt="" />
                 Reclamação
               </div>
             </div>
-            <div className="card" onClick={ () => {navigate("/sugestao")}}>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/sugestao");
+              }}
+            >
               <div className="icon">
                 <img src={solicitar} alt="" />
                 Sugestão
               </div>
             </div>
-            <div className="card" onClick={ () => {navigate("/solicitacao")}}>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/solicitacao");
+              }}
+            >
               <div className="icon">
-                  <img src={lampada} alt="" />
-                Solicitação 
+                <img src={lampada} alt="" />
+                Solicitação
               </div>
             </div>
-            <div className="card" onClick={ () => {navigate("/elogio")}}>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/elogio");
+              }}
+            >
               <div className="icon">
-                  <img src={gostar} alt="" />
+                <img src={gostar} alt="" />
                 Elogio
               </div>
             </div>
@@ -135,12 +157,7 @@ function User() {
       </Frame>
       <Footer />
     </>
-  )
-
+  );
 }
 
-
-
 export default User;
-
-

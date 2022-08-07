@@ -70,6 +70,7 @@ export const Nav = styled.nav `
     margin-right: 20px;
     padding: 22px 4px;
     word-spacing: 4px;
+    cursor: pointer;
   }
   
   li a:hover {
