@@ -13,7 +13,7 @@ export default function PerguntasFrequentes () {
       <Container>
         <h1>Perguntas Frequentes</h1>
         <p>Consulte as perguntas que são feitas frequentemente para Minha Ouvidoria e tire sua dúvida.</p>
-        <p>Caso não encontre uma pergunta específica, nos envie sua dúvida <span>clicando aqui.</span></p>
+        <p>Caso não encontre uma pergunta específica, nos envie sua dúvida <span onClick={() => { navigate("/fale-conosco") }}>clicando aqui.</span></p>
 
         <h2> O que é uma ouvidoria?</h2>
         <p>A ouvidoria é um canal que visa promover e coordenar a interlocução entre a adiministração e os usuários dos serviços prestados. 

@@ -18,27 +18,13 @@ function Menu({ setMenuVisible }) {
       <Nav>
         <ul>
           <li>
-            <a
-              href="#"
-              onClick={() => {
-                navigate("/sobre-nos");
-              }}
-            >
-              Sobre Nós
-            </a>
+            <a onClick={() => { navigate("/sobre-nos")}}> Sobre Nós </a>
           </li>
           <li>
-            <a
-              href="#"
-              onClick={() => {
-                navigate("/ajuda");
-              }}
-            >
-              Ajuda
-            </a>
+            <a onClick={() => { navigate("/ajuda")}}> Ajuda </a>
           </li>
           <li>
-            <a href="#">Perfil</a>
+            <a onClick={() => { navigate("/perfil-user")}}>Perfil</a>
           </li>
         </ul>
       </Nav>
