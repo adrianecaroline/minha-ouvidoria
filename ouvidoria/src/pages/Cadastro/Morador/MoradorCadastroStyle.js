@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.main `
-    margin: 3% 10%;
+    margin: 4% 14%;
     padding-top: 3%;
 
     svg {

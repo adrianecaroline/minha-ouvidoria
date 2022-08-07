@@ -82,17 +82,17 @@ export const Btn = styled.button `
   margin-right: 14%;
   border: none;
   padding: 10px;
-  border: 1px solid;
   border-radius: 3px;
-  background-color: #6fd22200; 
+  background-color: #ffffff; 
   font-weight: bold;
-  color: #ffffff;
+  color: #235ae2;
   cursor: pointer;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
 
   :hover {
   background-color: #9e9ec2;
+  color: #ffffff;
   }
 
 `;

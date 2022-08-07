@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Frame = styled.footer `
   background-color: #1348aa;
-  height: 100px;
+  width: 100%;
+  // height: 100px;
   align-items: center;
   gap: 3rem;
 
@@ -13,25 +14,30 @@ export const Frame = styled.footer `
       margin: 0;
   }
 
-  @media(max-width: 880px) {
-    font-size: 0.9rem;
-    text-align: center;
-    // padding: 0;
-    // margin: 0;
-    // display: block;
+  @media(max-width: 860px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+
+    // font-size: 0.9rem;
+    // text-align: center;
+    // // padding: 0;
+    // // margin: 0;
+    // // display: block;
 
     .info {
-      display: block;
       align-items: center;
-      gap: 1rem;
+      gap: 0;
+      display: flex;
+      flex-direction: column;
     }
   }
 
   .info {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 10rem;
+    // gap: 10rem;
   }
 
   p > a {
@@ -42,10 +48,10 @@ export const Frame = styled.footer `
   }
 
   .autorais {
-    margin-top: 20px;
     color: #ffff;
     word-spacing: 4px;
     text-align: center;
+    padding: 20px 0;
   }
   
   

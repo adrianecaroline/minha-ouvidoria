@@ -1,5 +1,6 @@
 // import styles from './Forms.module.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios'
 import { 
   FormMain, 
@@ -11,7 +12,10 @@ import {
   SubInputs
 } from './FormsStyle.js'
 
+import { BiArrowBack } from "react-icons/bi";
+
 export default function Formss (props) {
+  const navigate = useNavigate();
 
   const [values, setValues] = useState();
   
@@ -39,7 +43,8 @@ export default function Formss (props) {
 
   return (
     <FormMain>
-      <h1>Faça a sua {props.registro} </h1>
+      <BiArrowBack size={35} onClick={() => { navigate(window.history.back());}} />
+      <h1>{props.frase} {props.registro} </h1>
       <form>
           <Selection>
             <label htmlFor="selection">Sobre qual assunto você quer falar: </label>

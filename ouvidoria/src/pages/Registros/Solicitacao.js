@@ -6,7 +6,7 @@ export default function Solicitacao () {
   return (
     <>
       <Menu/>
-      <Formss registro = {"Solicitação"}/>
+      <Formss frase= {"Faça a sua "} registro = {"Solicitação"}/>
     </>
   )
 

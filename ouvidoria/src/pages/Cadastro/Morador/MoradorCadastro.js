@@ -47,7 +47,7 @@ export default function CondominioCad() {
                 />
               </div>
 
-              <div className="input-dados">
+              {/* <div className="input-dados">
                 <label for="CPF" className="nome-escuro">
                   {" "}
                   CPF:{" "}
@@ -61,7 +61,7 @@ export default function CondominioCad() {
                   required
                   onChange={handleChangeValues}
                 ></input>
-              </div>
+              </div> */}
 
               <div className="input-dados">
                 <label for="dtNasci" class="nome-escuro">

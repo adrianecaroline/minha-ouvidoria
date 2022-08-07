@@ -4,6 +4,7 @@ import photo from "../../images/profile.png";
 import solicitar from "../../images/solicitar.png"
 import negative from "../../images/negative.png"
 import lampada from "../../images/lampada.png"
+import gostar from "../../images/gostar.png"
 import Menu from "../../components/Menu/Menu.js";
 
 import { useNavigate } from "react-router-dom"
@@ -116,7 +117,13 @@ function User() {
             <div className="card" onClick={ () => {navigate("/solicitacao")}}>
               <div className="icon">
                   <img src={lampada} alt="" />
-                Solicitação
+                Solicitação 
+              </div>
+            </div>
+            <div className="card" onClick={ () => {navigate("/elogio")}}>
+              <div className="icon">
+                  <img src={gostar} alt="" />
+                Elogio
               </div>
             </div>
           </div>

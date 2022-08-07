@@ -26,6 +26,10 @@ export const FormMain = styled.main `
     margin: 2% 35%;
     cursor: pointer;
   }
+
+  svg {
+    cursor: pointer;
+  }
 `;
 
 export const Selection = styled.div `
