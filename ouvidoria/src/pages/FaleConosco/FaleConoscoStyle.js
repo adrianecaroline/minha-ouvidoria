@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.main`
 display: flex;
+gap: 7rem;
 justify-content: space-around;
 margin: 4% 14%;
 padding-top: 3%;
@@ -19,7 +20,7 @@ h3{
    height: 8rem;
 }
 img{
-    width: 30rem;
+    width: 24rem;
 }
 
 @media (max-width: 1300px){
@@ -46,7 +47,7 @@ img{
 
 export const FormContact = styled.div`
 border-radius: 6px;
-width: 460px;
+width: 380px;
 height: 460px;
 box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.35);
 background-color: #ffff;
@@ -56,7 +57,7 @@ h3 {
     color: #ffff;
     background-color: #5072fe;
     height: 60px;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin: 0%;
     display: grid;
     align-items: center;
