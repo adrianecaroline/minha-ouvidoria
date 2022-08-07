@@ -12,7 +12,7 @@ export const Container = styled.main`
   }
 
   section {
-    // height: 460px;
+     height: 460px;
     padding: 6px;
     overflow-y: auto;
     overflow-x: hidden;

@@ -8,7 +8,7 @@ import gostar from "../../images/gostar.png"
 import Menu from "../../components/Menu/Menu.js";
 
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState,useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import { axiosInstance } from "../../api_services/ouvidoriaApi"
 import { Contexto } from "../../context/AuthContext.js";
@@ -35,7 +35,7 @@ function User() {
 
   useEffect (  () => {
     userRegistro();
-  }, []);
+  }, [listRegistros]);
 
   // useEffect(() => {
   //   if (!token) {
