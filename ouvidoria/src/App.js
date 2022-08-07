@@ -19,6 +19,7 @@ import CondominioPerfil from "./pages/Registros/Condominio/RegistroLista";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
 import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
 import AuthContext  from './context/AuthContext';
+import FaleConosco from "./pages/FaleConosco/FaleConosco";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route exact path="/perfil-condominio" element={<CondominioPerfil/>}/>
         <Route exact path="/esqueci-senha" element={<EsqueciSenha/>}/>
         <Route exact path="/desenvolvedores" element={<Desenvolvedores/>}/>
+        <Route exact path="/fale-conosco" element={<FaleConosco/>}/>
       </Routes>
     </AuthContext>
     
