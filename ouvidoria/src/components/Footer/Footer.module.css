@@ -1,11 +1,14 @@
 footer {
-  background-color: #1348aa;
+  background-color: #235ae2;
   display: flex;
   height: 70px;
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  font-family: 'Courier New', Courier, monospace
+  ;
 }
+
 
 @media screen ,(max-width: 500px) {
   footer {

@@ -1,5 +1,6 @@
 import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
+import FooterCss from "../../components/Footer/Footer.module.css"
 import { Link } from "react-router-dom";
 import Solicitacoes from "../../images/solicitacoes.png";
 import Registros from "../../images/registros.png"

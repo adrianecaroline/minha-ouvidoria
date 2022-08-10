@@ -76,7 +76,7 @@ export default function CondominioCad() {
             <h3>Endereço</h3>
             <section className="forms">
               <div className="inputs">
-                <label htmlFor="address">Endereço</label>
+                <label htmlFor="address">Logradouro</label>
                 <input type="text" name="adress" className="adress" onChange={handleChangeValues}/>
               </div>
               <div className="inputs">

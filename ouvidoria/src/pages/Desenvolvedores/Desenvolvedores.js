@@ -6,6 +6,7 @@ import devLucas from "../../images/dev-lucas.jpeg"
 import devMylena from "../../images/dev-mylena.jpeg"
 import devThais from "../../images/dev-thais.jpeg"
 import devAdriane from "../../images/dev-adriane.jpeg"
+import { Container } from "../Cadastro/Condominio/condominio_cadStyle";
 
 
 export default function Desenvolvedores () {
@@ -92,7 +93,6 @@ export default function Desenvolvedores () {
           </div>
         </div>
         </MainDev>
-        
     </Dev>
   )
 

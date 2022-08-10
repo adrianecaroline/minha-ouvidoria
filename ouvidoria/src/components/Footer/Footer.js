@@ -4,9 +4,11 @@ function Footer () {
   const navigate = useNavigate();
   return(
     <footer>
-      <p><a onClick={() => { navigate("/desenvolvedores") }}>SOBRE OS DESENVOLVEDORES</a></p>
-      <p><a href="#">PERGUNTAS FREQUENTES</a></p>
-      <p><a href="#">FALE COM A GENTE</a></p>
+      <tr>
+      <td><a onClick={() => { navigate("/desenvolvedores") }}>SOBRE OS DESENVOLVEDORES</a></td>
+      <td><a href="#">PERGUNTAS FREQUENTES</a></td>
+      <td><a href="#">FALE COM A GENTE</a></td>
+      </tr>
     </footer>
   )
 
