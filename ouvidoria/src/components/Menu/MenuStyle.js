@@ -70,6 +70,7 @@ export const Nav = styled.nav `
     margin-right: 20px;
     padding: 22px 4px;
     word-spacing: 4px;
+    cursor: pointer;
   }
   
   li a:hover {
@@ -78,18 +79,21 @@ export const Nav = styled.nav `
 `;
 
 export const Btn = styled.button `
-  width: 69px;
+  width: 80px;
   margin-right: 14%;
   border: none;
   padding: 10px;
-  border-radius: 6px;
-  background-color: #6fd222;
+  border-radius: 3px;
+  background-color: #ffffff; 
   font-weight: bold;
-  color: #ffffff;
+  color: #235ae2;
   cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
 
   :hover {
   background-color: #9e9ec2;
+  color: #ffffff;
   }
 
 `;

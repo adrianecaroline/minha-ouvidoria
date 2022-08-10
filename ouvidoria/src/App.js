@@ -1,4 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Solicitacao from "./pages/Registros/Solicitacao";
@@ -13,14 +14,18 @@ import MoradorCadastro from "./pages/Cadastro/Morador/MoradorCadastro";
 import NotFound from "./pages/NotFound/NotFound";
 import SobreNos from "./pages/SobreNos/SobreNos";
 import Ajuda from "./pages/Ajuda/Ajuda";
+import PerguntasFrequentes from "./pages/Ajuda/Perguntas/PerguntasFreq";
 import CondominioPerfil from "./pages/Registros/Condominio/RegistroLista";
 import EsqueciSenha from "./pages/EsqueciSenha/EsqueciSenha";
 import Desenvolvedores from "./pages/Desenvolvedores/Desenvolvedores";
-// import Routes from "./routes";
+import AuthContext  from './context/AuthContext';
+import FaleConosco from "./pages/FaleConosco/FaleConosco";
+
 
 function App() {
+  
   return (
-    <>
+    <AuthContext>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
@@ -35,12 +40,14 @@ function App() {
         <Route exact path="/*" element={<NotFound/>}/>
         <Route exact path="/sobre-nos" element={<SobreNos/>}/>
         <Route exact path="/ajuda" element={<Ajuda/>}/>
+        <Route exact path="/perguntas-frequentes" element={<PerguntasFrequentes/>}/>
         <Route exact path="/login-condominio" element={<LoginUserCond/>}/>
         <Route exact path="/perfil-condominio" element={<CondominioPerfil/>}/>
         <Route exact path="/esqueci-senha" element={<EsqueciSenha/>}/>
         <Route exact path="/desenvolvedores" element={<Desenvolvedores/>}/>
+        <Route exact path="/fale-conosco" element={<FaleConosco/>}/>
       </Routes>
-    </>
+    </AuthContext>
     
   );
 }

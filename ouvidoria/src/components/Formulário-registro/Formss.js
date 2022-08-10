@@ -1,6 +1,6 @@
 // import styles from './Forms.module.css'
-import { useState } from 'react'
-import Axios from 'axios'
+import { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { 
   FormMain, 
   Selection, 
@@ -11,7 +11,13 @@ import {
   SubInputs
 } from './FormsStyle.js'
 
+import { BiArrowBack } from "react-icons/bi";
+import { axiosInstance } from '../../api_services/ouvidoriaApi';
+import { Contexto } from "../../context/AuthContext";
+
 export default function Formss (props) {
+
+  const navigate = useNavigate();
 
   const [values, setValues] = useState();
   
@@ -22,10 +28,13 @@ export default function Formss (props) {
     }))
   }
 
+  const { token, setToken } = useContext(Contexto);
+  const { user, setUser } = useContext(Contexto);
+
   const handleClickBtn = () => {
     // console.log(values)
-    Axios.post("http://localhost:4200/register", {
-      id_usuario: "Danilo", 
+    axiosInstance.post("/register/auth", {
+      id_usuario: user.username, 
       tipo_registro: `${props.registro}`,
       assunto_registro: values.selection,
       titulo: values.titulo,
@@ -39,7 +48,8 @@ export default function Formss (props) {
 
   return (
     <FormMain>
-      <h1>Faça a sua {props.registro} </h1>
+      <BiArrowBack size={35} onClick={() => { navigate(window.history.back());}} />
+      <h1>{props.frase} {props.registro} </h1>
       <form>
           <Selection>
             <label htmlFor="selection">Sobre qual assunto você quer falar: </label>

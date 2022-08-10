@@ -6,7 +6,7 @@ export default function Sugestao () {
   return (
     <>
       <Menu/>
-      <Formss registro = {"Sugestão"}/>
+      <Formss frase= {"Faça a sua "} registro = {"Sugestão"}/>
     </>
   )
 

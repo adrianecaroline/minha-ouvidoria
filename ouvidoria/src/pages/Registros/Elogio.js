@@ -6,7 +6,7 @@ export default function Elogio () {
   return (
     <>
       <Menu/>
-      <Formss registro = {"Elogio"}/>
+      <Formss frase={"Faça o seu"} registro = {"Elogio"}/>
     </>
   )
 

@@ -1,8 +1,13 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.main `
-    margin: 3% 10%;
-    padding-top: 3%;
+    margin: 4% 14%;
+    padding-top: 1%;
+
+    svg {
+        cursor: pointer;
+        margin-top: 2%;
+    }
 
     .form-data {
         display: flex;
@@ -12,7 +17,7 @@ export const Container = styled.main `
 
     .forms {
         display: flex;
-        gap: 2rem;
+        justify-content: space-between;
     }
 
     h1 {
@@ -27,7 +32,6 @@ export const Container = styled.main `
     .input-dados {
         display: grid;
         gap: 1rem;
-        margin-top: 0.5rem;
       }
 
     input {
@@ -49,12 +53,20 @@ export const Container = styled.main `
         width: 15.5rem;
     }
 
-    .nomeCompleto, .email, .condominio {
-        width: 30rem;
+    #UserName {
+        width: 12.5rem;
     }
     
-    .data, .bloco, .numero, .CEP, .UF {
+    .data, .CEP {
         width: 12.5rem;
+    }
+
+    .bloco, .numero {
+        width: 10rem;
+    }
+
+    .UF {
+        width: 6rem;
     }
 
     @media (max-width: 1070px) {
@@ -81,7 +93,14 @@ export const Container = styled.main `
         .CPF, .data-900, .senha, .confirmarSenha, .bloco, .numero {
             width: 10rem;
         }
+        svg {
+            margin-top: 8%;
+            cursor: pointer;
+        }
+
       }
+        
+
     }
 
     @media (max-width: 700px) {
@@ -127,8 +146,8 @@ export const Checkbox = styled.section `
 `
 
 export const ButtonCad = styled.button `
-    width: 30%;
-    margin: 1% 35%;
+    width: 23%;
+    margin: 2% 38%;
     padding: 10px;
     background-color: #23e24c;
     color: #ffff;

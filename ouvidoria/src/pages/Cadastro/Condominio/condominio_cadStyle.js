@@ -6,6 +6,11 @@ export const Container = styled.main `
   display: flex;
   flex-direction: column;
 
+  svg {
+    cursor: pointer;
+    margin-top: 2%;
+  }
+
   h1 {
     text-align: center;
     font-size: 28px;

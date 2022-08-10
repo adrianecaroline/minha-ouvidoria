@@ -1,46 +1,57 @@
 import Registro from "../../components/Registro/Registro.js";
 import Footer from "../../components/Footer/Footer.js";
 import photo from "../../images/profile.png";
-import solicitar from "../../images/solicitar.png"
-import negative from "../../images/negative.png"
-import lampada from "../../images/lampada.png"
+import solicitar from "../../images/solicitar.png";
+import negative from "../../images/negative.png";
+import lampada from "../../images/lampada.png";
+import gostar from "../../images/gostar.png";
 import Menu from "../../components/Menu/Menu.js";
 
-import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
-import ouvidoriaApi from "../../api_services/ouvidoriaApi"
+import { axiosInstance } from "../../api_services/ouvidoriaApi";
+import { Contexto } from "../../context/AuthContext.js";
 
-// import styles  from './Perfil.module.css'
-
-
-import { 
-  Container, 
-  FrameUser, 
-  UserInfo, 
-  BtnUser, 
+import {
+  Container,
+  FrameUser,
+  UserInfo,
+  BtnUser,
   Botao,
-  Frame 
+  Frame,
 } from "./PerfilStyle";
 
-// import { useParams } from "react-router-dom"
+function User() {
 
-function User(props) {
   const navigate = useNavigate();
-  // const username = useParams();
 
-  const [menuVisible, setMenuVisible] = useState(false);
+  const { token, setToken } = useContext(Contexto);
+  const { user, setUser } = useContext(Contexto);
+
   const [listRegistros, setListRegistros] = useState([]);
-
+  
   useEffect(() => {
-    ouvidoriaApi.get("/users/registers")
-    .then((response) => {
-      setListRegistros(response.data);
-    }) 
-    .catch((err) => {
-      console.log(err)
-    } );
-  }, []);
+    userRegistro();
+  }, [listRegistros]);
+
+  // useEffect(() => {
+  //   if (!token) {
+  //   navigate("/");
+  //   }
+  // }, []);
+
+  const userRegistro = () => {
+    if (user) {
+      axiosInstance.get("ouvidoria/registers/" + user.username).then((res) => {
+        setListRegistros(res.data);
+      });
+    }
+  };
+
+  //menu mobile
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <>
@@ -52,64 +63,39 @@ function User(props) {
             <h3>Seu Perfil</h3>
           </span>
           <UserInfo>
-            <p>
-              Usuário:{" "}
-              <strong>
-                {props.user} {"Joana1"} 
-              </strong>
-            </p>
-            <p>
-              Nome:{" "}
-              <strong>
-                {props.name} {"Jaqueline Souza"}
-              </strong>
-            </p>
-            <p>
-              E-mail:{" "}
-              <strong>
-                {props.email} {"jaquelinedesouza@gmail.com"}
-              </strong>
-            </p>
-            <p>
-              Condomínio:{" "}
-              <strong>
-                {" "}
-                {props.condominio} {"Rosa & Silva"}
-              </strong>
-            </p>
-            <p>
-              Bloco:{" "}
-              <strong>
-                {" "}
-                {props.bloco} {7}
-              </strong>
-            </p>
+            <p>Username: {user.username}</p>
+            <p>E-mail: {user.email}</p>
+            <p>Nome: {user.nome}</p>
+            <p>Condominio: {user.condominio}</p>
+            <p>Bloco: {user.bloco}</p>
+            <p>Apto: {user.apto}</p>
           </UserInfo>
           <BtnUser>
             <Botao>Editar Perfil</Botao>
             <Botao primary>Excluir Perfil</Botao>
-            {/* <input type="button" value="Editar perfil" className='btn1'/>
-            <input type="button" value="Excluir conta"/> */}
           </BtnUser>
         </FrameUser>
 
         <section>
           <h3>Seus registros</h3>
-          {typeof listRegistros !== "undefined" ?
-            listRegistros.map((value) => {
+          {listRegistros.toString() !== "" ? (
+            listRegistros.map((registros) => {
               return (
                 <Registro
-                  key={value.id}
+                  key={registros.username}
                   listRegistros={listRegistros}
                   setListRegistros={setListRegistros}
-                  idProtocolo={value.idProtocolo}
-                  tipo_registro={value.tipo_registro}
-                  titulo={value.titulo}
-                  descricao={value.descricao}
-                  assunto_registro={value.assunto_registro}
+                  idProtocol={registros.idProtocol}
+                  tipo_registro={registros.tipo_registro}
+                  titulo={registros.titulo}
+                  descricao={registros.descricao}
+                  assunto_registro={registros.assunto_registro}
                 />
               );
-            }) : (<p>Você não possui nenhum registro ainda.</p>)}
+            })
+          ) : (
+            <p>Você não possui nenhum registro ainda.</p>
+          )}
         </section>
       </Container>
 
@@ -119,21 +105,47 @@ function User(props) {
 
           <div className="box">
             <div className="card">
-              <div className="icon" onClick={ () => {navigate("/reclamacao")}}>
-                <img src={negative} alt="" srcset="" />
+              <div
+                className="icon"
+                onClick={() => {
+                  navigate("/reclamacao");
+                }}
+              >
+                <img src={negative} alt="" />
                 Reclamação
               </div>
             </div>
-            <div className="card" onClick={ () => {navigate("/sugestao")}}>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/sugestao");
+              }}
+            >
               <div className="icon">
-                <img src={solicitar} alt="" srcset="" />
+                <img src={solicitar} alt="" />
                 Sugestão
               </div>
             </div>
-            <div className="card" onClick={ () => {navigate("/solicitacao")}}>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/solicitacao");
+              }}
+            >
               <div className="icon">
-                  <img src={lampada} alt="" srcset="" />
+                <img src={lampada} alt="" />
                 Solicitação
+              </div>
+            </div>
+            <div
+              className="card"
+              onClick={() => {
+                navigate("/elogio");
+              }}
+            >
+              <div className="icon">
+                <img src={gostar} alt="" />
+                Elogio
               </div>
             </div>
           </div>
@@ -149,15 +161,3 @@ function User(props) {
 }
 
 export default User;
-
-// function Userinf (props) {
-//   const [name, email, usuario, condominio, bloco] = props;
-//   return ([{
-//     name: name,
-//     email: email,
-//     usuario: usuario,
-//     condominio: condominio,
-//     bloco: bloco
-//   }]
-//   )
-// }

@@ -2,6 +2,8 @@ import house from '../../images/house.png'
 import owlfront from '../../images/owl-front.png'
 import { Link } from "react-router-dom";
 import { Principal, Frame1, Frame2 } from './HomeStyle';
+// import { useContext, useState } from 'react';
+// import { Contexto }  from '../../context/AuthContext'
 
 export default function Home () {
 

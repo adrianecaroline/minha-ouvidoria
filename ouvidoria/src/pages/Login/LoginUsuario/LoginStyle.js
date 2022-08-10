@@ -20,7 +20,7 @@ export const BannerLogin = styled.section`
     font-size: 1.8125rem;
     line-height: 2rem;
     color: white;
-    margin-top: 6rem;
+    margin-top: 6rem; 
     margin-left: 10rem;
     margin-right: 10rem;
   }

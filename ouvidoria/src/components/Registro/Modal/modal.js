@@ -5,12 +5,14 @@ import DialogActions from '../../../../node_modules/@material-ui/core/DialogActi
 import DialogContent from '../../../../node_modules/@material-ui/core/DialogContent/DialogContent';
 import DialogContentText from '../../../../node_modules/@material-ui/core/DialogContentText/DialogContentText';
 import DialogTitle from '../../../../node_modules/@material-ui/core/DialogTitle/DialogTitle';
-import Axios from "axios";
-import { useEffect, useState } from 'react';
+import { axiosInstance } from '../../../api_services/ouvidoriaApi';
+import { useEffect, useState, useContext } from 'react';
 
 export default function FormDialog(props) {
+
+
   const [deleteValue, setDeleteValue] = useState({
-    idProtocolo: props.idProtocolo,
+    idProtocol: props.idProtocol,
     registro: props.tipo_registro,
     titulo: props.titulo,
     assunto_registro: props.assunto_registro,
@@ -18,7 +20,7 @@ export default function FormDialog(props) {
   });
 
   const handleDelete = () => {
-    Axios.delete(`http://localhost:8080/ouvidoria/${deleteValue.idProtocolo}`
+    axiosInstance.delete(`/ouvidoria/${deleteValue.idProtocol}`
   ) 
   handleClose();
 }
@@ -31,15 +33,34 @@ export default function FormDialog(props) {
     props.setOpen(false);
   };
 
+  const style = () => {  
+      const mystyle = {
+      display: "flex",
+      flexDirection: "column",
+      gap: "10px"
+    };
+
+    return mystyle;
+  }
+  style();
+
+  const border = () => {
+    const mystyle = {
+      borderBottom: "2px solid #235ae2"
+    };
+    return mystyle;
+  }
+
   return (
     <div>
       <Dialog open={props.open} onClose={handleClose}>
-        <DialogTitle>(Nº do Protocolo: {props.idProtocolo})</DialogTitle>
+        <div  style={{width: "450px"}}>
+        <DialogTitle style={border()}> {/*(Nº do Protocolo: {props.idProtocolo})*/} Seu Registro</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={style()}>
             <>
               <div>
-                <span>Registro: <strong>{props.tipo_registro}</strong></span>
+                <span>Tipo: <strong>{props.tipo_registro}</strong></span>
               </div>
               <div>
                 <span>Titulo: </span>
@@ -60,6 +81,7 @@ export default function FormDialog(props) {
           <Button onClick={handleDelete}>Excluir</Button>
           <Button onClick={handleClose}>Fechar</Button>
         </DialogActions>
+        </div>
       </Dialog>
     </div>
   );
