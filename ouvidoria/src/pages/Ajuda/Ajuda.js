@@ -1,11 +1,8 @@
 import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
-<<<<<<< HEAD
 import FooterCss from "../../components/Footer/Footer.module.css"
 import { Link } from "react-router-dom";
-=======
 import { useNavigate } from "react-router-dom";
->>>>>>> 0314d9cdd161d99ab88e72993b156153cb68a188
 import Solicitacoes from "../../images/solicitacoes.png";
 import Registros from "../../images/registros.png"
 import {Container} from './AjudaStyle'

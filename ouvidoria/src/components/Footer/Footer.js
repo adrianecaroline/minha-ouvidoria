@@ -4,15 +4,8 @@ function Footer () {
 
   const navigate = useNavigate();
   return(
-<<<<<<< HEAD
-    <footer>
-      <tr>
-      <td><a onClick={() => { navigate("/desenvolvedores") }}>SOBRE OS DESENVOLVEDORES</a></td>
-      <td><a href="#">PERGUNTAS FREQUENTES</a></td>
-      <td><a href="#">FALE COM A GENTE</a></td>
-      </tr>
-    </footer>
-=======
+
+
     <Frame>
       <div className="info">
         <p><a onClick={() => { navigate("/desenvolvedores") }}>Sobre os desenvolvedores</a></p>
@@ -23,7 +16,6 @@ function Footer () {
       <div className="autorais">© REACTon 2022. Todos os Direitos Reservados</div>
       
     </Frame>
->>>>>>> 0314d9cdd161d99ab88e72993b156153cb68a188
   )
 
 }

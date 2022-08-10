@@ -155,12 +155,7 @@ export default function CondominioCad() {
                 <p>Caracteres especiais (!@#$%&*).</p>
               </div>
             </div>
-<<<<<<< HEAD
-            <h3>Logradouro</h3>
-=======
 
-            <h3>Endereço</h3>
->>>>>>> 0314d9cdd161d99ab88e72993b156153cb68a188
             <div className="forms">
               <div className="input-dados">
                 <label for="condominio"> Condominio: </label>
