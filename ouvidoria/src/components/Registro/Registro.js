@@ -1,12 +1,12 @@
 // import styles from './Registro.module.css'
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { Container } from "./RegistroStyle";
 import { FcNext } from "react-icons/fc";
 import Modal from "./Modal/modal";
 
 export default function Registro(props) {
-  // const { token, setToken } = useContext(Contexto);
-  const [open, setOpen] = React.useState(false);
+
+  const [open, setOpen] = useState(false);
 
   const handleClickArrow = () => {
     setOpen(true);
@@ -15,6 +15,7 @@ export default function Registro(props) {
   return (
     <>
       <Modal
+        next={props.next}
         open={open}
         setOpen={setOpen}
         idProtocol={props.idProtocol}
@@ -27,7 +28,7 @@ export default function Registro(props) {
       />
       <Container>
         <div>
-           Registro: {props.tipo_registro}
+          Registro: {props.tipo_registro}
           <p>{props.assunto_registro}</p>
         </div>
         <div className="icon">

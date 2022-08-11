@@ -29,7 +29,7 @@ export default function Login() {
 
         {/* <!-- login --> */}
         <LoginArea>
-          <h3><BiArrowBack size={35} onClick={() => { navigate(window.history.back());}} /></h3>
+          <h3><BiArrowBack size={35} onClick={() => {(window.history.back());}} /></h3>
           <img src={logo} alt="Logo da Minha Ouvidoria" />
           {/* 
         <!-- area do input --> */}
@@ -43,9 +43,7 @@ export default function Login() {
                 id="senha"
                 placeholder="Senha"
               />
-              <a href="inicio.html">
                 <input type="button" id="btn-login" value="Continue" onClick={ () => {navigate("/condominio-cadastro")}}/>
-              </a>
               <hr />
             </form>
           </LoginInput>
@@ -56,15 +54,13 @@ export default function Login() {
             <p>
               Esqueceu sua senha?{" "}
               <span>
-               <Link to="/esqueci-senha">
-                <a href="/">Clique aqui!</a>
-               </Link>
+                <a onClick={ () => {navigate("/esqueci-senha")}}>Clique aqui!</a>
               </span>
             </p>
             <p>Ainda não tem uma conta?</p>
-            <Link to="/condominio-cadastro">
-              <input type="button" value="Cadastre-se" />
-            </Link>
+            
+            <input type="button" value="Cadastre-se" onClick={ () => {navigate("/condominio-cadastro")}}/>
+            {/* Fazer modal mostrando condominio cadastrado ir para tela de login*/}
           </InfoLogin>
           {/* <!-- /esqueceu senha e cadastro --> */}
         </LoginArea>

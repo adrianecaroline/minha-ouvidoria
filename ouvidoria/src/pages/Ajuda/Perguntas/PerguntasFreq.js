@@ -2,14 +2,20 @@ import Menu from "../../../components/Menu/Menu";
 import Footer from "../../../components/Footer/Footer";
 import { Container } from "./PerguntasStyle";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { MenuMobile } from "../../../components/Menu/MenuMobile";
 
 
 export default function PerguntasFrequentes () {
+
   const navigate = useNavigate();
+
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <>
-      <Menu/>
+    <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible}/>
       <Container>
         <h1>Perguntas Frequentes</h1>
         <p>Consulte as perguntas que são feitas frequentemente para Minha Ouvidoria e tire sua dúvida.</p>

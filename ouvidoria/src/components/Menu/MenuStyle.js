@@ -62,7 +62,7 @@ export const Nav = styled.nav `
     padding: 0;
   }
   
-  li a {
+  li span {
     text-decoration: none;
     list-style-type: none;
     color: aliceblue;
@@ -73,7 +73,7 @@ export const Nav = styled.nav `
     cursor: pointer;
   }
   
-  li a:hover {
+  li span:hover {
     border-bottom: 2px solid rgb(81, 230, 130);
   }
 `;

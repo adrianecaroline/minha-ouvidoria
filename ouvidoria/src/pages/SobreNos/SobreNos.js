@@ -1,17 +1,23 @@
-import iconOwl from "../../images/icon-owl.png";
+import iconOwl from "../../images/owl-nav.png";
 import sobreNosWoman from "../../images/sobre-nos-woman.png";
 import { DivAzul, DivBranca } from "./SobreNosStyle";
-import Menu from "../../components/Menu/MenuRegistro";
+import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
+import { useState } from "react";
+import { MenuMobile } from '../../components/Menu/MenuMobile';
 
 import { useNavigate } from "react-router-dom";
 
 export default function SobreNos() {
+
   const navigate = useNavigate();
+
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <>
-      <Menu/>
+      <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible}/>
       <DivAzul>
         <section>
           <div className="divAzul">
@@ -37,13 +43,7 @@ export default function SobreNos() {
                 rápida e agir de forma prática!
               </p>
 
-              <button
-                type="button"
-                className="botao-time"
-                onClick={() => {
-                  navigate("/desenvolvedores");
-                }}
-              >
+              <button type="button" className="botao-time" onClick={() => { navigate("/desenvolvedores");}}>
                 Conheça nosso time!
               </button>
             </div>

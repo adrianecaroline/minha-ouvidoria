@@ -1,11 +1,11 @@
 import house from '../../images/house.png'
 import owlfront from '../../images/owl-front.png'
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Principal, Frame1, Frame2 } from './HomeStyle';
-// import { useContext, useState } from 'react';
-// import { Contexto }  from '../../context/AuthContext'
 
 export default function Home () {
+
+  const navigate = useNavigate();
 
   return (
     <Principal>
@@ -14,9 +14,7 @@ export default function Home () {
 
         <h1>Ajude a gerir os desafios de infraestrutura da sua comunidade!</h1>
         
-        <Link to="/login">
-        <button type="button">Começar</button>
-        </Link>
+        <button type="button" onClick={ () => {navigate("/login")}}>Começar</button>
         
       </Frame1>
 

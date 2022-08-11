@@ -1,20 +1,24 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Principal = styled.section `
+export const Principal = styled.section`
   display: flex;
   align-content: center;
   align-items: center;
+  height: 100vh;
 
   @media (max-width: 600px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
   }
 `;
 
-export const Frame1 = styled.div `
+export const Frame1 = styled.div`
   display: flex;
   flex-direction: column;
   width: 45%;
-  margin: 5% 9%;  
+  margin: 5% 9%;
+  gap: 1rem;
 
   img {
     width: 360px;
@@ -37,7 +41,7 @@ export const Frame1 = styled.div `
     cursor: pointer;
     box-shadow: 0 5px 3px 0 rgb(0 0 0 / 20%), 0 3px 9px 0 rgb(0 0 0 / 19%);
     color: #ffff;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
 
     :hover {
       background-color: #3a62b9;
@@ -45,7 +49,6 @@ export const Frame1 = styled.div `
   }
 
   @media (max-width: 980px) {
-
     img {
       width: 200px;
     }
@@ -62,43 +65,52 @@ export const Frame1 = styled.div `
   }
 
   @media (max-width: 600px) {
-    margin: 3% 0;
-    width: 60%;
+    margin: 0;
+    width: 80%;
 
     h1 {
-      font-size: 20px;
+      margin: 2.4rem auto;
+      font-size: 1.7rem;
+      text-align: center;
     }
 
-  }
-
-  @media (max-width: 400px) {
-    margin: 10% auto;
-    align-items: center;
-
-    img{
-      width: 180px;
-    }
-
-    h1 {
-      font-size: 16px;
+    img {
+      width: 18rem;
+      margin: 0 auto;
     }
 
     button {
-      width: 80px;
-      height: 30px;
-      font-size: 10px;
-      align-items: center;
+      width: 10rem;
+      height: 40px;
+      font-size: 1.1rem;
+      margin: 0 auto;
     }
   }
 
+  @media (max-width: 400px) {
+    img {
+      width: 16rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 10rem;
+      height: 40px;
+      font-size: 1rem;
+      align-items: center;
+    }
+  }
 `;
 
-export const Frame2 = styled.div `
+export const Frame2 = styled.div`
   display: flex;
   width: 55%;
   float: right;
   margin: 4% 1%;
-  
+
   img {
     width: 100%;
     margin: 0;
@@ -109,7 +121,7 @@ export const Frame2 = styled.div `
     width: 50%;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;

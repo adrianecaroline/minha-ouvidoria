@@ -1,23 +1,22 @@
 import { Container, Section } from "./RegistroListaStyle";
 import Registro from "../../../components/Registro/RegistroCondominio/Registros";
-// import Axios from 'axios';
-import { axiosInstance } from "../../../api_services/ouvidoriaApi";
-import { useState, useEffect } from "react";
+import Axios from 'axios';
+//import { axiosInstance } from "../../../api_services/ouvidoriaApi";
+import { useState } from "react";
 import Menu from "../../../components/Menu/Menu";
 import Footer from "../../../components/Footer/Footer";
 
 export default function Lista() {
   const [registros, setRegistros] = useState([]);
 
-  useEffect(() => {
-    axiosInstance
-      .get("http://localhost:4200/ouvidoria/registers")
+  const handleRegistro = (registro) => {
+
+    Axios
+      .get("http://localhost:4200/ouvidoria/registro/" + (registro))
       .then((response) => {
         setRegistros(response.data);
       });
-
-    console.log("deveria aparecer " + registros);
-  }, []);
+  }
 
   return (
     <>
@@ -27,16 +26,16 @@ export default function Lista() {
         <Section>
         <div className="principal">
             <div className='cabecalho'>
-                <h3>Solicitação</h3>
-                <h3>Reclamação</h3>
-                <h3>Sugestão</h3>
-                <h3>Elogio</h3>
+                <h3 onClick={() => handleRegistro('Solicitação')}>Solicitação</h3>
+                <h3 onClick={() => handleRegistro('Reclamação')}>Reclamação</h3>
+                <h3 onClick={() => handleRegistro('Sugestão')}>Sugestão</h3>
+                <h3 onClick={() => handleRegistro('Elogio')}>Elogio</h3>
             </div>
           {registros.toString() !== "" ? (
-            registros.map((registro) => {
+            registros.map((registro, index) => {
               return (
                 <Registro
-                  key={registro.id_usuario}
+                  key={`${registro.id_usuario}-${index}`}
                   id_usuario={registro.id_usuario}
                   numero={registro.numero}
                   idProtocol={registro.idProtocol}
@@ -47,9 +46,7 @@ export default function Lista() {
                 />
               );
             })
-          ) : (
-            <p className="p">Não há registros no momento.</p>
-          )}
+          ) : (<p className="p">Não há registros no momento.</p>)}
         </div>
         </Section>
       </Container>

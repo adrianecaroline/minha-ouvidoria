@@ -14,13 +14,13 @@ export const Container = styled.main`
     width: 20rem;
   }
 
-  span a {
+  span {
     text-decoration: none;
     color: #235ae2;
     cursor: pointer;
   }
 
-  a:hover {
+  span:hover {
     color: #163a89;
   }
 

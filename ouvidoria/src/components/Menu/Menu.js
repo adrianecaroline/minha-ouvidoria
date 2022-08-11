@@ -4,11 +4,11 @@ import { Header, Nav, Btn } from "./MenuStyle";
 import { IoMenu } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { Contexto } from "../../context/AuthContext";
+import { Contexto } from "../../App";
 
 function Menu({ setMenuVisible }) {
-  const { token, setToken } = useContext(Contexto);
-  const { user, setUser } = useContext(Contexto);
+  
+  const { setToken } = useContext(Contexto);
 
   const navigate = useNavigate();
 
@@ -18,33 +18,21 @@ function Menu({ setMenuVisible }) {
       <Nav>
         <ul>
           <li>
-            <a onClick={() => { navigate("/sobre-nos")}}> Sobre Nós </a>
+            <span onClick={() => { navigate("/sobre-nos")}}> Sobre Nós </span>
           </li>
           <li>
-            <a onClick={() => { navigate("/ajuda")}}> Ajuda </a>
+            <span onClick={() => { navigate("/ajuda")}}> Ajuda </span>
           </li>
+
           <li>
-            <a onClick={() => { navigate("/perfil-user")}}>Perfil</a>
+            <span onClick={() => { navigate("/perfil-user")}}>Perfil</span>
           </li>
         </ul>
       </Nav>
-      <Btn
-        onClick={() => {
-          localStorage.removeItem("token");
-          setToken(null);
-          // localStorage.removeItem("user");
-          // setUser(null);
-          navigate("/");
-        }}
-      >
+      <Btn onClick={() => { localStorage.removeItem("token"); setToken(null); navigate("/");}} >
         Sair
       </Btn>
-      <IoMenu
-        size={34}
-        color="#ffff"
-        className="mobile"
-        onClick={() => setMenuVisible(true)}
-      />
+      <IoMenu size={34} color="#ffff" className="mobile" onClick={() => setMenuVisible(true)} />
     </Header>
   );
 }

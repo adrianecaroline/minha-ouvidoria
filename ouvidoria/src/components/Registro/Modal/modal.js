@@ -6,10 +6,9 @@ import DialogContent from '../../../../node_modules/@material-ui/core/DialogCont
 import DialogContentText from '../../../../node_modules/@material-ui/core/DialogContentText/DialogContentText';
 import DialogTitle from '../../../../node_modules/@material-ui/core/DialogTitle/DialogTitle';
 import { axiosInstance } from '../../../api_services/ouvidoriaApi';
-import { useEffect, useState, useContext } from 'react';
+import { useState } from 'react';
 
 export default function FormDialog(props) {
-
 
   const [deleteValue, setDeleteValue] = useState({
     idProtocol: props.idProtocol,
@@ -21,7 +20,14 @@ export default function FormDialog(props) {
 
   const handleDelete = () => {
     axiosInstance.delete(`/ouvidoria/${deleteValue.idProtocol}`
-  ) 
+  ).then((response) => {
+    props.next()
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
   handleClose();
 }
 
@@ -42,7 +48,27 @@ export default function FormDialog(props) {
 
     return mystyle;
   }
-  style();
+
+  const btn = () => {
+    const mystyle = {
+      background: "#235ae2",
+      color: "#ffffff",
+      padding: "4px 6px",
+      textTransform: "none",
+      fontFamily: "Montserrat"
+    }
+    return mystyle
+  }
+  const btnR = () => {
+    const mystyle = {
+      background: "#ff0000",
+      color: "#ffffff",
+      padding: "4px 6px",
+      textTransform: "none",
+      fontFamily: "Montserrat"
+    }
+    return mystyle
+  }
 
   const border = () => {
     const mystyle = {
@@ -78,8 +104,8 @@ export default function FormDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleDelete}>Excluir</Button>
-          <Button onClick={handleClose}>Fechar</Button>
+          <Button style={btnR()} onClick={handleDelete}>Excluir</Button>
+          <Button style={btn()} onClick={handleClose}>Fechar</Button>
         </DialogActions>
         </div>
       </Dialog>

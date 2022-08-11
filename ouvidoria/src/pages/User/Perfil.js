@@ -6,13 +6,14 @@ import negative from "../../images/negative.png";
 import lampada from "../../images/lampada.png";
 import gostar from "../../images/gostar.png";
 import Menu from "../../components/Menu/Menu.js";
-
+import ModalEd from "../../components/Modal/ModalEd";
+import ModalRemov from "../../components/Modal/ModalRemv";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import { axiosInstance } from "../../api_services/ouvidoriaApi";
-import { Contexto } from "../../context/AuthContext.js";
+import { Contexto } from "../../App.js";
 
 import {
   Container,
@@ -24,37 +25,46 @@ import {
 } from "./PerfilStyle";
 
 function User() {
-
   const navigate = useNavigate();
 
   const { token, setToken } = useContext(Contexto);
   const { user, setUser } = useContext(Contexto);
 
   const [listRegistros, setListRegistros] = useState([]);
-  
+
   useEffect(() => {
-    userRegistro();
-  }, [listRegistros]);
-
-  // useEffect(() => {
-  //   if (!token) {
-  //   navigate("/");
-  //   }
-  // }, []);
-
-  const userRegistro = () => {
-    if (user) {
+    // if (!token) {
+    //   navigate("/login-usuario");
+    //   return;
+    // }
+    user.username &&
       axiosInstance.get("ouvidoria/registers/" + user.username).then((res) => {
+        console.log(res);
         setListRegistros(res.data);
       });
-    }
-  };
+  }, [user]);
 
   //menu mobile
   const [menuVisible, setMenuVisible] = useState(false);
 
+  //Modal
+  const [open, setOpen] = useState(false);
+
+  const handleClickArrow = () => {
+    console.log("funcionando " + setOpen);
+    setOpen(true);
+  };
+
+  const [openrem, setOpenRem] = useState(false);
+  const handleClickBtn = () => {
+    setOpenRem(true);
+  };
+
   return (
     <>
+      <ModalEd open={open} setOpen={setOpen} />
+      <ModalRemov openrem={openrem} setOpenRem={setOpenRem} />
+
       <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
       <Menu setMenuVisible={setMenuVisible} />
       <Container>
@@ -71,18 +81,29 @@ function User() {
             <p>Apto: {user.apto}</p>
           </UserInfo>
           <BtnUser>
-            <Botao>Editar Perfil</Botao>
-            <Botao primary>Excluir Perfil</Botao>
+            <Botao onClick={() => handleClickArrow()}>Editar Perfil</Botao>
+            <Botao onClick={() => handleClickBtn()} primary>
+              Excluir Perfil
+            </Botao>
           </BtnUser>
         </FrameUser>
 
         <section>
           <h3>Seus registros</h3>
-          {listRegistros.toString() !== "" ? (
-            listRegistros.map((registros) => {
+          {listRegistros.length ? (
+            listRegistros.map((registros, index) => {
+              //if (!registros.assunto_registro) return;
               return (
                 <Registro
-                  key={registros.username}
+                  next={() => {
+                    axiosInstance
+                      .get("ouvidoria/registers/" + user.username)
+                      .then((res) => {
+                        console.log(res);
+                        setListRegistros(res.data);
+                      });
+                  }}
+                  key={`${registros.username}-${index}`}
                   listRegistros={listRegistros}
                   setListRegistros={setListRegistros}
                   idProtocol={registros.idProtocol}

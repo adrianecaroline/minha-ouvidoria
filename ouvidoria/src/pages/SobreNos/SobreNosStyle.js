@@ -1,113 +1,114 @@
 import styled from "styled-components";
 
 export const DivAzul = styled.div`
-
-.divAzul{
+  .divAzul {
+    margin-top: 2%;
     padding-top: 8%;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
     padding-left: 15%;
     padding-right: 15%;
-    background-color: #74ACE1;
+    background-color: #a8c7e5;
     display: flex;
-    justify-content:space-evenly;
-} 
-.divCoruja{
+    justify-content: space-evenly;
+    gap: 6.3rem;
+  }
+  .divCoruja {
     display: flex;
     align-items: center;
     justify-content: left;
     width: 90rem;
-}
-.divCoruja img{
-    width: 15rem;   
-}
-.divTexto1{
-    width: 200%;
-    text-align: justify;
-    font-size: 1.5rem;
+  }
+  .divCoruja img {
+    width: 21rem;
+  }
+  .divTexto1 {
+    font-size: 1.33rem;
+    text-align: right;
     font-weight: 550;
     color: #282525;
-    margin-left: 3rem;
+    margin-left: 5rem;
     margin-right: 1rem;
-}
+  }
 
-@media (max-width: 1050px){
-    .divCoruja{
-        width: 60rem;
-    } 
-    .divCoruja img{
-        width: 13rem;
+  @media (max-width: 1050px) {
+    .divCoruja {
+      width: 60rem;
     }
-    .divTexto1{
-        font-size: 1.3rem;
+    .divCoruja img {
+      width: 13rem;
     }
-}
+    .divTexto1 {
+      font-size: 1.3rem;
+    }
+  }
 
-@media (max-width: 900px){
-    .divAzul{
-        padding-top: 10%;
-        padding-left: 8%;
-        padding-right: 8%;
+  @media (max-width: 900px) {
+    .divAzul {
+      padding-top: 10%;
+      padding-left: 8%;
+      padding-right: 8%;
     }
-    .divCoruja{
-        width: 50rem;
-    } 
-}
-@media (max-width: 700px){
-    .divTexto1{
-        text-align: center;
-        margin: 0;
+    .divCoruja {
+      width: 50rem;
     }
-    .divCoruja{
-        width: 50rem;
+  }
+  @media (max-width: 700px) {
+    .divTexto1 {
+      text-align: center;
+      margin: 0;
     }
-}
-@media (max-width: 550px){
-    .divAzul{
-        padding-top: 18%;
-        display: block;
-        width: auto;
+    .divCoruja {
+      width: 50rem;
     }
-    .divTexto1{
-        text-align: justify;
-        font-size: 1.1rem;
-        width: 90%;
-        margin: auto;
+  }
+  @media (max-width: 550px) {
+    .divAzul {
+      padding-top: 18%;
+      display: block;
+      width: auto;
     }
-    .divCoruja{
-        justify-content: center;
-        width: 30rem;
-    } 
-    .divCoruja img{
-        width: 8rem;
+    .divTexto1 {
+      text-align: justify;
+      font-size: 1.1rem;
+      width: 90%;
+      margin: auto;
     }
-}
+    .divCoruja {
+      justify-content: center;
+      width: 30rem;
+    }
+    .divCoruja img {
+      width: 8rem;
+    }
+  }
 `;
 
 export const DivBranca = styled.div`
-
-.divBranca{
-    padding: 3% 13%;
+  .divBranca {
+    padding: 0% 13%;
     background-color: #f8f8f8;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
-}
-.divTexto2{
+  }
+  .divTexto2 {
     width: 50%;
-}
-.divTexto2 p {
+  }
+  .divTexto2 p {
     width: 80%;
-    text-align: justify;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    text-align: left;
     font-weight: 550;
-    color: #2539EA;
-}
-.botao-time{
+    color: #2539ea;
+    margin: 0;
+  }
+  .botao-time {
     margin-top: 2.5rem;
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
-    width: 20rem; height: 3rem;
+    width: 20rem;
+    height: 3rem;
     border-radius: 0.5rem;
     border-style: none;
     background-color: #23e24c;
@@ -118,83 +119,52 @@ export const DivBranca = styled.div`
     transition: background-color 0.4s linear;
 
     :hover {
-        background-color: #3a62b9;
-      }
-}
-.divWoman img{
+      background-color: #3a62b9;
+    }
+  }
+  .divWoman img {
     width: 22rem;
-}
+  }
 
-@media (max-width: 900px){
-    .divWoman img{
-        width: 18rem;
+  @media (max-width: 900px) {
+    .divWoman img {
+      width: 18rem;
     }
-    .divBranca{
-        padding-right: 8%;
-    }
-    .divTexto2 p {
-        width: auto;
-    }
-}
-@media (max-width: 770px){
-    .divTexto2 p {
-        font-size: 1.3rem;
-        width: 90%;
-    }
-    .botao-time{
-        font-size: 1rem;
-        width: 15rem; height: 3rem;
-    }
-}
-@media (max-width: 550px){
-    .divBranca{
-        width: auto;
+    .divBranca {
+      padding-right: 8%;
     }
     .divTexto2 p {
-        font-size: 1.1rem;
-        text-align: left;
+      width: auto;
     }
-    .divWoman img{
-        width: 15rem;
+  }
+  @media (max-width: 770px) {
+    .divTexto2 p {
+      font-size: 1.3rem;
+      width: 90%;
     }
-    .botao-time{
-        margin-top: auto;
-        font-size: 0.8rem;
-        width: 10rem; height: 2.5rem;
-        font-weight: 500;
+    .botao-time {
+      font-size: 1rem;
+      width: 15rem;
+      height: 3rem;
     }
-}
+  }
+  @media (max-width: 550px) {
+    .divBranca {
+      width: auto;
+    }
+    .divTexto2 p {
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    .divWoman img {
+      width: 15rem;
+    }
+    .botao-time {
+      margin-top: auto;
+      font-size: 0.8rem;
+      width: 10rem;
+      height: 2.5rem;
+      font-weight: 500;
+    }
+  }
 `;
-
-// export const FooterSobre = styled.section`
-
-// span{
-//     background-color: #1348aa;
-//     height: 8rem;
-//     display: flex;
-//     align-items: center;
-// }
-// #divFooter{
-//     width: 100%;
-// }
-// #rodape{
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-around;
-//     text-align: center;
-//     margin-left: 20%;
-//     margin-right: 20%;
-// }
-// #copyright{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     color: #ffff;
-//     word-spacing: 3px;   
-// }
-// p > a{
-//     text-decoration: none;
-//     color: #ffff;
-//     word-spacing: 4px;
-// }
-// `;

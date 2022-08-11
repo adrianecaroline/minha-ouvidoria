@@ -3,18 +3,12 @@ import styled from "styled-components";
 export const Container = styled.main `
     margin: 4% 14%;
     padding-top: 3%;
+    height: 100vh;
 
     h1 {
-        // text-align: center;
         font-size: 28px;
         padding-left: 2rem;
       }
-
-    @media (max-width: 600px) {
-      padding-top: 10%;
-      margin: 4% 3%;
-      width: 480px;
-    }
 `
 
 export const Section = styled.section`
@@ -46,7 +40,7 @@ export const Section = styled.section`
   
   .cabecalho {
     margin: 0 auto;
-    width: 800px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #bdb3b3;
@@ -59,17 +53,6 @@ export const Section = styled.section`
 
     :hover {
       background: #f3f3f3;
-    }
-  }
-
-  @media (max-width: 600px) {
-
-
-    .cabecalho {
-      display: flex;
-      flex-direction: column;
-      width: 350px;
-      text-align: center;
     }
   }
 `;

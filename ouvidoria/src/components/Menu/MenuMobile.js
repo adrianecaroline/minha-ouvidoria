@@ -1,24 +1,36 @@
 import { Container } from './MenuMobileStyles';
 import { IoClose } from "react-icons/io5";
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Contexto } from "../../App";
 
 export function MenuMobile({ menuVisible, setMenuVisible }){
 
+  const { setToken } = useContext(Contexto);
+  const navigate = useNavigate()
+
   useEffect(() => {
     document.body.style.overflowY = menuVisible ? 'hidden' : 'auto';
-  }, [menuVisible]);
+  }, [menuVisible]); 
 
   return(
     <Container isVisible={menuVisible}>
       <IoClose size={40} color="#ffff" onClick={() => setMenuVisible(false)}/>
       <nav>
         <ul>
-          <li>Sobre Nós</li>
-          <li>Ajuda</li>
-          <li>Editar Perfil</li>
+        <li>
+            <span onClick={() => { navigate("/sobre-nos")}}> Sobre Nós </span>
+          </li>
+          <li>
+            <span onClick={() => { navigate("/ajuda")}}> Ajuda </span>
+          </li>
+
+          <li>
+            <span onClick={() => { navigate("/perfil-user")}}>Perfil</span>
+          </li>
         </ul>
 
-        <button type="submit">Sair</button>
+        <button type="button" onClick={() => { localStorage.removeItem("token"); setToken(null); navigate("/");}}>Sair</button>
       </nav>
     </Container>
   )

@@ -1,82 +1,72 @@
+import React from "react";
 import Menu from "../../../components/Menu/MenuRegistro";
-import { Container, Checkbox, ButtonCad } from "./MoradorCadastroStyle";
-import { useEffect, useState } from "react";
+import { Container, ButtonCad } from "./MoradorCadastroStyle";
+import {  useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
 import validator from "validator";
+import { axiosInstance } from "../../../api_services/ouvidoriaApi";
+import { MenuMobile } from "../../../components/Menu/MenuMobile";
 
 export default function CondominioCad() {
-  // const [sucessesMsg, setsucessesMsg] = useState(false);
-  // const [errorMsg, setErrorMsg] = useState(false);
 
-  const navigate = useNavigate();
-  const [values, setValues] = useState();
+  const [menuVisible, setMenuVisible] = useState(false);
 
-  const handleChangeValues = (value) => {
-    setValues((prevValue) => ({
-      ...prevValue,
-      [value.target.name]: value.target.value,
-    }));
-  };
+  const [values, setValues] = useState({
+    
+    nome: '',
+    dtNasci: '',
+    email: '',
+    senha: '', 
+    condominio: '',
+    bloco: '',
+    apto: '',
+    uf: '', 
+    cep: ''
+  });
 
   const handleClickBtn = () => {
     //lógica para enviar os dados a api pelo axios
     console.log(values);
+    if (values.username === "" || values.nome === "" || values.dtNasci === "" || values.email === ""|| values.senha === "" || values.condominio === "" || values.cep === "" || values.bloco === "" || values.uf === "" || values.apto === "") {
+      console.log("campos inválidos");
+    } else {
+    axiosInstance
+      .post("http://localhost:4200/user", {
+        username: values.username,
+        nome: values.nome,
+        dtNasci: values.dtNasci,
+        email: values.email,
+        senha: values.senha,
+        condominio: values.condominio,
+        bloco: values.bloco,
+        apto: values.apto,
+        uf: values.uf,
+        cep: values.cep
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
   };
 
   //validação email
   const [emailError, setEmailError] = useState("");
-  const validateEmail = (e) => {
-    let email = e.target.value;
 
-    if (validator.isEmail(email)) {
-      setEmailError(" ");
-    } else {
-      setEmailError("Email inválido");
-    }
-  };
-
-  //validação senha
   const [pwdError, setPwdError] = useState("");
-  const validatePwd = (e) => {
-    let senha = e.target.value;
 
-    if (
-      validator.isStrongPassword(senha, {
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-      })
-    ) {
-      setPwdError("");
-    } else {
-      setPwdError("A senha não se enquadra");
-    }
-  };
-
-  // //confirmação senha
-
-  // const [pwdValid, setPwdValid] = useState('')
-  // const confirmPwd = (e) => {
-  //   let pwd = e.target.value;
-
-  //   if(pwd !==  email){
-  //     setPwdValid('senhas não batem')
-  //   } else {
-  //     setPwdValid('senhas')
-  //   }
-  // }
 
   return (
     <>
-      <Menu />
+    <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible}/>
       <Container>
         <BiArrowBack
           size={35}
           onClick={() => {
-            navigate(window.history.go(-2));
+            (window.history.go(-2));
           }}
         />
         <h1> Cadastro de Perfil </h1>
@@ -85,49 +75,67 @@ export default function CondominioCad() {
             <h3>Dados Pessoais</h3>
             <div className="forms">
               <div className="input-dados">
-                <label for="nome"> Nome completo: </label>
+                <label htmlFor="nome"> Nome completo: </label>
                 <input
                   type="text"
                   name="nome"
                   className="nomeCompleto"
                   required
-                  onChange={handleChangeValues}
+                  value={values.nome}
+                  onChange={(e) =>
+                    setValues({ ...values, nome: e.target.value })
+                  }
                 />
               </div>
 
               <div className="input-dados">
-                <label for="idUsername">Nome de usuário:</label>
+                <label htmlFor="idUsername">Nome de usuário:</label>
                 <input
                   type="text"
                   name="idUsername"
                   id="UserName"
                   className="username"
                   required
-                  onChange={handleChangeValues}
+                  value={values.username}
+                  onChange={(e) =>
+                    setValues({ ...values, username: e.target.value })
+                  }
                 />
               </div>
 
               <div className="input-dados">
-                <label for="dtNasci">Data de Nascimento:</label>
+                <label htmlFor="dtNasci">Data de Nascimento:</label>
                 <input
                   type="date"
                   name="dtNasci"
                   className="data"
                   required
-                  onChange={handleChangeValues}
+                  value={values.dtNasci}
+                  onChange={(e) =>
+                    setValues({ ...values, dtNasci: e.target.value })
+                  }
                 ></input>
               </div>
             </div>
 
             <div className="forms">
               <div className="input-dados">
-                <label for="E-mail"> Email: </label>
+                <label htmlFor="email"> Email: </label>
                 <input
                   type="email"
                   name="email"
                   className="email"
                   required
-                  onChange={(e) => validateEmail(e)}
+                  value={values.email}
+                  onChange={(e) => {
+                    setValues({ ...values, email: e.target.value });
+                    let valor = e.target.value;
+                    if (validator.isEmail(valor)) {
+                      return setEmailError("");
+                    } else {
+                      return setEmailError("Email inválido");
+                    }
+                  }}
                 />
                 <span style={{ color: "red" }}>{emailError}</span>
               </div>
@@ -136,13 +144,28 @@ export default function CondominioCad() {
             <div>
               <div className="forms">
                 <div className="input-dados">
-                  <label for="senha">Senha:</label>
+                  <label htmlFor="password">Senha:</label>
                   <input
                     type="password"
                     name="password"
                     className="senha"
                     required
-                    onChange={(e) => validatePwd(e)}
+                    onChange={(e) => {
+                      setValues({ ...values, senha: e.target.value });
+                      let senha = e.target.value;
+                      if (validator.isStrongPassword(senha, {
+                          minLength: 8,
+                          minLowercase: 1,
+                          minUppercase: 1,
+                          minNumbers: 1,
+                          minSymbols: 1,
+                        })
+                      ) {
+                        setPwdError("");
+                      } else {
+                        setPwdError("A senha não se enquadra");
+                      }
+                    }}
                   />
                   <span style={{ color: "red" }}>{pwdError}</span>
                 </div>
@@ -156,55 +179,57 @@ export default function CondominioCad() {
               </div>
             </div>
 
+            <h3>Endereço</h3>
             <div className="forms">
               <div className="input-dados">
-                <label for="condominio"> Condominio: </label>
+                <label htmlFor="condominio"> Condominio: </label>
                 <input
                   type="text"
                   name="condominio"
                   className="condominio"
                   required
-                  onChange={handleChangeValues}
+                  onChange={(e) => {
+                    setValues({ ...values, condominio: e.target.value })}}
                 />
               </div>
 
               <div className="input-dados">
-                <label for="bloco"> Bloco: </label>
-                <input
-                  type="text"
-                  name="bloco"
-                  className="bloco"
-                  required
-                  onChange={handleChangeValues}
+                <label htmlFor="bloco"> Bloco: </label>
+                <input type="text" 
+                name="bloco" 
+                className="bloco" 
+                required 
+                onChange={(e) => {
+                  setValues({ ...values, bloco: e.target.value })}}
                 />
               </div>
 
               <div className="input-dados">
-                <label for="apto"> Nº Apartamento: </label>
-                <input
-                  type="number"
-                  name="apto"
-                  className="numero"
-                  required
-                  onChange={handleChangeValues}
+                <label htmlFor="apto"> Nº Apartamento: </label>
+                <input type="number" 
+                name="apto" 
+                className="numero" 
+                required 
+                onChange={(e) => {
+                  setValues({ ...values, apto: e.target.value })}}
                 />
               </div>
 
               <div className="input-dados">
-                <label for="UF"> UF: </label>
-                <input
-                  type="text"
-                  className="UF"
-                  name="UF"
-                  required
-                  onChange={handleChangeValues}
+                <label htmlFor="uf"> UF: </label>
+                <input type="text" 
+                className="UF" 
+                name="uf" 
+                required 
+                onChange={(e) => {
+                  setValues({ ...values, uf: e.target.value })}}
                 />
               </div>
             </div>
 
             <div className="forms">
               <div className="input-dados">
-                <label for="cep"> CEP: </label>
+                <label htmlFor="cep"> CEP: </label>
                 <input
                   type="number"
                   name="cep"
@@ -212,7 +237,8 @@ export default function CondominioCad() {
                   min="00000001"
                   max="99999999"
                   required
-                  onChange={handleChangeValues}
+                  onChange={(e) => {
+                    setValues({ ...values, cep: e.target.value })}}
                 />
               </div>
             </div>
