@@ -11,12 +11,16 @@ export const Container = styled.main`
   span {
     font-weight: bold;
   }
+  @media (max-width: 900px) {
+    width: 350px;
+    height: 500px;
+  }
 `;
 
 export const Registro = styled.section`
   display: flex;
   gap: 6.5rem;
-  
+
   span {
     font-weight: bold;
   }
@@ -28,6 +32,11 @@ export const Feedback = styled.section`
     background: #e9e9e9;
     border-radius: 3px;
     padding: 8px;
+  }
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
   }
 
   button {
@@ -49,5 +58,13 @@ export const Feedback = styled.section`
 
   .feedback-msg {
     margin-left: 2.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .msg {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0 1rem 0;
+    }
   }
 `;
