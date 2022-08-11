@@ -10,11 +10,10 @@ export const Container = styled.main `
         padding-left: 2rem;
       }
 
-    @media (max-width: 600px) {
-      padding-top: 10%;
-      margin: 4% 3%;
-      width: 480px;
-    }
+  @media (max-width: 900px) {
+    padding-top: 10%;
+    margin: 4% 3%;
+  }
 `
 
 export const Section = styled.section`
@@ -62,8 +61,7 @@ export const Section = styled.section`
     }
   }
 
-  @media (max-width: 600px) {
-
+  @media (max-width: 900px) {
 
     .cabecalho {
       display: flex;

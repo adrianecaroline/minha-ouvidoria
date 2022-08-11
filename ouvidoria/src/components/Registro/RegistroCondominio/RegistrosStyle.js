@@ -12,18 +12,18 @@ export const Container = styled.main `
   height: 290px;
   border-top: 1px solid;
 
-  @media (max-width: 600px) {
-    width: 350px;
-    height: 480px;
-}
-    
+    @media (max-width: 900px) {
+        width: 350px;
+        height: 500px;
+    }
+
 `
 
 export const Registro = styled.section `
     display: flex;
     gap: 6.5rem;
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         display: flex;
         flex-direction: column;
         gap: 0rem;
@@ -57,7 +57,7 @@ export const Feedback = styled.section `
         margin-left: 2.5rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         
         .msg {
             display: flex;
