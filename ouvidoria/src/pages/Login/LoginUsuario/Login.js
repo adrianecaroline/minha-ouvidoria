@@ -32,7 +32,7 @@ export default function Login() {
 
 
   const login = () => {
-    if(values.email === "" || values.senha === "") {
+    if(values.email === "" || values.senha === "" ) {
       console.log("Email ou senha inválidos")
       setOpenWarn(true)
     } else {

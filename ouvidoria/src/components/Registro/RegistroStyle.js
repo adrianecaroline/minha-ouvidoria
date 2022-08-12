@@ -28,4 +28,14 @@ export const Container = styled.div `
     font-size: 14px;
   }
 
+  @media (max-width: 868px) {
+    width: 300px;
+    height: 80px;
+  }
+
+  @media (max-width: 420px) {
+    width: 300px;
+    height: 85px;
+  }
+
 `;

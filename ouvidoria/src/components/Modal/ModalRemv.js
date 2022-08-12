@@ -51,7 +51,7 @@ export default function FormRemov(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <div style={{ width: "450px" }}>
+        <div>
           <DialogTitle id="alert-dialog-title">
             Tem certeza que quer excluir seu perfil?
           </DialogTitle>

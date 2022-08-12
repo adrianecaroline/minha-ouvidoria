@@ -1,4 +1,6 @@
 import Menu from "../../components/Menu/Menu";
+import { useState } from "react";
+import { MenuMobile } from "../../components/Menu/MenuMobile";
 import { MainDev, Dev } from './DevStyle';
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import devArthur from "../../images/dev-arthur.jpeg"
@@ -6,15 +8,16 @@ import devLucas from "../../images/dev-lucas.jpeg"
 import devMylena from "../../images/dev-mylena.jpeg"
 import devThais from "../../images/dev-thais.jpeg"
 import devAdriane from "../../images/dev-adriane.jpeg"
-import { Container } from "../Cadastro/Condominio/condominio_cadStyle";
 
 
 export default function Desenvolvedores () {
 
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <Dev>
-      <Menu/>
+      <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible}/>
       <MainDev>
         <div>
           <div className="card-dev">

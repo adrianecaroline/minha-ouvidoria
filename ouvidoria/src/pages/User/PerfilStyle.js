@@ -12,7 +12,7 @@ export const Container = styled.main`
   }
 
   section {
-     height: 460px;
+    height: 460px;
     padding: 6px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -44,6 +44,14 @@ export const Container = styled.main`
 
   @media (max-width: 600px) {
     margin: 16% 1%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  @media (max-width: 420px) {
+    padding-top: 25%;
+    margin: 0% 1%;
   }
 `;
 
@@ -90,9 +98,10 @@ export const UserInfo = styled.div`
 
   @media (max-width: 870px) {
     margin: 2% 11%;
+    gap: 1rem;
 
     p {
-      font-size: 14px;
+      font-size: 15px;
       margin: 0rem 0;
     }
   }
@@ -139,16 +148,19 @@ export const Frame = styled.div`
   gap: 6rem;
   justify-content: center;
 
+  .profile {
+    width: 24rem;
+  }
+
   @media (max-width: 870px) {
     gap: 2rem;
-    
+
     .profile {
       width: 20rem;
     }
   }
 
   .carrossel {
-
     > h3 {
       color: #2539ea;
       text-align: center;
@@ -192,32 +204,49 @@ export const Frame = styled.div`
       }
     }
 
-
     @media (max-width: 870px) {
-       h3 {
+      h3 {
         color: #2539ea;
         text-align: center;
         font-size: 20px;
       }
 
-       .box {
+      .box {
         border-radius: 3px;
         box-sizing: border-box;
       }
 
-       .card {
+      .card {
         width: 110px;
         height: 129px;
       }
 
-       .icon {
+      .icon {
         width: 30px;
       }
-      
     }
   }
 
-  .profile {
-    width: 24rem;
+  @media (max-width: 420px) {
+    img {
+      width: 19rem;
+    }
+
+    .carrossel {
+      .card {
+        width: 74px;
+        height: 116px;
+        margin-top: 5%;
+      }
+
+      .icon {
+        font-size: 11px;
+      }
+
+      img {
+        width: 43px;
+        margin-top: 7%;
+      }
+    }
   }
 `;

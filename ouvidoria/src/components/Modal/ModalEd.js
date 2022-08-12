@@ -85,7 +85,7 @@ export default function FormEditar(props) {
   return (
     <div>
       <Dialog open={props.open} onClose={handleClose}>
-        <div style={{ width: "450px" }}>
+        <div >
           <DialogTitle>Editar Perfil</DialogTitle>
           <DialogContent>
             <DialogContentText>

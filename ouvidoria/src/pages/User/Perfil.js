@@ -25,6 +25,7 @@ import {
 } from "./PerfilStyle";
 
 function User() {
+  
   const navigate = useNavigate();
 
   const { token, setToken } = useContext(Contexto);
@@ -59,12 +60,12 @@ function User() {
 
   return (
     <>
-      <ModalEd open={open} setOpen={setOpen} />
       <ModalRemov openrem={openrem} setOpenRem={setOpenRem} />
 
       <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
       <Menu setMenuVisible={setMenuVisible} />
       <Container>
+      <div className="modal"><ModalEd open={open} setOpen={setOpen} /></div>
         <FrameUser>
           <span>
             <h3>Seu Perfil</h3>
