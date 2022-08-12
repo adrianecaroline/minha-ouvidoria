@@ -6,10 +6,15 @@ import { BiArrowBack } from "react-icons/bi";
 import validator from "validator";
 import { axiosInstance } from "../../../api_services/ouvidoriaApi";
 import { MenuMobile } from "../../../components/Menu/MenuMobile";
+import ModalSuccess from "../../../components/Modal/ModalSuccess";
+import AlertWarning from "../../../components/Alert/AlertWarning";
 
 export default function CondominioCad() {
 
   const [menuVisible, setMenuVisible] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const [openwarn, setOpenWarn] = useState(false);
 
   const [values, setValues] = useState({
     
@@ -29,6 +34,8 @@ export default function CondominioCad() {
     console.log(values);
     if (values.username === "" || values.nome === "" || values.dtNasci === "" || values.email === ""|| values.senha === "" || values.condominio === "" || values.cep === "" || values.bloco === "" || values.uf === "" || values.apto === "") {
       console.log("campos inválidos");
+      setOpenWarn(true)
+
     } else {
     axiosInstance
       .post("http://localhost:4200/user", {
@@ -45,6 +52,7 @@ export default function CondominioCad() {
       })
       .then((response) => {
         console.log(response);
+        setOpen(true)
       })
       .catch((err) => {
         console.log(err);
@@ -60,6 +68,7 @@ export default function CondominioCad() {
 
   return (
     <>
+    <ModalSuccess open={open} setOpen={setOpen}/>
     <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
       <Menu setMenuVisible={setMenuVisible}/>
       <Container>
@@ -244,7 +253,9 @@ export default function CondominioCad() {
             </div>
           </section>
         </form>
+        {<AlertWarning open={openwarn} setOpen={setOpenWarn} />}
       </Container>
+      
       <ButtonCad onClick={() => handleClickBtn()}>Criar Conta</ButtonCad>
     </>
   );

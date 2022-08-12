@@ -52,6 +52,7 @@ export const FormSection = styled.section `
   align-items: flex-start;
   // justify-content: space-between;
   gap: 10rem; 
+  margin-bottom: 2rem;
 
 `;
 

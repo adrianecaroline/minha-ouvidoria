@@ -2,12 +2,16 @@ import Menu from "../../../components/Menu/MenuRegistro";
 import { Container, Password } from "./condominio_cadStyle";
 import { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
+import ModalSuccess from "../../../components/Modal/ModalSuccess";
+import AlertWarning from "../../../components/Alert/AlertWarning";
 // import { axiosInstance } from "../../../api_services/ouvidoriaApi";
 import axios from "axios";
 import validator from "validator";
 
 export default function CondominioCad() {
 
+  const [open, setOpen] = useState(false);
+  const [openwarn, setOpenWarn] = useState(false);
 
   const [values, setValues] = useState({
     razao_social: "",
@@ -25,6 +29,7 @@ export default function CondominioCad() {
     console.log(values)
     if (values.razao_social === "" || values.nome_condominio === "" || values.cnpj === "" || values.email === ""|| values.senha === "" || values.endereco === "" || values.cep === "" || values.numero === "" || values.uf === "") {
       console.log("campos inválidos");
+      setOpenWarn(true)
     } else {
       axios.post("http://localhost:4200/q-admin", {
           razao_social: values.razao_social,
@@ -39,6 +44,7 @@ export default function CondominioCad() {
         })
         .then((response) => {
           console.log(response);
+          setOpen(true)
         })
         .catch((err) => {
           console.log(err);
@@ -48,6 +54,7 @@ export default function CondominioCad() {
 
   return (
     <>
+    <ModalSuccess open={open} setOpen={setOpen}/>
       <Menu />
       <Container>
         <BiArrowBack
@@ -134,15 +141,6 @@ export default function CondominioCad() {
                     }
                   />
                 </div>
-                {/* <div className="inputs">
-                  <label htmlFor="confirmar">Confirmar Senha</label>
-                  <input
-                    type="password"
-                    name="confirmar"
-                    className="confirmar"
-                    onChange={handleChangeValues}
-                  />
-                </div> */}
               </Password>
             </section>
           </div>
@@ -203,7 +201,7 @@ export default function CondominioCad() {
             </section>
           </div>
 
-          {/*type submit está recarregando a pagina*/}
+          {<AlertWarning open={openwarn} setOpen={setOpenWarn} />}
           <button
             type="button"
             className="btn"

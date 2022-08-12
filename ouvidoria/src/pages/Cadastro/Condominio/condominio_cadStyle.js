@@ -31,6 +31,7 @@ export const Container = styled.main `
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    margin-bottom: 1rem;
   }
 
   input {

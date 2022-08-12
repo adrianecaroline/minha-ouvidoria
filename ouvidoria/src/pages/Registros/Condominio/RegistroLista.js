@@ -3,7 +3,7 @@ import Registro from "../../../components/Registro/RegistroCondominio/Registros"
 import Axios from 'axios';
 //import { axiosInstance } from "../../../api_services/ouvidoriaApi";
 import { useState } from "react";
-import Menu from "../../../components/Menu/Menu";
+import Menu from "../../../components/Menu/MenuCondominio/Menu";
 import Footer from "../../../components/Footer/Footer";
 
 export default function Lista() {

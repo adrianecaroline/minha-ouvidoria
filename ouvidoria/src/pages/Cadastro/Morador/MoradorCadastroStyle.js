@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.main `
     margin: 4% 14%;
@@ -13,6 +13,7 @@ export const Container = styled.main `
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
+        margin-bottom: 1rem;
     }
 
     .forms {
@@ -147,7 +148,9 @@ export const Checkbox = styled.section `
 
 export const ButtonCad = styled.button `
     width: 23%;
-    margin: 2% 38%;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-bottom: 3%;
     padding: 10px;
     background-color: #23e24c;
     color: #ffff;

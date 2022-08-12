@@ -33,10 +33,6 @@ function User() {
   const [listRegistros, setListRegistros] = useState([]);
 
   useEffect(() => {
-    // if (!token) {
-    //   navigate("/login-usuario");
-    //   return;
-    // }
     user.username &&
       axiosInstance.get("ouvidoria/registers/" + user.username).then((res) => {
         console.log(res);
@@ -46,7 +42,7 @@ function User() {
 
   //menu mobile
   const [menuVisible, setMenuVisible] = useState(false);
-
+ 
   //Modal
   const [open, setOpen] = useState(false);
 
@@ -56,6 +52,7 @@ function User() {
   };
 
   const [openrem, setOpenRem] = useState(false);
+
   const handleClickBtn = () => {
     setOpenRem(true);
   };
