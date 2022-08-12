@@ -1,6 +1,8 @@
 import React from "react";
 import Imagem from "../../../images/imagem-login.svg";
 import logo from "../../../images/logo.png";
+import AlertWarning from "../../../components/Alert/AlertWarning";
+import { BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import {
   MainUser,
@@ -14,11 +16,12 @@ import { useState, useContext } from "react";
 import { axiosInstance } from '../../../api_services/ouvidoriaApi';
 import { Contexto } from "../../../App";
 
-import { BiArrowBack } from "react-icons/bi";
 
 export default function Login() {
 
   const navigate = useNavigate();
+
+  const [openwarn, setOpenWarn] = useState(false);
 
   const {setToken, setUser} = useContext(Contexto)
   
@@ -29,6 +32,10 @@ export default function Login() {
 
 
   const login = () => {
+    if(values.email === "" || values.senha === "") {
+      console.log("Email ou senha inválidos")
+      setOpenWarn(true)
+    } else {
     axiosInstance.post("/auth/user/login", {email: values.email, senha: values.senha}).then((response)=>{
       localStorage.setItem('token',response.data.token)
       setToken(response.data.token)
@@ -38,6 +45,7 @@ export default function Login() {
     }).catch((err)=>{
       console.log("error: " + err)
     })
+  }
   }
 
   return (
@@ -69,13 +77,13 @@ export default function Login() {
                 placeholder="Senha"
                 onChange={(e) => { setValues({ ...values, senha: e.target.value }) }}
               />
-        
-                <input type="button" id="btn-login" value="Continue" onClick={login} />
+                <div style={{width: "350px"}}>{<AlertWarning open={openwarn} setOpen={setOpenWarn} />}</div>
+
+                <input type="button" id="btn-login" value="Continue" onClick={ () => login()} />
               
               <hr />
             </form>
           </LoginInput>
-          {/* <!-- /area do input --> */}
 
           {/* <!-- esqueceu senha e cadastro --> */}
           <InfoLogin>
@@ -88,9 +96,7 @@ export default function Login() {
             <p>Ainda não tem uma conta?</p>
               <input type="button" value="Cadastre-se" onClick={ () => {navigate("/morador-cadastro")}} />
           </InfoLogin>
-          {/* <!-- /esqueceu senha e cadastro --> */}
         </LoginArea>
-        {/* <!-- /login --> */}
       </MainUser>
     </>
   );
