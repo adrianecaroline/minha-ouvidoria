@@ -9,14 +9,12 @@ export const Container = styled.main `
         font-size: 28px;
         padding-left: 2rem;
       }
-<<<<<<< HEAD
-=======
 
   @media (max-width: 900px) {
     padding-top: 10%;
     margin: 4% 3%;
   }
->>>>>>> 2c19883d81d00de26d114f03a1c4af9b29b5aaaf
+
 `
 
 export const Section = styled.section`
@@ -29,17 +27,17 @@ export const Section = styled.section`
     padding: 1px 30px;
     box-sizing: border-box;
     box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 41%);
-    // height:800px;
+    // height:600px;
 
-    // overflow-y: auto;
-    // overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    // ::-webkit-scrollbar {
-    //   width: 8px;
-    // }
-    // ::-webkit-scrollbar-thumb {
-    //   background-color: darkgrey;
-    // }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
 
     .p {
       padding-left: 1.6rem;
@@ -63,8 +61,6 @@ export const Section = styled.section`
       background: #f3f3f3;
     }
   }
-<<<<<<< HEAD
-=======
 
   @media (max-width: 900px) {
 
@@ -75,5 +71,5 @@ export const Section = styled.section`
       text-align: center;
     }
   }
->>>>>>> 2c19883d81d00de26d114f03a1c4af9b29b5aaaf
+
 `;
