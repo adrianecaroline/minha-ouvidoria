@@ -4,7 +4,7 @@ export const Container = styled.main`
   margin: 4% 5%;
   padding-top: 5%;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-around;
 
   h3 {

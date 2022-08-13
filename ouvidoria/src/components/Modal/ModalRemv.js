@@ -6,17 +6,36 @@ import DialogContent from "../../../node_modules/@material-ui/core/DialogContent
 import DialogContentText from "../../../node_modules/@material-ui/core/DialogContentText/DialogContentText";
 import DialogTitle from "../../../node_modules/@material-ui/core/DialogTitle/DialogTitle";
 import { useEffect, useState, useContext } from "react";
+import { axiosInstance } from "../../api_services/ouvidoriaApi";
+import { Contexto } from '../../App'
+import { useNavigate } from "react-router-dom";
 
 export default function FormRemov(props) {
-  const [removUser, setRemovUser] = useState({});
+
+  const navigate = useNavigate();
+
+  const { token, setToken } = useContext(Contexto);
+  const { user, setUser } = useContext(Contexto);
+
 
   const handleRemov = () => {
-    //logica axios e voltar para tela inicial
+    if(user) {
+      axiosInstance.delete('/user/' + user.username).then((response) => {
+        console.log(response);
+        localStorage.removeItem("token"); 
+        setToken(null); 
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+    
   };
 
-  const handleClickOpen = () => {
-    props.setOpenRem(true);
-  };
+  // const handleClickOpen = () => {
+  //   props.setOpenRem(true);
+  // };
 
   const handleClose = () => {
     props.setOpenRem(false);
@@ -65,7 +84,7 @@ export default function FormRemov(props) {
             <Button style={btn()} onClick={handleClose}>
               Cancelar
             </Button>
-            <Button style={btnR()} onClick={handleClose} autoFocus>
+            <Button style={btnR()} onClick={ ()=> handleRemov()} autoFocus>
               Excluir
             </Button>
           </DialogActions>

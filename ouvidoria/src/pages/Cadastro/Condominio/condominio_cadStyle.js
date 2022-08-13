@@ -54,7 +54,7 @@ export const Container = styled.main `
   }
   
    .senha, .confirmar, .cep{
-    width: 260px;
+    width: 250px;
   }
   
   .uf, .num{
@@ -62,6 +62,7 @@ export const Container = styled.main `
   }
   
   .btn {
+    font-weight: 600;
     width: 30%;
     margin: 3% 35%;
     padding: 10px;
@@ -212,9 +213,6 @@ export const Container = styled.main `
     box-sizing: border-box;
     justify-content: center;
     text-align: center;
-    
-    
-   
   }
 
   .inputs {
@@ -254,6 +252,28 @@ export const Container = styled.main `
     text-align: center;
     gap: 10rem;
     margin: 2% 50%;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 16%;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h3 {
+      text-align: initial;
+      font-size: 17px;
+    }
+
+    input, .cep, .uf, .num {
+      margin: 2% 0%;
+    }
+
+    .box {
+      display: flex;
+    }
+  
   }
   
 }

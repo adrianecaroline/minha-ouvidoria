@@ -26,17 +26,17 @@ export const Section = styled.section`
     padding: 1px 30px;
     box-sizing: border-box;
     box-shadow: 0px 3px 4px 0px rgb(0 0 0 / 41%);
-    // height:800px;
+    // height:600px;
 
-    // overflow-y: auto;
-    // overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    // ::-webkit-scrollbar {
-    //   width: 8px;
-    // }
-    // ::-webkit-scrollbar-thumb {
-    //   background-color: darkgrey;
-    // }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
 
     .p {
       padding-left: 1.6rem;
@@ -60,11 +60,6 @@ export const Section = styled.section`
       background: #f3f3f3;
     }
   }
-
-  @media (max-width: 600px) {
-
-  }
-
   @media (max-width: 900px) {
 
     .cabecalho {

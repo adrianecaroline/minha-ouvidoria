@@ -14,7 +14,7 @@ export const Container = styled.main `
         flex-direction: column;
         gap: 0.7rem;
         margin-bottom: 1rem;
-    }
+    } 
 
     .forms {
         display: flex;
@@ -98,10 +98,6 @@ export const Container = styled.main `
             margin-top: 8%;
             cursor: pointer;
         }
-
-      }
-        
-
     }
 
     @media (max-width: 700px) {
@@ -126,6 +122,28 @@ export const Container = styled.main `
 
         .info-senha p {
             margin: 0.5rem 0 0.5rem 7.5rem;
+        }
+    }
+
+    @media (max-width: 470px) {
+        padding-top: 12%;
+
+        .forms {
+            align-items: flex-start;
+        }
+
+        .nomeCompleto, .email, .username, .condominio, .CPF, .data-900, .senha, .confirmarSenha, .bloco, .numero, .CEP, .UF {
+            width: 17rem;
+        }
+    }
+
+    @media (max-width: 435px) {
+        h1 {
+          font-size: 22px;
+        }
+
+        h3 {
+            text-align: initial;
         }
     }
 
@@ -158,5 +176,11 @@ export const ButtonCad = styled.button `
     border: none;
     border-radius: 3px;
     cursor: pointer;
+
+    @media (max-width: 500px) {
+        width: 32%;
+        margin-left: 34%;
+        margin-right: 34%;
+    }
 
 `

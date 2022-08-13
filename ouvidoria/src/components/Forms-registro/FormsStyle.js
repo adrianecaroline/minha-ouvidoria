@@ -12,7 +12,7 @@ export const FormMain = styled.main `
   }
 
   input[type="button"] {
-    background-color: #23e24c;
+    background-color: #23e24c; 
     color: #ffff;
     border: none;
     border-radius: 3px;
@@ -30,6 +30,14 @@ export const FormMain = styled.main `
   svg {
     cursor: pointer;
   }
+
+  @media (max-width: 440px) {
+    padding-top: 19%;
+
+    h1 {
+      font-size: 22px;
+    }
+  }
 `;
 
 export const Selection = styled.div `
@@ -45,6 +53,12 @@ export const Selection = styled.div `
     width: 400px;
     box-sizing: border-box;
   }
+
+  @media (max-width: 440px) {
+   select{
+    width: 268px;
+   }
+  }
 `;
 
 export const FormSection = styled.section `
@@ -53,6 +67,11 @@ export const FormSection = styled.section `
   // justify-content: space-between;
   gap: 10rem; 
   margin-bottom: 2rem;
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
 `;
 
@@ -83,6 +102,20 @@ export const Descricao = styled.div `
     padding: 10px;
     width: 379px;
     height: 120px;
+  }
+
+  @media (max-width: 440px){
+    h1 {
+      font-size: 18px;
+    }
+
+    textarea {
+      width: 247px;
+    }
+
+    input {
+      width: 268px;
+    }
   }
 
 `;
@@ -120,11 +153,34 @@ export const Endereco = styled.div `
     background-color: transparent;
     padding: 0;
   }
+
+  @media (max-width: 440px){
+    h1 {
+      font-size: 18px;
+    }
+
+    input {
+      width: 268px;
+    }
+
+    input [type="text"] {
+      width: 268px;
+    }
+
+    input[type="file"]{
+      width: 279px;
+    }
+
+  }
 `;
 
 export const SInputs = styled.div `
   display: flex;
   gap: 2.4rem;
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+  }
 `;
 
 export const SubInputs = styled.div `
