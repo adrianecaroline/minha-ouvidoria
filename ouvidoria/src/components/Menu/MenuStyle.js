@@ -20,17 +20,6 @@ export const Header = styled.header `
   .mobile {
     display: none;
   }
-
-  @media(max-width: 420px) {
-    .mobile {
-      padding-right: 2rem;
-    }
-
-    img {
-      width: 8rem;
-      margin-left: 2rem;
-    }
-  }
   
   @media(max-width: 900px) {
     .mobile {
@@ -46,6 +35,17 @@ export const Header = styled.header `
 
     nav, button {
       display: none;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .mobile {
+      padding-right: 2rem;
+    }
+
+    img {
+      width: 9rem;
+      margin-left: 2rem;
     }
   }
 
