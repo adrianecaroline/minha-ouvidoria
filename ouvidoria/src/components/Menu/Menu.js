@@ -1,4 +1,3 @@
-// import styles from './Menu.module.css'
 import imagem from "../../images/owl-nav.png";
 import { Header, Nav, Btn } from "./MenuStyle";
 import { IoMenu } from "react-icons/io5";

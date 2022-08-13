@@ -166,6 +166,14 @@ export const LoginInput = styled.section`
       font-size: 0.7rem;
     }
  }
+
+ @media (max-width: 440px){
+    input[type="button"]{
+      width: 7rem;
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+ }
 `;
 
 export const InfoLogin = styled.section`
@@ -201,11 +209,20 @@ export const InfoLogin = styled.section`
       font-size: 0.7rem;
     }
   }
+
   @media (max-width: 820px){
     input[type="button"] {
       height: 2rem;
       width: 7rem;
       font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 440px){
+    input[type="button"] {
+      height: 2rem;
+      width: 8rem;
+      font-size: 0.9rem;
     }
   }
 

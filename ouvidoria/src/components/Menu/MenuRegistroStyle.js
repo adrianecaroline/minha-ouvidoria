@@ -37,6 +37,17 @@ export const HeaderR = styled.header `
       display: none;
     }
   }
+
+  @media(max-width: 420px) {
+    .mobile {
+      padding-right: 2rem;
+    }
+
+    img {
+      width: 9rem;
+      margin-left: 2rem;
+    }
+  }
 `;
 
 export const NavR = styled.nav `

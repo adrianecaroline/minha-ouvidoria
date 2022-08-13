@@ -114,9 +114,17 @@ export const Opcoes = styled.div `
   }
 
   @media (max-width: 600px) {
+    
     .visible-mobile {
       display: block;
       padding: 1rem;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .visible-mobile {
+      font-size: 1.2rem;
+      padding: 1rem 2.5rem;
     }
   }
  
@@ -129,7 +137,7 @@ export const InputLogin = styled.div `
 
   input {
     cursor: pointer;
-    background-color: #4DD14E;
+    background-color: #23e24c;
     width: 10rem;
     height: 2rem;
     color: white;

@@ -174,29 +174,31 @@ export default function CondominioCad() {
                   }
                 />
               </div>
-              <div className="inputs">
-                <label htmlFor="num">Nº</label>
-                <input
-                  type="text"
-                  name="num"
-                  className="num"
-                  required
-                  value={values.numero}
-                  onChange={(e) =>
-                    setValues({ ...values, numero: e.target.value })
-                  }
-                />
-              </div>
-              <div className="inputs">
-                <label htmlFor="uf">UF</label>
-                <input
-                  type="text"
-                  name="uf"
-                  className="uf"
-                  required
-                  value={values.uf}
-                  onChange={(e) => setValues({ ...values, uf: e.target.value })}
-                />
+              <div className="box">
+                <div className="inputs">
+                  <label htmlFor="num">Nº</label>
+                  <input
+                    type="text"
+                    name="num"
+                    className="num"
+                    required
+                    value={values.numero}
+                    onChange={(e) =>
+                      setValues({ ...values, numero: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="inputs">
+                  <label htmlFor="uf">UF</label>
+                  <input
+                    type="text"
+                    name="uf"
+                    className="uf"
+                    required
+                    value={values.uf}
+                    onChange={(e) => setValues({ ...values, uf: e.target.value })}
+                  />
+                </div>
               </div>
             </section>
           </div>
