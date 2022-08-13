@@ -6,12 +6,13 @@ gap: 7rem;
 justify-content: space-around;
 margin: 4% 14%;
 padding-top: 3%;
+min-height: 100vh;
 
 @media (max-width: 1200px){
     padding-top: 5%;
 }
 @media (max-width: 900px){
-    padding-top: 8%;
+    padding-top: 14%;
 }
 `;
 
