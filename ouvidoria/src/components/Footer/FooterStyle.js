@@ -5,7 +5,7 @@ export const Frame = styled.footer `
   width: 100%;
   // height: 100px;
   align-items: center;
-  gap: 3rem;
+
 
   @media(max-width: 920px) {
       font-size: 0.9rem;

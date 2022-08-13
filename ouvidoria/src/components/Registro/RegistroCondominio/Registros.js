@@ -10,7 +10,7 @@ export default function Registros(props) {
             <p><span>Endereço: </span> {props.endereco}</p>
             <p><span> Nº:</span> {props.numero}</p>
           </div>
-          <div>
+          <div className="descricao">
             <p>
               {" "}
               {props.registro} <span>(Nº {props.idProtocol})</span>
@@ -23,13 +23,22 @@ export default function Registros(props) {
         </Registro>
         <p><span>Feedback:</span></p>
         <Feedback>
-          <input type="checkbox" />
-          <label> Analisando </label>
-          <input type="checkbox" />
-          <label> Resolvido </label>
-          <label className="feedback-msg msg">
+          <div className="checkbox-mobile">
+            <input type="checkbox" />
+            <label> Analisando </label>
+            <input type="checkbox" />
+            <label> Resolvido </label>
+          </div>
+          <input type="checkbox" className="checkbox-normal"/>
+          <label className="checkbox-normal"> Analisando </label>
+          <input type="checkbox" className="checkbox-normal"/>
+          <label className="checkbox-normal"> Resolvido </label>
+
+          <div className="feedback-msg">
+            <label className="msg">
             Enviar Mensagem: <input placeholder="Digite..." className="box" type="text" />{" "}
           </label>
+          </div>
 
           <button>Enviar</button>
         </Feedback>

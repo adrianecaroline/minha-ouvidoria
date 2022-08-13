@@ -3,20 +3,17 @@ import styled from "styled-components";
 export const Container = styled.main `
     margin: 4% 14%;
     padding-top: 3%;
-    height: 100vh;
+    min-height: 100vh;
 
     h1 {
         font-size: 28px;
         padding-left: 2rem;
       }
-<<<<<<< HEAD
-=======
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     padding-top: 10%;
     margin: 4% 3%;
   }
->>>>>>> 2c19883d81d00de26d114f03a1c4af9b29b5aaaf
 `
 
 export const Section = styled.section`
@@ -63,8 +60,10 @@ export const Section = styled.section`
       background: #f3f3f3;
     }
   }
-<<<<<<< HEAD
-=======
+
+  @media (max-width: 600px) {
+
+  }
 
   @media (max-width: 900px) {
 
@@ -75,5 +74,4 @@ export const Section = styled.section`
       text-align: center;
     }
   }
->>>>>>> 2c19883d81d00de26d114f03a1c4af9b29b5aaaf
 `;

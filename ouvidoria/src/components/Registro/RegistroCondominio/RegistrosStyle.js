@@ -5,16 +5,17 @@ export const Container = styled.main`
   padding: 10px 30px;
   box-sizing: border-box;
   margin-bottom: 1rem;
-  height: 290px;
+  height: 370px;
   border-top: 1px solid;
 
   span {
     font-weight: bold;
   }
-  @media (max-width: 900px) {
-    width: 350px;
-    height: 500px;
+
+  @media (max-width: 1200px) {
+    height: 650px;
   }
+
 `;
 
 export const Registro = styled.section`
@@ -24,6 +25,17 @@ export const Registro = styled.section`
   span {
     font-weight: bold;
   }
+
+  .descricao {
+    word-break: break-all;
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
 `;
 
 export const Feedback = styled.section`
@@ -32,11 +44,6 @@ export const Feedback = styled.section`
     background: #e9e9e9;
     border-radius: 3px;
     padding: 8px;
-  }
-  @media (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
-    gap: 0rem;
   }
 
   button {
@@ -60,11 +67,25 @@ export const Feedback = styled.section`
     margin-left: 2.5rem;
   }
 
-  @media (max-width: 900px) {
-    .msg {
+  @media (max-width: 1200px) {
       display: flex;
       flex-direction: column;
+
+      .checkbox-normal {
+        display: none;
+      }
+
+    .feedback-msg {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
       margin: 1rem 0 1rem 0;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    .checkbox-mobile {
+      display: none;
     }
   }
 `;
