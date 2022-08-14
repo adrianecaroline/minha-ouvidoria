@@ -11,8 +11,8 @@ import {
 import AlertSuccess from "../Alert/AlertSuccess.js";
 import AlertWarning from "../Alert/AlertWarning.js";
 import { BiArrowBack } from "react-icons/bi";
-// import { axiosInstance } from '../../api_services/ouvidoriaApi';
-import axios from "axios";
+import { axiosInstance } from '../../api_services/ouvidoriaApi';
+//import axios from "axios";
 
 export default function Formss(props) {
 
@@ -56,9 +56,9 @@ export default function Formss(props) {
       bodyFormData.append("numero", values.numero);
       bodyFormData.append("url", values.url);
 
-      axios({
+      axiosInstance({
         method: "post",
-        url: "http://localhost:4200/register/auth",
+        url: `${process.env.REACT_APP_BACK}/register/auth`,
         data: bodyFormData,
         headers: { "Content-Type": "multipart/form-data" },
       })

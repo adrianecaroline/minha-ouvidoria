@@ -5,9 +5,9 @@ import { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import ModalSuccess from "../../../components/Modal/ModalSuccess";
 import AlertWarning from "../../../components/Alert/AlertWarning";
-// import { axiosInstance } from "../../../api_services/ouvidoriaApi";
-import axios from "axios";
-import validator from "validator";
+import { axiosInstance } from "../../../api_services/ouvidoriaApi";
+// import axios from "axios";
+// import validator from "validator";
 
 export default function CondominioCad() {
 
@@ -20,7 +20,7 @@ export default function CondominioCad() {
     cnpj: "",
     email: "",
     senha: "",
-    endereco: "",
+    endereco: "", 
     cep: "",
     numero: "",
     uf: "",
@@ -32,7 +32,7 @@ export default function CondominioCad() {
       console.log("campos inválidos");
       setOpenWarn(true)
     } else {
-      axios.post("http://localhost:4200/q-admin", {
+      axiosInstance.post("/q-admin", {
           razao_social: values.razao_social,
           nome_condominio: values.nome_condominio,
           cnpj: values.cnpj,

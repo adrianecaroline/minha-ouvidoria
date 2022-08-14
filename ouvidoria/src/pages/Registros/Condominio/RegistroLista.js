@@ -1,7 +1,7 @@
 import { Container, Section } from "./RegistroListaStyle";
 import Registro from "../../../components/Registro/RegistroCondominio/Registros";
-import Axios from 'axios';
-//import { axiosInstance } from "../../../api_services/ouvidoriaApi";
+// import Axios from 'axios';
+import { axiosInstance } from "../../../api_services/ouvidoriaApi";
 import { useState } from "react";
 import Menu from "../../../components/Menu/MenuCondominio/Menu";
 import Footer from "../../../components/Footer/Footer";
@@ -9,10 +9,10 @@ import Footer from "../../../components/Footer/Footer";
 export default function Lista() {
   const [registros, setRegistros] = useState([]);
 
-  const handleRegistro = (registro) => {
+  const handleRegistro = (registro) => { 
 
-    Axios
-      .get("http://localhost:4200/ouvidoria/registro/" + (registro))
+    axiosInstance
+      .get("/ouvidoria/registro/" + (registro))
       .then((response) => {
         setRegistros(response.data);
       });
