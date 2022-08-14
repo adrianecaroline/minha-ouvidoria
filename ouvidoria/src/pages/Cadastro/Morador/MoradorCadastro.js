@@ -39,7 +39,7 @@ export default function CondominioCad() {
 
     } else {
     axiosInstance
-      .post("http://localhost:4200/user", {
+      .post("/user", {
         username: values.username,
         nome: values.nome,
         dtNasci: values.dtNasci,
