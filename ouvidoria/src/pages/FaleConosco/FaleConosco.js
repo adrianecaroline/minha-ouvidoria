@@ -1,20 +1,20 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import contactUs from "../../images/contact-us.png";
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Menu/MenuRegistro";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import Footer from "../../components/Footer/Footer";
 import { Banner, Container, FormContact } from "./FaleConoscoStyle";
 import ModalEnviado from "./ModalEnviado";
 
 export default function FaleConosco() {
+  
   const [open, setOpen] = useState(false);
 
   const [menuVisible, setMenuVisible] = useState(false);
 
   const form = useRef();
   const sendEmail = (e) => {
-    e.preventDefault();
     if (
       !form.current ||
       !form.current.nome.value ||

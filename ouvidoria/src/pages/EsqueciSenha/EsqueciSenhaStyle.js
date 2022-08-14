@@ -176,6 +176,11 @@ export const InfoLogin = styled.section`
     margin-bottom: 1.5rem;
   }
 
+  span {
+    color: #1348AA;
+    cursor: pointer;
+  }
+
   input[type="button"] {
     height: 2.5rem;
     width: 10.06rem;

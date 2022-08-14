@@ -1,4 +1,4 @@
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Menu/MenuRegistro";
 import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import Solicitacoes from "../../images/solicitacoes.png";

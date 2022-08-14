@@ -17,6 +17,17 @@ export default function ModalEnviado (props) {
     props.setOpen(false);
   };
 
+  const btn = () => {
+    const mystyle = {
+      background: "#235ae2",
+      color: "#ffffff",
+      padding: "4px 6px",
+      textTransform: "none",
+      fontFamily: "Montserrat",
+    };
+    return mystyle;
+  };
+
   return (
     <>
       <Dialog
@@ -31,22 +42,9 @@ export default function ModalEnviado (props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}> Fechar </Button>
+          <Button style={btn()} onClick={handleClose}> Fechar </Button>
         </DialogActions>
       </Dialog>
     </>
   );
 }
-
-
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-
-//   useEffect(() => {
-//     setOpen(props.open)
-//   }, []);
-   
-//  const handleClickOpen = () => {
-//     props.setOpen(true);
-//   };

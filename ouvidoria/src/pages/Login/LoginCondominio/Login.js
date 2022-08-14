@@ -31,11 +31,14 @@ export default function Login() {
 
 
   const login = () => {
-    if (values.email === "" || values.senha === "" ) {
+    if (values.email === "" || values.senha === "") {
       console.log("Email ou senha inválidos")
       setOpenWarn(true)
     } else {
-    axiosInstance.post("/auth/condominio/login", {email: values.email, senha: values.senha}).then((response)=>{
+    axiosInstance.post("/auth/condominio/login", 
+    {email: values.email, 
+      senha: values.senha}
+      ).then((response)=>{
       localStorage.setItem('token',response.data.token)
       setToken(response.data.token)
       setUser(response.data.user)

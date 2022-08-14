@@ -68,7 +68,10 @@ export default function Login() {
           <LoginInput>
             <p>Login</p>
             <form action="/" method="post">
-              <input type="text" name="email" id="email" onChange={(e) => { setValues({ ...values, email: e.target.value }) }} 
+              <input type="text" 
+              name="email" 
+              id="email" 
+              onChange={(e) => { setValues({ ...values, email: e.target.value }) }} 
               placeholder="E-mail" />
               <input
                 type="password"
@@ -81,7 +84,7 @@ export default function Login() {
 
                 <input type="button" id="btn-login" value="Continue" onClick={ () => login()} />
               
-              <hr />
+              <hr /> 
             </form>
           </LoginInput>
 

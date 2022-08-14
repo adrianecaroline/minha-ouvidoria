@@ -1,7 +1,7 @@
 import iconOwl from "../../images/owl-nav.png";
 import sobreNosWoman from "../../images/sobre-nos-woman.png";
 import { DivAzul, DivBranca } from "./SobreNosStyle";
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Menu/MenuRegistro";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 import { MenuMobile } from '../../components/Menu/MenuMobile';

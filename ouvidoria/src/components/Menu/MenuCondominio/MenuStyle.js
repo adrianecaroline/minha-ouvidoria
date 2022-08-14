@@ -7,7 +7,7 @@ export const Header = styled.header `
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.35);
   display: flex;
   align-content: center;
-  // justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
@@ -36,24 +36,24 @@ export const Header = styled.header `
     nav, button {
       display: none;
     }
+  }
 
-    @media(max-width: 500px) {
-      img {
-        width: 8rem;
-        margin-left: 2rem;
-      }
+  @media (max-width: 420px) {
+    .mobile {
+      padding-right: 2rem;
+    }
 
-      .mobile {
-        padding-right: 2rem;
-      }
+    img {
+      width: 8rem;
+      margin-left: 2rem;
     }
   }
+
 `;
 
 export const Nav = styled.nav `
   justify-content: center;
   align-items: center;
-  margin-left: 32rem;
 
   ul {
     list-style-type: none;

@@ -8,9 +8,9 @@ function MenuRegistro ({ setMenuVisible }) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(setMenuVisible)
-  }, [])
+  // useEffect(() => {
+  //   console.log(setMenuVisible)
+  // }, [])
 
   return(
     <HeaderR> 

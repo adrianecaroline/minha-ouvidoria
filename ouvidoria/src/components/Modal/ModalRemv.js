@@ -33,10 +33,6 @@ export default function FormRemov(props) {
     
   };
 
-  // const handleClickOpen = () => {
-  //   props.setOpenRem(true);
-  // };
-
   const handleClose = () => {
     props.setOpenRem(false);
   };

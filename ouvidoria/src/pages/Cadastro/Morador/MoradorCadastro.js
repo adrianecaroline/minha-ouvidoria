@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../../../components/Menu/MenuRegistro";
+import Footer from '../../../components/Footer/Footer';
 import { Container, ButtonCad } from "./MoradorCadastroStyle";
 import {  useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
@@ -255,8 +256,9 @@ export default function CondominioCad() {
         </form>
         {<AlertWarning open={openwarn} setOpen={setOpenWarn} />}
       </Container>
-      
       <ButtonCad onClick={() => handleClickBtn()}>Criar Conta</ButtonCad>
+
+      <Footer/>
     </>
   );
 }

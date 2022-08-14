@@ -1,4 +1,5 @@
 import Menu from "../../../components/Menu/MenuRegistro";
+import Footer from '../../../components/Footer/Footer'
 import { Container, Password } from "./condominio_cadStyle";
 import { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
@@ -213,6 +214,8 @@ export default function CondominioCad() {
           </button>
         </form>
       </Container>
+
+      <Footer/>
     </>
   );
 }

@@ -64,13 +64,13 @@ function App() {
         <Route exact path="/morador-cadastro" element={<MoradorCadastro />} />
         <Route exact path="/*" element={<NotFound />} />
         <Route exact path="/sobre-nos" element={<SobreNos />} />
-        <Route exact path="/ajuda" element={<ProtectedRoute><Ajuda /></ProtectedRoute>}/>
-        <Route exact path="/perguntas-frequentes" element={<ProtectedRoute><PerguntasFrequentes /></ProtectedRoute>}/>
-        <Route exact path="/login-condominio" element={<LoginUserCond />} />
-        <Route exact path="/perfil-condominio" element={<CondominioPerfil />} />
+        <Route exact path="/ajuda" element={<Ajuda />}/>
+        <Route exact path="/perguntas-frequentes" element={<PerguntasFrequentes />}/>
+        <Route exact path="/login-condominio" element={<LoginUserCond />}/>
+        <Route exact path="/perfil-condominio" element={<ProtectedRoute><CondominioPerfil /></ProtectedRoute>} />
         <Route exact path="/esqueci-senha" element={<EsqueciSenha />} />
-        <Route exact path="/desenvolvedores" element={<ProtectedRoute><Desenvolvedores /></ProtectedRoute>}/>
-        <Route exact path="/fale-conosco" element={<ProtectedRoute><FaleConosco /></ProtectedRoute>}/>
+        <Route exact path="/desenvolvedores" element={<Desenvolvedores />}/>
+        <Route exact path="/fale-conosco" element={<FaleConosco />}/>
       </Routes>
     </Contexto.Provider>
   );

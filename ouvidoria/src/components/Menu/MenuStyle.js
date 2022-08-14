@@ -44,7 +44,7 @@ export const Header = styled.header `
     }
 
     img {
-      width: 9rem;
+      width: 8rem;
       margin-left: 2rem;
     }
   }

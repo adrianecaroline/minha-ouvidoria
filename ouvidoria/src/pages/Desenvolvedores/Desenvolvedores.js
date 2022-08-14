@@ -1,4 +1,4 @@
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Menu/MenuRegistro";
 import { useState } from "react";
 import { MenuMobile } from "../../components/Menu/MenuMobile";
 import { MainDev, Dev } from './DevStyle';
