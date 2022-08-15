@@ -11,7 +11,7 @@ axiosInstance.interceptors.request.use((config) => {
 
   if(token) {
     config.headers = {
-      ...config.headers,
+      ...config.headers, 
       "x-access-token": token
     }
   }

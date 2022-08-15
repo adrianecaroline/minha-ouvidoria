@@ -7,7 +7,7 @@ export default function Registros(props) {
         <Registro>
           <div>
             <p><span>Morador: </span>{props.id_usuario}</p>
-            <p><span>Endereço: </span> {props.endereco}</p>
+            <p className="endereco"><span>Endereço: </span> {props.endereco}</p>
             <p><span> Nº:</span> {props.numero}</p>
           </div>
           <div className="descricao">

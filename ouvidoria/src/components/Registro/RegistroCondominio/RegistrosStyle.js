@@ -5,16 +5,16 @@ export const Container = styled.main`
   padding: 10px 30px;
   box-sizing: border-box;
   margin-bottom: 1rem;
-  height: 370px;
+  // height: 370px;
   border-top: 1px solid;
 
   span {
     font-weight: bold;
   }
 
-  @media (max-width: 1200px) {
-    height: 650px;
-  }
+  // @media (max-width: 1200px) {
+  //   height: 650px;
+  // }
 
 `;
 
@@ -24,6 +24,10 @@ export const Registro = styled.section`
 
   span {
     font-weight: bold;
+  }
+
+  .endereco {
+    word-break: break-all;
   }
 
   .descricao {

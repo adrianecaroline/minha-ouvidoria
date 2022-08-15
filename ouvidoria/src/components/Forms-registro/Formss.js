@@ -100,12 +100,12 @@ export default function Formss(props) {
             <option defaultValue="Selecione">
               Selecione
             </option>
-            <option value="ilumincacao">Iluminação</option>
-            <option value="arborizacao">Arborização</option>
-            <option value="coletalixo">Coleta de lixo</option>
-            <option value="pavimentacao">Pavimentação</option>
-            <option value="ciclovia">Ciclovia</option>
-            <option value="saneamento">Saneamento básico</option>
+            <option value="Iluminação">Iluminação</option>
+            <option value="Arborização">Arborização</option>
+            <option value="Coleta lixo">Coleta de lixo</option>
+            <option value="Pavimentação">Pavimentação</option>
+            <option value="Ciclovia">Ciclovia</option>
+            <option value="Saneamento">Saneamento básico</option>
             <option value="Outro">Outro</option>
           </select>
         </Selection>
@@ -118,12 +118,14 @@ export default function Formss(props) {
             <input
               type="text"
               name="titulo"
+              maxlength="60"
               value={values.titulo}
               onChange={(e) => setValues({ ...values, titulo: e.target.value })}
             />
             <label htmlFor="descricao">Descrição</label>
             <textarea
-              row="10"
+              row="4"
+              maxlength="310"
               name="descricao"
               value={values.descricao}
               onChange={(e) =>
@@ -139,6 +141,7 @@ export default function Formss(props) {
             <input
               type="text"
               name="local"
+              maxlength="60"
               value={values.endereco}
               onChange={(e) =>
                 setValues({ ...values, endereco: e.target.value })

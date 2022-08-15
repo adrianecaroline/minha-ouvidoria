@@ -45,9 +45,12 @@ export default function CondominioCad() {
         })
         .then((response) => {
           console.log(response);
-          setOpen(true)
-        })
-        .catch((err) => {
+          if(response.status === 203) {
+            console.log("Usuário já cadastrado")
+          } else {
+            setOpen(true)
+          }
+        }).catch((err) => {
           console.log(err);
         });
     }

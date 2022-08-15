@@ -12,7 +12,7 @@ export default function Lista() {
   const handleRegistro = (registro) => { 
 
     axiosInstance
-      .get("/ouvidoria/registro/" + (registro))
+      .post("/ouvidoria/registro/" , {tipo_registro: registro})
       .then((response) => {
         setRegistros(response.data);
       });

@@ -65,7 +65,7 @@ export const Section = styled.section`
     .cabecalho {
       display: flex;
       flex-direction: column;
-      width: 350px;
+      // width: 350px;
       text-align: center;
     }
   }
