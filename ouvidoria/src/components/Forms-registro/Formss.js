@@ -97,7 +97,7 @@ export default function Formss(props) {
               setValues({ ...values, selection: e.target.value })
             }
           >
-            <option disabled defaultValue="Selecione">
+            <option defaultValue="Selecione">
               Selecione
             </option>
             <option value="ilumincacao">Iluminação</option>
