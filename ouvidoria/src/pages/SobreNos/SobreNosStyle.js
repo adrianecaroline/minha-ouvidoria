@@ -63,7 +63,7 @@ export const DivAzul = styled.div`
   }
   @media (max-width: 550px) {
     .divAzul {
-      padding-top: 18%;
+      padding-top: 15%;
       display: block;
       width: auto;
     }
@@ -75,10 +75,35 @@ export const DivAzul = styled.div`
     }
     .divCoruja {
       justify-content: center;
-      width: 30rem;
+      width: 10rem;
     }
     .divCoruja img {
       width: 8rem;
+    }
+  }
+  @media (max-width: 420px) {
+    .divAzul {
+      padding-top: 20%;
+      display: block;
+      width: auto;
+    }
+    .divTexto1 {
+      text-align: justify;
+      font-size: 1.1rem;
+      width: 90%;
+      margin: auto;
+    }
+    .divCoruja {
+      justify-content: center;
+      width: 10rem;
+    }
+    .divCoruja img {
+      width: 8rem;
+    }
+  }
+  @media (max-width: 370px) {
+    .divAzul {
+      padding-top: 25%;
     }
   }
 `;
@@ -111,7 +136,7 @@ export const DivBranca = styled.div`
     height: 3rem;
     border-radius: 0.5rem;
     border-style: none;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: white;
     cursor: pointer;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.35);
@@ -150,21 +175,48 @@ export const DivBranca = styled.div`
   }
   @media (max-width: 550px) {
     .divBranca {
-      width: auto;
+      width: 73%;
+      padding: 0% 12%;
     }
     .divTexto2 p {
       font-size: 1.1rem;
       text-align: left;
     }
     .divWoman img {
-      width: 15rem;
+      width: 13rem;
+    }
+    .botao-time {
+      margin: 5%;
+      margin-left: 0;
+      font-size: 0.7rem;
+      width: 8rem;
+      height: 2rem;
+      font-weight: 500;
+    }
+  }
+  @media (max-width: 420px) {
+    .divBranca {
+      width: 70%;
+      padding: 0% 15%;
+    }
+    .divTexto2 p {
+      font-size: 1rem;
+      text-align: left;
+    }
+    .divWoman img {
+      width: 11rem;
     }
     .botao-time {
       margin-top: auto;
-      font-size: 0.8rem;
-      width: 10rem;
-      height: 2.5rem;
+      font-size: 0.7rem;
+      width: 8rem;
+      height: 2rem;
       font-weight: 500;
+    }
+  }
+  @media (max-width: 370px) {
+    .divBranca {
+      margin-bottom: 9%;
     }
   }
 `;
