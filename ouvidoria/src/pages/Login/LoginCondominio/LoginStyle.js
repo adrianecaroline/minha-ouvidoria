@@ -140,6 +140,7 @@ export const LoginInput = styled.section`
     :hover {
       background-color: #3a62b9;
     }
+
  }
 
  @media (max-width: 1000px){
@@ -166,6 +167,14 @@ export const LoginInput = styled.section`
       font-size: 0.7rem;
     }
  }
+
+ 
+ @media (max-width: 440px) {
+  input[type="button"]{
+    font-size: 0.9rem;
+  }
+  
+}
 `;
 
 export const InfoLogin = styled.section`
@@ -213,5 +222,10 @@ export const InfoLogin = styled.section`
       font-size: 0.7rem;
     }
   }
+
+  @media (max-width: 440px) {
+    input[type="button"]{
+      font-size: 0.9rem;
+    }
 
 `;

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.main `
   margin: 4% 14%;
@@ -66,7 +66,7 @@ export const Container = styled.main `
     width: 30%;
     margin: 3% 35%;
     padding: 10px;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: #ffff;
     font-size: 18px;
     border: none;

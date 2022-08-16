@@ -122,6 +122,7 @@ export default function CondominioCad() {
                   name="email"
                   className="email"
                   required
+                  placeholder="seuemail@email.com"
                   value={values.email}
                   onChange={(e) =>
                     setValues({ ...values, email: e.target.value })
@@ -178,8 +179,7 @@ export default function CondominioCad() {
                   }
                 />
               </div>
-              <div className="box">
-                <div className="inputs">
+              <div className="inputs">
                   <label htmlFor="num">Nº</label>
                   <input
                     type="text"
@@ -203,7 +203,6 @@ export default function CondominioCad() {
                     onChange={(e) => setValues({ ...values, uf: e.target.value })}
                   />
                 </div>
-              </div>
             </section>
           </div>
 

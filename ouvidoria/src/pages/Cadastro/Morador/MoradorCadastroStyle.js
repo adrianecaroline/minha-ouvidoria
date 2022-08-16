@@ -170,7 +170,7 @@ export const ButtonCad = styled.button `
     margin-right: 38%;
     margin-bottom: 3%;
     padding: 10px;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: #ffff;
     font-size: 18px;
     border: none;

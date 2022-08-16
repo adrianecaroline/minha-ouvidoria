@@ -105,6 +105,7 @@ export default function CondominioCad() {
               <div className="input-dados">
                 <label htmlFor="idUsername">Nome de usuário:</label>
                 <input
+                 maxLength={9}
                   type="text"
                   name="idUsername"
                   id="UserName"
@@ -140,6 +141,7 @@ export default function CondominioCad() {
                   name="email"
                   className="email"
                   required
+                  placeholder="seuemail@email.com"
                   value={values.email}
                   onChange={(e) => {
                     setValues({ ...values, email: e.target.value });
