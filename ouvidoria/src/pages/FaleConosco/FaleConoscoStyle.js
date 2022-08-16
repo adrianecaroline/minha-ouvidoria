@@ -6,13 +6,21 @@ gap: 7rem;
 justify-content: space-around;
 margin: 4% 14%;
 padding-top: 3%;
-min-height: 100vh;
+min-height: 75vh;
 
 @media (max-width: 1200px){
     padding-top: 5%;
 }
 @media (max-width: 900px){
     padding-top: 14%;
+    min-height: 70vh;
+}
+@media (max-width: 400px){
+    padding-top: 18%;
+    min-height: 64vh;
+}
+@media (max-width: 300px){
+    padding-top: 25%;
 }
 `;
 
@@ -98,12 +106,21 @@ textarea{
     width: 30%;
     margin: 2% 35%;
     padding: 10px;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: #ffff;
     font-size: 18px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 
+}
+@media (max-width: 360px){
+    .enviar-dados input{
+        width: 30%;
+        margin: 2% 35%;
+        padding: 10px;
+        font-size: 15px;
+    
+    }
 }
 `;
