@@ -32,7 +32,7 @@ export const Frame1 = styled.div`
   button {
     width: 160px;
     height: 50px;
-    background-color: #23e24c;
+    background-color: #3fab40;
     border: none;
     border-radius: 6px;
     font-weight: bolder;

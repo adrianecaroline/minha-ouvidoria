@@ -40,7 +40,7 @@ export const Frame = styled.footer `
     // gap: 10rem;
   }
 
-  p > a {
+  p {
     text-decoration: none;
     color: #ffff;
     word-spacing: 4px;

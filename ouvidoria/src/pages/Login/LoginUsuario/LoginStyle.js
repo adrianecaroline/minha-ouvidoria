@@ -128,7 +128,7 @@ export const LoginInput = styled.section`
     height: 2.5rem;
     border-radius: 3px;
     border-style: none;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: white;
     cursor: pointer;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.35);
@@ -194,7 +194,7 @@ export const InfoLogin = styled.section`
     width: 10.06rem;
     border-radius: 3px;
     border-style: none;
-    background-color: #23e24c;
+    background-color: #3fab40;
     color: white;
     cursor: pointer;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.35); 

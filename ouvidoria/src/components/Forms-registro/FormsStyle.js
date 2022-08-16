@@ -12,7 +12,7 @@ export const FormMain = styled.main `
   }
 
   input[type="button"] {
-    background-color: #23e24c; 
+    background-color: #3fab40; 
     color: #ffff;
     border: none;
     border-radius: 3px;

@@ -22,7 +22,7 @@ export default function Lista() {
     <>
       <Menu />
       <Container>
-        <h1>Registros:</h1>
+        <h1>Registros</h1>
         <Section>
         <div className="principal">
             <div className='cabecalho'>

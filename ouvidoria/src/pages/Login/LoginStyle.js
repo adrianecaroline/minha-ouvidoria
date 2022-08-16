@@ -137,7 +137,7 @@ export const InputLogin = styled.div `
 
   input {
     cursor: pointer;
-    background-color: #23e24c;
+    background-color: #3fab40;
     width: 10rem;
     height: 2rem;
     color: white;

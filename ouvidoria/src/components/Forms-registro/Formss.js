@@ -105,7 +105,7 @@ export default function Formss(props) {
             <option value="Coleta lixo">Coleta de lixo</option>
             <option value="Pavimentação">Pavimentação</option>
             <option value="Ciclovia">Ciclovia</option>
-            <option value="Saneamento">Saneamento básico</option>
+            <option value="Saneamento básico">Saneamento básico</option>
             <option value="Outro">Outro</option>
           </select>
         </Selection>
@@ -137,7 +137,7 @@ export default function Formss(props) {
           {/* <!--Endereço da solicitação--> */}
           <Endereco>
             <h1>Endereço</h1>
-            <label htmlFor="local">Local do fato</label>
+            <label htmlFor="local">Local do ocorrido</label>
             <input
               type="text"
               name="local"
@@ -160,7 +160,7 @@ export default function Formss(props) {
                 />
               </SubInputs>
               <SubInputs>
-                <label htmlFor="url">Inlcuir anexos</label>
+                <label htmlFor="url">Incluir anexos</label>
 
                 <input
                   type="file"

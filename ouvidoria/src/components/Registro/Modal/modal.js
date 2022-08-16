@@ -81,7 +81,7 @@ export default function FormDialog(props) {
     <div>
       <Dialog open={props.open} onClose={handleClose}>
         <div  style={{width: "400px"}}>
-        <DialogTitle style={border()}> {/*(Nº do Protocolo: {props.idProtocolo})*/} Seu Registro</DialogTitle>
+        <DialogTitle style={border()}> {/*(Nº do Protocolo: {props.idProtocolo})*/} Meu registro</DialogTitle>
         <DialogContent>
           <DialogContentText style={style()}>
             <>

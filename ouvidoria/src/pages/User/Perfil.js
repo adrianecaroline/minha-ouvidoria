@@ -68,26 +68,26 @@ function User() {
       <div className="modal"><ModalEd open={open} setOpen={setOpen} /></div>
         <FrameUser>
           <span>
-            <h3>Seu Perfil</h3>
+            <h3>Meu perfil</h3>
           </span>
           <UserInfo>
-            <p>Username: {user.username}</p>
+            <p>Nome de usuário: {user.username}</p>
             <p>E-mail: {user.email}</p>
             <p>Nome: {user.nome}</p>
-            <p>Condominio: {user.condominio}</p>
+            <p>Condomínio: {user.condominio}</p>
             <p>Bloco: {user.bloco}</p>
             <p>Apto: {user.apto}</p>
           </UserInfo>
           <BtnUser>
-            <Botao onClick={() => handleClickArrow()}>Editar Perfil</Botao>
+            <Botao onClick={() => handleClickArrow()}>Editar perfil</Botao>
             <Botao onClick={() => handleClickBtn()} primary>
-              Excluir Perfil
+              Excluir perfil
             </Botao>
           </BtnUser>
         </FrameUser>
 
         <section>
-          <h3>Seus registros</h3>
+          <h3>Meus registros</h3>
           {listRegistros.length ? (
             listRegistros.map((registros, index) => {
               //if (!registros.assunto_registro) return;

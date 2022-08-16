@@ -18,7 +18,7 @@ function Menu({ setMenuVisible }) {
       <Nav>
         <ul>
           <li>
-            <span onClick={() => { navigate("/sobre-nos")}}> Sobre Nós </span>
+            <span onClick={() => { navigate("/sobre-nos")}}> Sobre nós </span>
           </li>
           <li>
             <span onClick={() => { navigate("/ajuda")}}> Ajuda </span>

@@ -128,7 +128,7 @@ export const Botao = styled.button`
   color: #f9f9f9;
   font-weight: bolder;
   cursor: pointer;
-  background-color: #6fd222;
+  background-color: #3fab40;
   box-shadow: 0px 2px 3px 0px rgb(0 0 0 / 35%);
 
   ${(props) =>
