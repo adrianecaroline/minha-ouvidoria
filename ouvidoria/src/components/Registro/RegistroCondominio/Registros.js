@@ -13,7 +13,7 @@ export default function Registros(props) {
           <div className="descricao">
             <p>
               {" "}
-              {props.registro} <span>(Nº {props.idProtocol})</span>
+              {props.registro} <span>Nº do protocolo:  {props.idProtocol}</span>
             </p>
             <p><span>Título:</span> {props.titulo}</p>
             <p><span>Descrição:</span> {props.descricao} </p>

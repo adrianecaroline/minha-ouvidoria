@@ -4,6 +4,7 @@ import Registro from "../../../components/Registro/RegistroCondominio/Registros"
 import { axiosInstance } from "../../../api_services/ouvidoriaApi";
 import { useState } from "react";
 import Menu from "../../../components/Menu/MenuCondominio/Menu";
+import { MenuMobile } from "../../../components/Menu/MenuMobile";
 import Footer from "../../../components/Footer/Footer";
 
 export default function Lista() {
@@ -18,9 +19,14 @@ export default function Lista() {
       });
   }
 
+  //menu mobile
+  const [menuVisible, setMenuVisible] = useState(false);
+ 
+
   return (
     <>
-      <Menu />
+      <MenuMobile menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      <Menu setMenuVisible={setMenuVisible} />
       <Container>
         <h1>Registros</h1>
         <Section>
