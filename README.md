@@ -55,7 +55,7 @@ Desenvolvida pelo squad [REACTon](https://github.com/adrianecaroline/minha-ouvid
 
 ## Utilitários
 
-* Protótipo: [Figma](https://www.figma.com/) → [Protótipo (Minha Ouvidoria)](https://www.figma.com/file/z093QNFC0Wyf01mu5DaIAl/REACT-on-team-library?node-id=411%3A2) 
+* Protótipo: [Figma](https://www.figma.com/) → [Protótipo (Minha Ouvidoria)](https://www.figma.com/file/z093QNFC0Wyf01mu5DaIAl/REACT-on-team-library?node-id=411%3A2)  
 * Editor: [Visual Studio Code](https://code.visualstudio.com/)
 * Teste de API: [Insomnia](https://insomnia.rest/)
 
